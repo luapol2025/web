@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luapol – Preparadores Policía Nacional</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* =========================
+       CONFIGURACIÓN GLOBAL Y MÓVIL
+       ========================= */
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; font-family: system-ui, -apple-system, sans-serif; color: #333; line-height: 1.6; }
+    .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+    h1, h2, h3, h4, h5, h6 { text-align: center; font-weight: 700; }
+    p, li { text-align: justify; }
+
+    /* =========================
+       NAVBAR (ESTILO UNIFICADO CON ALUMNOS)
+       ========================= */
+    .navbar { padding: 1rem 0; }
+    .navbar-brand { font-size: 1.8rem; letter-spacing: 1px; }
+
+    /* =========================
+       HERO SECTION
+       ========================= */
+    .hero { padding: clamp(3rem, 10vh, 6rem); }
+    body h1 { font-size: clamp(2.2rem, 8vw, 4.2rem); line-height: 1.1; margin-bottom: 1.5rem; }
+    body p.lead { 
+      font-size: clamp(1.1rem, 3vw, 1.4rem); 
+      max-width: 950px; 
+      margin: 0 auto 2.5rem auto; 
+    }
+
+    /* =========================
+       TARJETAS (IDÉNTICO A PÁGINA ALUMNOS)
+       ========================= */
+    .seccion-herramientas { padding: 2rem; }
+    .card { border: none; border-radius: 1rem; padding: 1.5rem; height: 100%; transition: box-shadow 0.3s; }
+    .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important; }
+    
+    .card h6 { 
+      color: #0d6efd; 
+      font-size: 1.05rem; 
+      margin-bottom: 1rem; 
+      text-transform: uppercase; 
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .card p.small { font-size: 0.95rem; color: #444; margin-bottom: 1rem; text-align: justify; }
+    .card ul { padding-left: 1.1rem; margin-bottom: 0; }
+    .card ul li { font-size: 0.85rem; color: #555; margin-bottom: 0.6rem; text-align: justify; }
+
+    /* =========================
+       GALERÍA Y CAPTIONS
+       ========================= */
+    .bloque-imagen { margin-top: 3rem; margin-bottom: 5rem; text-align: center; }
+    .bloque-imagen img { 
+      max-width: 95%; 
+      border-radius: 1rem; 
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
+    }
+    .bloque-imagen p.caption { 
+      text-align: center !important; 
+      margin-top: 1.5rem; 
+      font-size: 1rem; 
+      color: #6c757d; 
+      font-weight: 500;
+    }
+    @media (min-width: 992px) { .bloque-imagen img { max-width: 80%; } }
+
+    /* =========================
+       FOOTER Y DESPLEGABLE LEGAL
+       ========================= */
+    .footer-legal { padding: 3rem 0; border-top: 1px solid #eee; background: #fff; }
+    .footer-link { 
+      color: #333; 
+      text-decoration: underline; 
+      background: none; 
+      border: none; 
+      padding: 0; 
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+    .seccion-legal { border-top: 2px solid #0d6efd; }
+    .seccion-legal h3 { margin-top: 2.5rem; color: #0d6efd; font-size: 1.2rem; text-align: left; }
+    .instagram-icon { width: 35px; transition: opacity 0.3s; }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="https://www.luapol.com/">LUAPOL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="https://www.luapol.com/">LUAPOL ALUMNOS</a></li>
+          <li class="nav-item"><a class="nav-link active" href="https://www.luapol.com/preparadores">LUAPOL PREPARADORES</a></li>
+        </ul>
+        <div class="d-flex flex-column flex-lg-row gap-2 ms-lg-4">
+          <a href="https://app.luapol.com/login/" class="btn btn-primary px-4">ACCESO ALUMNOS</a>
+          <a href="#" class="btn btn-primary px-4">ACCESO PREPARADORES</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero text-center">
+    <div class="container">
+      <h1>PREPARADORES <span class="text-primary">LUAPOL</span></h1>
+      <p class="lead">
+        Ponemos a tu disposición una <strong>plataforma profesional de test para la preparación del examen teórico de Escala Básica</strong>, diseñada para que academias y preparadores tengan control total sobre la formación.
+      </p>
+    </div>
+  </section>
+
+  <section class="seccion-herramientas bg-light">
+    <div class="container">
+      <h2 class="mb-5">🚀 Seguimiento total <span class="text-primary">de tus alumnos:</span></h2>
+      <div class="row g-4">
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="card shadow-sm">
+            <h6>PREGUNTAS LUAPOL</h6>
+            <p class="small">Gestión de contenido exclusivo para tus grupos de estudio.</p>
+            <ul>
+              <li>Acceso total a la base completa de preguntas de LUAPOL.</li>
+              <li>Sube tus propias preguntas de forma exclusiva para tus alumnos.</li>
+              <li>Crea contenido específico para el juego Operativo Élite.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card shadow-sm">
+            <h6>CONTROL DE ALUMNOS</h6>
+            <p class="small">Supervisa el rendimiento grupal desde un panel centralizado.</p>
+            <ul>
+              <li>Control total de la actividad y resultados de cada grupo.</li>
+              <li>Analiza la evolución mediante gráficos e indicadores claros.</li>
+              <li>Visualiza rankings y comparativas internas actualizadas.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card shadow-sm">
+            <h6>ANÁLISIS INDIVIDUAL</h6>
+            <p class="small">Seguimiento detallado por cada opositor de tu academia.</p>
+            <ul>
+              <li>Identifica los temas con mayor tasa de error por alumno.</li>
+              <li>Consulta históricos de intentos, tiempos y calificaciones.</li>
+              <li>Accede a los resultados detallados de cada test realizado.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card shadow-sm">
+            <h6>FORO EXCLUSIVO</h6>
+            <p class="small">Comunicación directa en un entorno privado y profesional.</p>
+            <ul>
+              <li>Resuelve dudas y publica avisos importantes para tus grupos.</li>
+              <li>Modera y gestiona los mensajes y temas de tus alumnos.</li>
+              <li>Espacio privado para mejorar la comunicación y el seguimiento.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-5">
+    <div class="container">
+      <h2 class="mb-5">📊 Así funciona <span class="text-primary">LUAPOL para preparadores:</span></h2>
+
+      <div class="bloque-imagen">
+        <img src="img/2editarpregunta1.png" alt="Edición">
+      </div>
+
+      <div class="bloque-imagen">
+        <img src="img/2editarpregunta2.png" alt="Preguntas">
+        <p class="caption">Crea tus propias preguntas para los test y los juegos.</p>
+      </div>
+
+      <div class="bloque-imagen">
+        <img src="img/2seguimiento3.png" alt="Seguimiento">
+       <p class="caption">Gestión y control de alumnos registrados en el sistema.</p>
+      </div>
+
+  <div class="bloque-imagen">
+        <img src="img/2usuariosregistrados4.png" alt="Seguimiento">
+      </div>
+
+      <div class="bloque-imagen">
+        <img src="img/2analisisglobal5.png" alt="Usuarios">
+      </div>
+
+
+      <div class="bloque-imagen">
+        <img src="img/2seguimientoestudio6.png" alt="Individual">
+        <p class="caption">Control individualizado y detallado de cada opositor.</p>
+      </div>
+
+      <div class="bloque-imagen">
+        <img src="img/2foro7.png" alt="Foro">
+        <p class="caption">Participa y modera tu propio foro de dudas.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer-legal">
+    <div class="container">
+      <div class="row align-items-center text-center text-md-start">
+        <div class="col-md-5 mb-4 mb-md-0">
+          <button class="footer-link fw-bold" data-bs-toggle="collapse" data-bs-target="#desplegableLegal">
+            AVISO LEGAL, TÉRMINOS DE USO, POLÍTICA DE PRIVACIDAD Y COOKIES
+          </button>
+          <div class="mt-2 text-muted small">Contacto: info@luapol.com</div>
+        </div>
+        <div class="col-md-2 text-center mb-4 mb-md-0">
+          <a href="https://www.instagram.com/luapol_cnp" target="_blank">
+            <img src="img/instagram.svg" class="instagram-icon" alt="Instagram Luapol">
+          </a>
+        </div>
+        <div class="col-md-5 text-md-end text-muted small">
+          © 2026 LUAPOL. Todos los derechos reservados.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div class="collapse seccion-legal bg-light" id="desplegableLegal">
+    <div class="container py-5">
+      <h2 class="text-start mb-4">AVISO LEGAL, TÉRMINOS DE USO, POLÍTICA DE PRIVACIDAD Y COOKIES</h2>
+      <p class="text-muted mb-4">Fecha de última actualización: 28/05/2025</p>
+      
+      <div class="legal-content">
+        <p>Este documento establece las condiciones legales aplicables al uso del sitio web de <strong>www.luapol.com</strong> y <strong>app.luapol.com</strong>. Al acceder y utilizar este sitio, el usuario acepta expresamente los términos y condiciones aquí recogidos.</p>
+        <p>Esta política se aplica tanto a la navegación en www.luapol.com, como al uso de la plataforma/app accesible desde app.luapol.com, donde se gestionan los servicios contratados y se tratan los datos personales del usuario.</p>
+
+        <h3>1. INFORMACIÓN GENERAL</h3>
+        <p>LUAPOL y los sitios webs expuestos son propiedad de <strong>Genís Del Pino Vives</strong> con NIF 39735453D y domicilio fiscal en Avinguda del Mil·lenari número 3A de Alella. Email de contacto: info@luapol.com</p>
+
+        <h3>2. OBJETO DEL SITIO WEB</h3>
+        <p>El sitio tiene como finalidad proporcionar herramientas de preparación para las oposiciones a la Policía Nacional, incluyendo test en línea y un foro de discusión.</p>
+        <p><strong>Aviso importante:</strong> Los materiales ofrecidos son de carácter educativo. LUAPOL no garantiza la superación de exámenes oficiales ni proporciona asesoramiento legal.</p>
+
+        <h3>3. CONDICIONES DE USO</h3>
+        <ul>
+          <li><strong>Uso adecuado:</strong> El usuario se compromete a un uso lícito y respetuoso conforme a la normativa.</li>
+          <li><strong>Veracidad:</strong> El usuario garantiza que los datos proporcionados son exactos y actualizados.</li>
+          <li><strong>Foro:</strong> Prohibida la publicación de contenido ofensivo o ilegal. LUAPOL se reserva el derecho de eliminar mensajes sin previo aviso.</li>
+          <li><strong>Desistimiento:</strong> Según el art. 103.m) del RDL 1/2007, el derecho de desistimiento no es aplicable a contenidos digitales sin soporte material una vez iniciada la ejecución.</li>
+          <li><strong>Menores:</strong> No dirigido a menores de 18 años.</li>
+        </ul>
+
+        <h3>4. PROPIEDAD INTELECTUAL</h3>
+        <p>Todos los contenidos (textos, imágenes, logotipos) están protegidos. Queda prohibida la reproducción o distribución sin autorización expresa por escrito.</p>
+
+        <h3>5. POLÍTICA DE PRIVACIDAD (LOPDGDD/GDPR)</h3>
+        <p>Responsable: Genís Del Pino Vives. Finalidad: Gestión de servicios y comunicaciones. Legitimación: Consentimiento del usuario. No se cederán datos a terceros salvo obligación legal.</p>
+        <p><strong>Derechos:</strong> Acceso, rectificación, supresión y portabilidad escribiendo a info@luapol.com.</p>
+
+        <h3>6. POLÍTICA DE COOKIES</h3>
+        <p>Se utilizan exclusivamente <strong>cookies técnicas necesarias</strong> para el funcionamiento (sesión, seguridad y progreso de test). No se requiere consentimiento según el art. 22.2 de la LSSI-CE.</p>
+
+        <h3>7. LIMITACIÓN DE RESPONSABILIDAD</h3>
+        <p>LUAPOL no garantiza el aprobado ni se responsabiliza de interrupciones o errores informáticos.</p>
+
+        <h3>8. LEGISLACIÓN Y JURISDICCIÓN</h3>
+        <p>Sujeto a legislación española. Jurisdicción en los juzgados de <strong>Barcelona</strong>.</p>
+
+        <div class="text-center mt-5">
+          <button class="btn btn-secondary btn-sm" data-bs-toggle="collapse" data-bs-target="#desplegableLegal">Cerrar documento legal</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
