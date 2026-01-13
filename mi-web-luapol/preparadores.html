@@ -99,33 +99,55 @@
   color: rgba(255,255,255,0.6);
 }
 
-    /* =========================
-       TARJETAS LADO A LADO
-       ========================= */
-    .seccion-herramientas { padding: 80px 0; background-color: #f8f9fa; }
-    
-    .card { 
-      border: none; 
-      border-radius: 1rem; 
-      padding: 1.5rem; 
-      height: 100%; 
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    }
+  /* =========================
+   TARJETAS (ESTÉTICA IDÉNTICA A ALUMNOS)
+   ========================= */
+.seccion-herramientas { padding: 5rem 0; background-color: #f8f9fa; }
 
-    .card h6 { color: #0d6efd; text-transform: uppercase; font-weight: 800; margin-bottom: 1rem; }
-    .card p.small { font-size: 0.95rem; color: #444; text-align: justify; }
-    .card ul { padding-left: 1.1rem; }
-    .card ul li { font-size: 0.85rem; margin-bottom: 0.5rem; text-align: justify; }
+.card { 
+  border: none; 
+  border-radius: 1rem; 
+  padding: 1.5rem; 
+  height: 100%; 
+  transition: box-shadow 0.3s ease; /* Transición suave para el hover */
+}
 
-    /* Estilos Galería */
-    .img-grande {
-      width: 100%;
-      max-width: 950px;
-      border-radius: 1rem;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-      margin-bottom: 3rem;
-    }
+/* Efecto de sombra al pasar el ratón */
+.card:hover { 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important; 
+}
 
+/* Título de la tarjeta azul y optimizado */
+.card h6 { 
+  color: #0d6efd; 
+  font-size: 1.05rem;      
+  margin-bottom: 1rem; 
+  text-transform: uppercase; 
+  letter-spacing: 0.01em;    
+  white-space: nowrap;      
+  overflow: hidden;          
+  text-overflow: ellipsis;  
+  text-align: center; /* Centrado como en Alumnos */
+}
+
+.card p.small { 
+  font-size: 0.95rem; 
+  color: #444; 
+  margin-bottom: 1rem; 
+  text-align: justify; 
+}
+
+.card ul { padding-left: 1.1rem; margin-bottom: 0; }
+.card ul li { 
+  font-size: 0.85rem; 
+  color: #555; 
+  margin-bottom: 0.6rem; 
+  text-align: justify; 
+}
+
+/* Ajuste para móviles muy pequeños */
+@media (max-width: 380px) {
+  .card h6 { font-size: 0.95rem; }
 
 
     /* =========================
@@ -232,8 +254,12 @@
   </div>
 </section>
 
-        <section class="seccion-herramientas">
+        <<section class="seccion-herramientas bg-light">
   <div class="container">
+    <h2 class="mb-5">🚀 GESTIONA TU ACADEMIA CON <span class="text-primary">HERRAMIENTAS PROFESIONALES:</span></h2>
+    <div class="row g-4 justify-content-center">
+       </div>
+  
     <div class="row g-4 justify-content-center"> <div class="col-md-4">
         <div class="card shadow-sm">
           <h6>CONTROL DE ALUMNOS</h6>
@@ -363,6 +389,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
