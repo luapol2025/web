@@ -40,16 +40,34 @@
       transform: scale(1.05);
     }
 
-    /* =========================
-       HERO SECTION (DISEÑO SEGÚN CAPTURAS)
+ /* =========================
+       HERO SECTION (CON FONDO Y GUIÑO)
        ========================= */
-    .hero { padding: clamp(3rem, 10vh, 6rem) 0; }
-    body h1 { font-size: clamp(2.2rem, 8vw, 4.2rem); line-height: 1.1; margin-bottom: 1.5rem; }
-    
-    body p.lead { 
-      font-size: clamp(1.1rem, 3vw, 1.4rem); 
-      max-width: 950px; 
-      margin: 0 auto 2.5rem auto; 
+    .hero { 
+      padding: clamp(3rem, 10vh, 6rem) 0;
+      background: linear-gradient(rgba(0, 15, 35, 0.8), rgba(0, 15, 35, 0.8)), url('img/fondo.png');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      color: white; /* Texto blanco para legibilidad */
+    }
+
+    /* GUIÑO POLICIAL: Franja superior sutil */
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 5px;
+      background: linear-gradient(90deg, #002244 0%, #0055aa 50%, #d4af37 100%);
+    }
+
+    /* Ajustes específicos para que los textos originales no cambien de posición */
+    .hero h1 { color: white !important; text-align: center; }
+    .hero p.lead { color: rgba(255,255,255,0.9) !important; text-align: center; }
+    .hero .text-primary { color: #4da3ff !important; }
+    .hero .precio-hero { color: #4da3ff !important; text-align: center; }
+    .hero .precio-hero .precio { color: white; }
+    .hero .texto-descuento { color: white; text-align: center; }
+    .hero .texto-legal-hero { color: rgba(255,255,255,0.6) !important; text-align: center; }
     }
 
     /* BLOQUE DE COMPRA Y TEXTOS CENTRADOS (SOLO ESTOS) */
@@ -177,7 +195,7 @@
     </div>
   </div>
 </nav>
-  <section class="hero">
+ <section class="hero">
     <div class="container">
       <h1>¡BIENVENIDO A <span class="text-primary">LUAPOL</span>!</h1>
       <p class="lead">
@@ -185,7 +203,7 @@
       </p>
 
       <div class="promo-block">
-        <div class="fw-bold text-primary precio-hero">
+        <div class="fw-bold precio-hero">
           Prueba nuestra DEMO GRATIS sin registro<br>
           o únete ahora por solo <span class="precio">1,99 €</span> el primer mes
         </div>
@@ -370,6 +388,7 @@
 </body>
 
 </html>
+
 
 
 
