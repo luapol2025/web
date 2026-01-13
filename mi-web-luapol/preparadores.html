@@ -31,69 +31,71 @@
 }
     
 /* =========================
-       HERO SECTION - IMPACTO TOTAL
-       ========================= */
-    .hero { 
-      background: linear-gradient(180deg, #0b1320 0%, #162235 100%); 
-      padding: 120px 0 100px 0; 
-      color: #ffffff;
-      text-align: center; 
-    }
-
- .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 3.8rem); 
-  font-weight: 800; 
-  letter-spacing: 1px;
-  margin-bottom: 2rem !important;
-  text-transform: uppercase;
+   NAVBAR CON LÍNEA CNP
+   ========================= */
+.navbar { 
+  padding: 1rem 0; 
+  border-bottom: 5px solid;
+  /* Gradiente exacto: Azul oscuro, azul brillante y dorado */
+  border-image: linear-gradient(90deg, #002244 0%, #0055aa 50%, #d4af37 100%) 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-    .hero h1 span.text-primary {
-      color: #0d6efd !important; 
-    }
+/* =========================
+   HERO SECTION (ESTILO ALUMNOS)
+   ========================= */
+.hero { 
+  padding: clamp(4rem, 12vh, 8rem) 0;
+  background-color: #00152e; 
+  background-image: linear-gradient(rgba(0, 15, 35, 0.8), rgba(0, 15, 35, 0.8)), url('img/fondo.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white !important;
+}
 
-    /* Subtítulo JUSTIFICADO */
-    .hero p.lead {
-      font-size: clamp(1.1rem, 3vw, 1.4rem); 
-      text-align: justify !important;
-      text-justify: inter-word;
-      max-width: 900px; 
-      margin: 0 auto 3rem auto; 
-      line-height: 1.8;
-      color: #d1d5db;
-    }
+.hero h1 { 
+  font-size: clamp(3rem, 10vw, 5.5rem) !important; 
+  line-height: 1; 
+  margin-bottom: 2rem; 
+  text-align: center !important;
+  color: white !important;
+}
 
-    /* Botón Azul Permanente (Estilo Navbar) */
-    .btn-navbar-style {
-      background-color: #0d6efd !important;
-      border: none;
-      color: white !important;
-      padding: 15px 45px;
-      font-weight: 700;
-      text-transform: uppercase;
-      border-radius: 5px;
-      font-size: 1rem;
-      display: inline-block;
-      text-decoration: none;
-      transition: opacity 0.3s;
-    }
+.hero p.lead { 
+  font-size: clamp(1.1rem, 3vw, 1.4rem); 
+  max-width: 900px; 
+  margin: 0 auto 3rem auto !important; 
+  text-align: justify !important; /* Justificado perfecto */
+  color: rgba(255,255,255,0.95) !important;
+}
 
-    .btn-navbar-style:hover {
-      opacity: 0.9;
-      color: white !important;
-    }
+.promo-block { 
+  text-align: center !important; 
+  max-width: 800px; 
+  margin: 0 auto; 
+}
 
-    /* Especialistas Centrado */
-    .especialistas-tag {
-      margin-top: 3rem;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: #ffffff;
-      opacity: 0.8;
-    }
+/* Botón estilo CTA de Alumnos */
+.btn-cta { 
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important; 
+  padding: 1rem 3.5rem !important; 
+  font-weight: 700;
+  border-radius: 0.6rem;
+  transition: transform 0.2s;
+}
+.btn-cta:hover { transform: scale(1.03); }
+
+.especialistas-tag {
+  margin-top: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
 
     /* =========================
        TARJETAS LADO A LADO
@@ -201,23 +203,20 @@
   </nav>
   
 <section class="hero">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-11">
-          <h1>LUAPOL <span class="text-primary">PREPARADORES</span></h1>
-          
-          <p class="lead">
-            Plataforma profesional de test diseñada para que academias y preparadores tengan <strong>control total</strong> sobre la formación teórica de Escala Básica. Supervisa el rendimiento grupal e individual mediante análisis avanzados de progreso y gestión de contenido exclusivo.
-          </p>
+  <div class="container">
+    <h1>LUAPOL <span style="color: #4da3ff !important;">PREPARADORES</span></h1>
+    
+    <p class="lead">
+      Plataforma profesional de test diseñada para que academias y preparadores tengan <strong>control total</strong> sobre la formación teórica de Escala Básica. Supervisa el rendimiento grupal e individual mediante análisis avanzados de progreso y gestión de contenido exclusivo.
+    </p>
 
-          <a href="#" class="btn btn-navbar-style">ACCESO PREPARADORES</a>
-          
-          <div class="especialistas-tag">
-            ESPECIALISTAS EN POLICÍA NACIONAL
-          </div>
-        </div>
+    <div class="promo-block">
+      <div class="d-flex justify-content-center">
+        <a href="#" class="btn btn-primary btn-lg btn-cta">ACCESO PREPARADORES</a>
       </div>
       
+      <div class="especialistas-tag">
+        ESPECIALISTAS EN POLICÍA NACIONAL
       </div>
     </div>
   </div>
@@ -354,6 +353,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
