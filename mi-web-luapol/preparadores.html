@@ -30,38 +30,60 @@
   vertical-align: middle; 
 }
     
- /* =========================
-       HERO SECTION (LIMPIO Y CORREGIDO)
-       ========================= */
-    .hero { 
-      padding: 120px 0 60px 0; 
-      text-align: center; 
-      width: 100%;
-    }
+/* =========================
+   HERO STYLE: "BIENVENIDO" COMPATIBLE
+   ========================= */
+.hero { 
+  /* Fondo oscuro degradado como la captura de alumnos */
+  background: linear-gradient(180deg, #0b1320 0%, #162235 100%); 
+  padding: 100px 0 80px 0; 
+  color: #ffffff;
+  text-align: center; 
+  width: 100%;
+}
 
-    /* Título más grande y centrado */
-    .hero h1 {
-      font-size: clamp(2.5rem, 8vw, 4.5rem); 
-      text-align: center !important;
-      margin-bottom: 3rem !important;
-      width: 100%;
-    }
+/* Título igual al de la captura */
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 3.2rem); 
+  text-align: center !important;
+  margin-bottom: 1.5rem !important;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
 
-    /* Párrafo JUSTIFICADO */
-    .hero p.lead {
-      font-size: clamp(1.1rem, 3vw, 1.4rem); 
-      text-align: justify !important;
-      text-justify: inter-word;
-      max-width: 900px; 
-      margin: 0 auto 2.5rem auto; 
-      line-height: 1.8; 
-    }
+/* El azul específico de Luapol para el nombre */
+.hero h1 span.text-primary {
+  color: #3b82f6 !important; 
+}
 
-    /* Ajuste para móviles */
-    @media (max-width: 768px) {
-      .hero { padding: 60px 0 40px 0; }
-      .hero h1 { margin-bottom: 2rem !important; }
-    }
+/* Párrafo: CENTRADO y en color gris claro/blanco */
+.hero p.lead {
+  font-size: clamp(1rem, 2vw, 1.25rem); 
+  text-align: center !important; /* Centrado absoluto como en la home */
+  max-width: 850px; 
+  margin: 0 auto 2.5rem auto; 
+  line-height: 1.6;
+  color: #d1d5db;
+  font-weight: 400;
+}
+
+/* Botón idéntico al de la captura de Alumnos */
+.btn-bienvenida {
+  background-color: #3b82f6;
+  border: none;
+  color: white;
+  padding: 12px 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+.btn-bienvenida:hover {
+  background-color: #2563eb;
+  color: white;
+}
     /* =========================
        TARJETAS
        ========================= */
@@ -154,7 +176,7 @@
         </ul>
         <div class="d-flex flex-column flex-lg-row gap-2 ms-lg-4">
           <a href="https://app.luapol.com/login/" class="btn btn-primary px-4">ACCESO ALUMNOS</a>
-          <a href="#" class="btn btn-primary px-4">ACCESO PREPARADORES</a>
+          <a href="https://www.luapol.com/preparadores#" class="btn btn-primary px-4">ACCESO PREPARADORES</a>
         </div>
       </div>
     </div>
@@ -162,29 +184,26 @@
   
 <section class="hero">
   <div class="container">
-    <h1>PREPARADORES <span class="text-primary">LUAPOL</span></h1>
-    <p class="lead">
-      Ponemos a tu disposición una <strong>plataforma profesional de test para la preparación del examen teórico de Escala Básica</strong>, diseñada para que academias y preparadores tengan control total sobre la formación.
-    </p>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <h1>LUAPOL <span class="text-primary">PREPARADORES</span></h1>
+        
+        <p class="lead">
+          Plataforma profesional de test diseñada para que academias y preparadores 
+          tengan <strong>control total</strong> sobre la formación teórica de Escala Básica.
+        </p>
+
+        <div class="d-flex justify-content-center mt-2">
+          <a href="#" class="btn btn-luapol shadow-lg">ACCESO PREPARADORES</a>
+        </div>
+        
+        <p class="mt-5 small text-uppercase fw-bold" style="letter-spacing: 3px; opacity: 0.6; font-size: 0.75rem;">
+          Especialistas en Policía Nacional
+        </p>
+      </div>
+    </div>
   </div>
 </section>
-  
-  <section class="seccion-herramientas bg-light">
-    <div class="container">
-      <h2 class="mb-5">🚀 SEGUIMIENTO TOTAL <span class="text-primary">DE TUS ALUMNOS:</span></h2>
-      <div class="row g-4">
-        
-        <div class="col-md-6 col-lg-3">
-          <div class="card shadow-sm">
-            <h6>PREGUNTAS LUAPOL</h6>
-            <p class="small">Gestión de contenido exclusivo para tus grupos de estudio.</p>
-            <ul>
-              <li>Acceso total a la base completa de preguntas de LUAPOL.</li>
-              <li>Sube tus propias preguntas de forma exclusiva para tus alumnos.</li>
-              <li>Crea contenido específico para el juego Operativo Élite.</li>
-            </ul>
-          </div>
-        </div>
 
         <div class="col-md-6 col-lg-3">
           <div class="card shadow-sm">
@@ -317,6 +336,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
