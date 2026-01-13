@@ -23,17 +23,17 @@
     .navbar { padding: 1rem 0; }
     .navbar-brand { font-size: 1.8rem; letter-spacing: 1px; }
 
-    /* =========================
-       HERO SECTION
-       ========================= */
-    .hero { padding: clamp(3rem, 10vh, 6rem) 0; }
-    body h1 { font-size: clamp(2.2rem, 8vw, 4.2rem); line-height: 1.1; margin-bottom: 1.5rem; }
-    body p.lead { 
-      font-size: clamp(1.1rem, 3vw, 1.4rem); 
-      max-width: 950px; 
-      margin: 0 auto 2.5rem auto; 
-    }
-
+   HERO SECTION
+   ========================= */
+.hero { 
+  padding: clamp(3rem, 10vh, 6rem) 0; /* 0 en los lados para no empujar el contenido */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+    
     /* =========================
        TARJETAS
        ========================= */
@@ -127,16 +127,16 @@
       </div>
     </div>
   </nav>
-
-  <section class="hero text-center">
-    <div class="container">
-      <h1>PREPARADORES <span class="text-primary">LUAPOL</span></h1>
-      <p class="lead">
-        Ponemos a tu disposición una <strong>plataforma profesional de test para la preparación del examen teórico de Escala Básica</strong>, diseñada para que academias y preparadores tengan control total sobre la formación.
-      </p>
-    </div>
-  </section>
-
+  
+<section class="hero">
+  <div class="container mx-auto text-center">
+    <h1 class="w-100">PREPARADORES <span class="text-primary">LUAPOL</span></h1>
+    <p class="lead mx-auto">
+      Ponemos a tu disposición una <strong>plataforma profesional de test para la preparación del examen teórico de Escala Básica</strong>, diseñada para que academias y preparadores tengan control total sobre la formación.
+    </p>
+  </div>
+</section>
+  
   <section class="seccion-herramientas bg-light">
     <div class="container">
       <h2 class="mb-5">🚀 Seguimiento total <span class="text-primary">de tus alumnos:</span></h2>
@@ -285,4 +285,5 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
