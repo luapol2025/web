@@ -157,42 +157,47 @@
  }
 
 /* =========================
-   GALERÍA ESTILO ALUMNOS (UNIFICADO)
+   GALERÍA UNIFICADA (ESTILO INDEX)
    ========================= */
 .bloque-imagen { 
-  margin-top: 3rem; 
-  margin-bottom: 5rem; 
+  margin-top: 4rem; 
+  margin-bottom: 6rem; 
   text-align: center; 
 }
 
-/* Fuerza a que todas sean iguales, centradas y con sombra profesional */
+/* La clase que controla el tamaño y los márgenes de la imagen */
 .img-grande {
   width: 100% !important;
-  max-width: 900px !important; /* El mismo tamaño que en alumnos */
+  max-width: 900px !important; /* Mismo ancho que en Index */
   height: auto;
   display: block;
-  margin: 0 auto 1.5rem auto; /* Centrado horizontal y espacio con el texto */
+  margin: 0 auto 2rem auto; /* Centrado absoluto con margen inferior */
   border-radius: 1rem;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.12); /* El efecto de profundidad */
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12); /* Sombra idéntica */
   transition: transform 0.3s ease;
 }
 
 .img-grande:hover {
-  transform: scale(1.01); /* Pequeño efecto de zoom al pasar el ratón */
+  transform: scale(1.02); /* Efecto sutil al pasar el ratón */
 }
 
+/* Estilo del pie de foto (Caption) */
 .bloque-imagen p.caption { 
   text-align: center !important; 
-  margin-top: 1rem; 
+  margin-top: 1.5rem; 
   font-size: 1.1rem; 
   color: #6c757d; 
   font-weight: 500;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Ajuste para que en móviles no se vean pegadas al borde */
-@media (max-width: 768px) {
-  .bloque-imagen { margin-bottom: 3.5rem; }
-  .img-grande { max-width: 100% !important; }
+/* Ajuste para que en tablets y móviles no pegue al borde de la pantalla */
+@media (max-width: 992px) {
+  .img-grande {
+    max-width: 95% !important; 
+  }
 }
 
     /* =========================
@@ -303,35 +308,35 @@
     </div> </div> </section>
 
   <section class="py-5">
-    <div class="container">
-      <h2 class="mb-5">📊 ASÍ FUNCIONA <span class="text-primary">LUAPOL PARA PREPARADORES:</span></h2>
+  <div class="container">
+    <h2 class="mb-5">📊 ASÍ FUNCIONA <span class="text-primary">LUAPOL PARA PREPARADORES:</span></h2>
 
-      <div class="bloque-imagen">
-        <img src="img/2editarpregunta1.png" alt="Edición" class="img-grande">
-        <img src="img/2editarpregunta2.png" alt="Preguntas" class="img-grande">
-        <p class="caption">Crea tus propias preguntas para los test y los juegos.</p>
-      </div>
-
-      <div class="bloque-imagen">
-        <img src="img/2seguimiento3.png" alt="Seguimiento" class="img-grande">
-        <img src="img/2usuariosregistrados4.png" alt="Usuarios" class="img-grande">
-        <p class="caption">Gestión y control de alumnos registrados en el sistema.</p>
-      </div>
-
-      <div class="bloque-imagen">
-        <img src="img/2analisisglobal5.png" alt="Análisis Global" class="img-grande">
-        <img src="img/2seguimientoestudio6.png" alt="Individual" class="img-grande">
-        <p class="caption">Control individualizado y detallado de cada opositor mediante análisis de fallos y progreso.</p>
-      </div>
-
-      <div class="bloque-imagen">
-        <img src="img/2foro7.png" alt="Foro" class="img-grande">
-        <p class="caption">Participa y modera tu propio foro de dudas privado para tus grupos.</p>
-      </div>
-
+    <div class="bloque-imagen">
+      <img src="img/2editarpregunta1.png" alt="Edición 1" class="img-grande">
+      <img src="img/2editarpregunta2.png" alt="Edición 2" class="img-grande">
+      <p class="caption">Crea tus propias preguntas para los test y los juegos.</p>
     </div>
-  </section>
 
+    <div class="bloque-imagen">
+      <img src="img/2seguimiento3.png" alt="Seguimiento" class="img-grande">
+      <img src="img/2usuariosregistrados4.png" alt="Usuarios" class="img-grande">
+      <p class="caption">Gestión y control de alumnos registrados en el sistema con listados detallados.</p>
+    </div>
+
+    <div class="bloque-imagen">
+      <img src="img/2analisisglobal5.png" alt="Análisis Global" class="img-grande">
+      <img src="img/2seguimientoestudio6.png" alt="Individual" class="img-grande">
+      <p class="caption">Control individualizado y detallado de cada opositor mediante análisis de fallos y progreso.</p>
+    </div>
+
+    <div class="bloque-imagen">
+      <img src="img/2foro7.png" alt="Foro" class="img-grande">
+      <p class="caption">Participa y modera tu propio foro de dudas privado para tus grupos.</p>
+    </div>
+
+  </div>
+</section>
+  
   <footer class="footer-legal">
     <div class="container">
       <div class="row align-items-center text-center text-md-start">
@@ -393,6 +398,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
