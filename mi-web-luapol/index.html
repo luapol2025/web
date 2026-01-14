@@ -8,25 +8,18 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
-    /* =========================
-       CONFIGURACIÓN GLOBAL Y MÓVIL
-       ========================= */
+   
     html { scroll-behavior: smooth; }
     body { overflow-x: hidden; font-family: system-ui, -apple-system, sans-serif; color: #333; line-height: 1.6; }
     
     .container { padding-left: 1.25rem; padding-right: 1.25rem; }
     h1, h2, h3, h4, h5, h6 { text-align: center; font-weight: 700; }
     
-    /* Alineación de textos */
     p, li { text-align: justify; }
 
-    /* =========================
-       NAVAR (ESTÉTICA PROFESIONAL)
-       ========================= */
     .navbar { padding: 1rem 0; }
     .navbar-brand { font-size: 1.8rem; letter-spacing: 1px; }
 
-    /* Estilo para el logo en el navbar */
     .navbar-logo {
       height: 1.8rem; 
       width: auto;
@@ -35,17 +28,12 @@
       transition: transform 0.3s ease;
     }
 
-    /* Efecto opcional: el logo se agranda un pelín al pasar el ratón */
     .navbar-brand:hover .navbar-logo {
       transform: scale(1.05);
     }
 
-/* =========================
-       HERO SECTION ACTUALIZADO
-       ========================= */
     .hero { 
       padding: clamp(4rem, 12vh, 8rem) 0;
-      /* Fondo azul oscuro de respaldo + tu imagen */
       background-color: #00152e; 
       background-image: linear-gradient(rgba(0, 15, 35, 0.8), rgba(0, 15, 35, 0.8)), url('img/fondo.png');
       background-size: cover;
@@ -55,7 +43,6 @@
       color: white !important;
     }
 
-    /* Franja superior CNP */
     .hero::before {
       content: "";
       position: absolute;
@@ -64,7 +51,6 @@
       z-index: 1;
     }
 
-    /* TÍTULO AMPLIADO */
     .hero h1 { 
       font-size: clamp(3rem, 10vw, 5.5rem) !important; 
       line-height: 1; 
@@ -72,7 +58,6 @@
       text-align: center !important;
     }
     
-    /* TEXTO JUSTIFICADO */
     .hero p.lead { 
       font-size: clamp(1.1rem, 3vw, 1.4rem); 
       max-width: 900px; 
@@ -81,7 +66,6 @@
       color: rgba(255,255,255,0.95) !important;
     }
 
-    /* BOTÓN CENTRADO */
     .hero .promo-block { 
       text-align: center !important; 
       margin: 0 auto; 
@@ -98,7 +82,6 @@
     .hero .texto-legal-hero { color: rgba(255,255,255,0.6) !important; text-align: center !important; }
     }
 
-    /* GUIÑO POLICIAL: Franja superior sutil */
     .hero::before {
       content: "";
       position: absolute;
@@ -106,7 +89,6 @@
       background: linear-gradient(90deg, #002244 0%, #0055aa 50%, #d4af37 100%);
     }
 
-    /* Ajustes específicos para que los textos originales no cambien de posición */
     .hero h1 { color: white !important; text-align: center; }
     .hero p.lead { color: rgba(255,255,255,0.9) !important; text-align: center; }
     .hero .text-primary { color: #4da3ff !important; }
@@ -116,7 +98,6 @@
     .hero .texto-legal-hero { color: rgba(255,255,255,0.6) !important; text-align: center; }
     }
 
-    /* BLOQUE DE COMPRA Y TEXTOS CENTRADOS (SOLO ESTOS) */
     .promo-block { 
       text-align: center !important; 
       max-width: 800px; 
@@ -136,15 +117,11 @@
 
     .texto-descuento { font-size: 1.1rem; margin-top: 1.8rem; text-align: center !important; }
     .texto-legal-hero { font-size: 0.95rem; color: #6c757d; margin-top: 0.6rem; text-align: center !important; }
-
-  /* =========================
-       TARJETAS (ESTÉTICA MEJORADA)
-       ========================= */
+    
     .seccion-herramientas { padding: 5rem 0; }
     .card { border: none; border-radius: 1rem; padding: 1.5rem; height: 100%; transition: box-shadow 0.3s; }
     .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important; }
     
-    /* Título reducido para evitar saltos de línea */
     .card h6 { 
       color: #0d6efd; 
       font-size: 1.05rem;      
@@ -160,14 +137,12 @@
     .card ul { padding-left: 1.1rem; margin-bottom: 0; }
     .card ul li { font-size: 0.85rem; color: #555; margin-bottom: 0.6rem; }
 
-    /* Ajuste específico para pantallas muy pequeñas (iPhone SE, etc) */
+  
     @media (max-width: 380px) {
       .card h6 { font-size: 0.95rem; }
     }
 
-    /* =========================
-       GALERÍA - PIES DE IMAGEN CENTRADOS
-       ========================= */
+  
     .bloque-imagen { margin-top: 3rem; margin-bottom: 5rem; text-align: center; }
     .bloque-imagen img { 
       max-width: 95%; 
@@ -184,9 +159,6 @@
     
     @media (min-width: 992px) { .bloque-imagen img { max-width: 80%; } }
 
-    /* =========================
-       FOOTER Y DESPLEGABLE LEGAL
-       ========================= */
     .footer-legal { padding: 3rem 0; border-top: 1px solid #eee; background: #fff; }
     .footer-link { 
       color: #333; 
@@ -205,8 +177,6 @@
     .instagram-icon { width: 35px; transition: opacity 0.3s; }
     .instagram-icon:hover { opacity: 0.7; }
 
-    
-  /* Fuerza a que todas las imágenes de la galería sean grandes y consistentes */
   .img-grande {
     width: 100% !important;
     max-width: 900px !important; 
@@ -439,6 +409,7 @@
 </body>
 
 </html>
+
 
 
 
