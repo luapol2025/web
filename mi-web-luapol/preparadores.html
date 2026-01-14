@@ -156,23 +156,44 @@
   .card h6 { font-size: 0.95rem; }
  }
 
-   /* =========================
-       GALERÍA Y CAPTIONS
-       ========================= */
-    .bloque-imagen { margin-top: 3rem; margin-bottom: 5rem; text-align: center; }
-    .bloque-imagen img { 
-      max-width: 95%; 
-      border-radius: 1rem; 
-      box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
-    }
-    .bloque-imagen p.caption { 
-      text-align: center !important; 
-      margin-top: 1.5rem; 
-      font-size: 1rem; 
-      color: #6c757d; 
-      font-weight: 500;
-    }
-    @media (min-width: 992px) { .bloque-imagen img { max-width: 80%; } }
+/* =========================
+   GALERÍA ESTILO ALUMNOS (UNIFICADO)
+   ========================= */
+.bloque-imagen { 
+  margin-top: 3rem; 
+  margin-bottom: 5rem; 
+  text-align: center; 
+}
+
+/* Fuerza a que todas sean iguales, centradas y con sombra profesional */
+.img-grande {
+  width: 100% !important;
+  max-width: 900px !important; /* El mismo tamaño que en alumnos */
+  height: auto;
+  display: block;
+  margin: 0 auto 1.5rem auto; /* Centrado horizontal y espacio con el texto */
+  border-radius: 1rem;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12); /* El efecto de profundidad */
+  transition: transform 0.3s ease;
+}
+
+.img-grande:hover {
+  transform: scale(1.01); /* Pequeño efecto de zoom al pasar el ratón */
+}
+
+.bloque-imagen p.caption { 
+  text-align: center !important; 
+  margin-top: 1rem; 
+  font-size: 1.1rem; 
+  color: #6c757d; 
+  font-weight: 500;
+}
+
+/* Ajuste para que en móviles no se vean pegadas al borde */
+@media (max-width: 768px) {
+  .bloque-imagen { margin-bottom: 3.5rem; }
+  .img-grande { max-width: 100% !important; }
+}
 
     /* =========================
        FOOTER Y DESPLEGABLE LEGAL
@@ -372,6 +393,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
 
 
 
