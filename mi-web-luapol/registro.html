@@ -1,1 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Registro Preparadores – Luapol</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { background-color: #00152e; font-family: system-ui, sans-serif; color: white; }
+    .navbar { border-bottom: 5px solid; border-image: linear-gradient(90deg, #002244 0%, #0055aa 50%, #d4af37 100%) 1; box-shadow: 0 4px 12px rgba(0,0,0,0.4); background-color: #212529 !important; }
+    .navbar-logo { height: 1.8rem; margin-right: 10px; }
+    
+    .card-registro { 
+      background: white; 
+      color: #333; 
+      border-radius: 1.5rem; 
+      border: none; 
+      margin-top: 3rem;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+    .form-label { font-weight: 700; color: #002244; margin-bottom: 0.5rem; }
+    .form-control { border: 2px solid #eee; padding: 0.8rem; border-radius: 0.8rem; }
+    .form-control:focus { border-color: #0d6efd; box-shadow: none; }
+    .input-group-text { background: #f8f9fa; border: 2px solid #eee; border-left: none; font-weight: bold; color: #0d6efd; }
+    
+    .btn-enviar { 
+      background: #0d6efd; 
+      color: white; 
+      font-weight: 700; 
+      padding: 1.2rem; 
+      border-radius: 0.8rem; 
+      border: none; 
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+    .btn-enviar:hover { background: #0b5ed7; transform: translateY(-2px); }
+  </style>
+</head>
+<body>
 
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+        <img src="img/logo.png" alt="Logo Luapol" class="navbar-logo">
+        <span>LUAPOL</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card card-registro p-4 p-md-5">
+          <h2 class="text-center mb-2" style="color: #00152e;">ALTA <span class="text-primary">PREPARADOR</span></h2>
+          <p class="text-center text-muted mb-4 small">Completa los datos para crear tu entorno personalizado.</p>
+          
+          <form action="https://formspree.io/f/tu-id-aqui" method="POST">
+            
+            <div class="mb-3">
+              <label class="form-label small text-uppercase">Nombre y Apellidos</label>
+              <input type="text" name="nombre_completo" class="form-control" placeholder="Ej: Javier García" required>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label small text-uppercase">Correo Electrónico</label>
+              <input type="email" name="email" class="form-control" placeholder="correo@academia.com" required>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label small text-uppercase">Nombre Preparador / Subdominio</label>
+              <div class="input-group">
+                <input type="text" name="subdominio" class="form-control" placeholder="tu-academia" required>
+                <span class="input-group-text">.luapol.com</span>
+              </div>
+              <div class="form-text text-center mt-2">Este será tu enlace de acceso exclusivo.</div>
+            </div>
+
+            <input type="hidden" name="_subject" value="Nueva solicitud de Alta: Preparadores Luapol">
+
+            <button type="submit" class="btn-enviar w-100 shadow">
+              ENVIAR SOLICITUD DE REGISTRO
+            </button>
+            
+            <div class="text-center mt-4">
+              <a href="index.html" class="text-muted small text-decoration-none">← Volver a inicio</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
