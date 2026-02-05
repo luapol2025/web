@@ -3,239 +3,89 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Luapol – Test Policía Nacional</title>
-
+  <title>Términos y Condiciones - LUAPOL</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
   <style>
-    html { scroll-behavior: smooth; }
-    body { overflow-x: hidden; font-family: system-ui, -apple-system, sans-serif; color: #333; line-height: 1.6; }
-    
-    .container { padding-left: 1.25rem; padding-right: 1.25rem; }
-    h1, h2, h3, h4, h5, h6 { text-align: center; font-weight: 700; }
-    p, li { text-align: justify; }
-
-    /* Navbar */
-    .navbar { padding: 1rem 0; }
-    .navbar-brand { font-size: 1.8rem; letter-spacing: 1px; }
-    .navbar-logo { height: 1.8rem; width: auto; margin-right: 12px; vertical-align: middle; transition: transform 0.3s ease; }
-    .navbar-brand:hover .navbar-logo { transform: scale(1.05); }
-
-    /* Hero Section */
-    .hero { 
-      padding: clamp(4rem, 12vh, 8rem) 0;
-      background-color: #00152e; 
-      background-image: linear-gradient(rgba(0, 15, 35, 0.8), rgba(0, 15, 35, 0.8)), url('img/fondo.png');
-      background-size: cover; background-position: center; background-repeat: no-repeat;
-      position: relative; color: white !important;
+    body { 
+      background-color: #f8f9fa; 
+      color: #333; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      padding: 40px 0;
     }
-    .hero::before {
-      content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 5px;
-      background: linear-gradient(90deg, #002244 0%, #0055aa 50%, #d4af37 100%);
-      z-index: 1;
+    .legal-container {
+      background-color: #ffffff;
+      padding: 50px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      max-width: 850px;
+      margin: auto;
     }
-    .hero h1 { font-size: clamp(2.5rem, 8vw, 5.5rem) !important; margin-bottom: 2rem; }
-    .hero p.lead { font-size: clamp(1.1rem, 3vw, 1.4rem); max-width: 900px; margin: 0 auto 3rem auto !important; color: rgba(255,255,255,0.95) !important; }
-
-    /* Buttons & Promo */
-    .btn-cta { font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important; padding: 1rem 3.5rem !important; font-weight: 700; border-radius: 0.6rem; transition: transform 0.2s; }
-    .btn-cta:hover { transform: scale(1.03); }
-    .precio-hero { font-size: clamp(1.2rem, 2.5vw, 1.5rem); margin-bottom: 1.5rem; color: #4da3ff !important; text-align: center; }
-    .texto-descuento { font-size: 1.1rem; margin-top: 1.8rem; text-align: center !important; }
-    .texto-legal-hero { font-size: 0.95rem; color: rgba(255,255,255,0.6) !important; text-align: center !important; }
-
-    /* Cards Section */
-    .seccion-herramientas { padding: 5rem 0; }
-    .card { border: none; border-radius: 1rem; padding: 1.5rem; height: 100%; transition: box-shadow 0.3s; }
-    .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important; }
-    .card h6 { color: #0d6efd; font-size: 1.05rem; margin-bottom: 1rem; text-transform: uppercase; }
-    .card p.small { font-size: 0.95rem; color: #444; }
-    .card ul li { font-size: 0.85rem; color: #555; margin-bottom: 0.6rem; }
-
-    /* Images */
-    .bloque-imagen { margin-top: 3rem; margin-bottom: 5rem; text-align: center; }
-    .img-grande { width: 100%; max-width: 900px; border-radius: 1rem; box-shadow: 0 15px 40px rgba(0,0,0,0.12); margin: 0 auto; display: block; }
-    .caption { text-align: center !important; margin-top: 1.5rem; font-size: 1rem; color: #6c757d; font-weight: 500; }
-
-    /* Footer & Legal */
-    .footer-legal { padding: 3rem 0; border-top: 1px solid #eee; background: #fff; }
-    .footer-link { color: #333; text-decoration: underline; background: none; border: none; padding: 0; font-size: 0.9rem; cursor: pointer; }
-    .seccion-legal { border-top: 4px solid #0d6efd; }
-    .seccion-legal h3 { margin-top: 2rem; color: #0d6efd; font-size: 1.25rem; text-align: left; border-bottom: 1px solid #dee2e6; padding-bottom: 0.5rem; }
-    .instagram-icon { width: 35px; transition: opacity 0.3s; }
-    .instagram-icon:hover { opacity: 0.7; }
+    h1 { color: #002244; font-weight: 700; margin-bottom: 30px; border-bottom: 2px solid #0d6efd; pb-2; }
+    h2 { color: #0d6efd; font-size: 1.4rem; margin-top: 30px; font-weight: 600; }
+    p, li { text-align: justify; font-size: 0.95rem; }
+    .footer-back { margin-top: 40px; text-align: center; border-top: 1px solid #eee; pt-4; }
+    @media (max-width: 600px) {
+      .legal-container { padding: 25px; }
+    }
   </style>
 </head>
-
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-  <div class="container">
-    <a class="navbar-brand fw-bold d-flex align-items-center" href="https://www.luapol.com/">
-      <img src="img/logo.png" alt="Logo Luapol" class="navbar-logo">
-      <span>LUAPOL</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="https://www.luapol.com/">LUAPOL ALUMNOS</a></li>
-        <li class="nav-item"><a class="nav-link" href="/preparadores">LUAPOL PREPARADORES</a></li>
-      </ul>
-      <div class="d-flex flex-column flex-lg-row gap-2 ms-lg-4">
-        <a href="https://app.luapol.com/login/" class="btn btn-primary px-4">ACCESO ALUMNOS</a>
-        <a href="#" class="btn btn-primary px-4">ACCESO PREPARADORES</a>
-      </div>
-    </div>
-  </div>
-</nav>
+<div class="container">
+  <div class="legal-container">
+    <h1>Términos y Condiciones</h1>
+    <p class="text-muted">Última actualización: 5 de febrero de 2026</p>
 
-<section class="hero">
-  <div class="container">
-    <h1>¡BIENVENIDO A <span style="color: #4da3ff !important;">LUAPOL</span>!</h1>
-    <p class="lead">
-      Sabemos que el camino hacia la <strong>Policía Nacional</strong> no es fácil. Con nuestra <strong>plataforma de test</strong> entrenas de forma inteligente para llegar preparado al examen oficial de conocimientos.
-    </p>
-    <div class="promo-block">
-      <div class="fw-bold precio-hero">
-        Prueba nuestra DEMO GRATIS sin registro o únete ahora por solo <span class="text-white" style="font-size: 1.3em;">1,99 €</span> el primer mes
-      </div>
-      <div class="d-flex justify-content-center">
-        <a href="https://app.luapol.com/register/" class="btn btn-primary btn-lg btn-cta shadow">¡Únete ya!</a>
-      </div>
-      <p class="texto-descuento"><strong>Código descuento:</strong> EMPIEZAYA199</p>
-      <p class="texto-legal-hero">Sin permanencias. Tras el primer mes, tu suscripción seguirá por 11,99 € / mes.</p>
-    </div>
-  </div>
-</section>
+    <section>
+      <h2>1. Información General</h2>
+      <p>En cumplimiento de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico, se informa que este sitio web es titularidad de <strong>Genís Del Pino Vives</strong> (NIF: 39735453D). La plataforma está alojada en la infraestructura de <strong>Render</strong>, bajo altos estándares de seguridad y cifrado.</p>
+    </section>
 
-<section class="seccion-herramientas bg-light">
-  <div class="container">
-    <h2 class="mb-5">🚀 TE ENTRENAMOS CON <span class="text-primary">HERRAMIENTAS CLAVE:</span></h2>
-    <div class="row g-4">
-      <div class="col-md-6 col-lg-3">
-        <div class="card shadow-sm">
-          <h6>RETO LUAPOL</h6>
-          <p class="small">Evita la curva del olvido con test constantes y repasos espaciados de todo el temario.</p>
-          <ul>
-            <li>Practica temas estudiados hace semanas.</li>
-            <li>Mantén activa tu memoria a largo plazo.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card shadow-sm">
-          <h6>SIMULACROS</h6>
-          <p class="small">Exámenes completos con la misma estructura y tiempo que el día oficial de la Escala Básica.</p>
-          <ul>
-            <li>Un simulacro real cada semana.</li>
-            <li>Análisis de técnica de examen.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card shadow-sm">
-          <h6>REPASO INTELIGENTE</h6>
-          <p class="small">Test personalizados enfocados en tus errores más frecuentes y tus temas favoritos.</p>
-          <ul>
-            <li>Repaso de tus 10 temas más fallados.</li>
-            <li>Enfoque en tus debilidades reales.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-6 col-lg-3">
-        <div class="card shadow-sm">
-          <h6>OPERATIVO ÉLITE</h6>
-          <p class="small">Aprende jugando con casos policiales reales y compite con la comunidad en el foro.</p>
-          <ul>
-            <li>Gamificación y casos prácticos.</li>
-            <li>Resolución de dudas en comunidad.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <section>
+      <h2>2. Objeto del Servicio</h2>
+      <p>LUAPOL ofrece una plataforma de formación online especializada en test de oposiciones para la Policía Nacional. El acceso se realiza mediante una suscripción de pago que otorga derecho de uso personal e intransferible a los contenidos alojados en la plataforma.</p>
+    </section>
 
-<section class="py-5">
-  <div class="container">
-    <h2 class="mb-5">📊 ASÍ FUNCIONA <span class="text-primary">LUAPOL POR DENTRO:</span></h2>
-    <div class="bloque-imagen">
-      <img src="img/inicial1.png" alt="Pantalla Inicial" class="img-grande">
-      <p class="caption">Panel de control y visión general del opositor.</p>
-    </div>
-    <div class="bloque-imagen">
-      <img src="img/reto2.png" alt="Reto Test" class="img-grande mb-4">
-      <img src="img/ejemplotest.png" alt="Ejemplo Test" class="img-grande">
-      <p class="caption">Sistema interactivo de test con retroalimentación.</p>
-    </div>
-    <div class="bloque-imagen">
-      <img src="img/estadistica3.png" alt="Progreso" class="img-grande">
-      <p class="caption">Estadísticas detalladas de rendimiento por bloques.</p>
-    </div>
-  </div>
-</section>
-
-<footer class="footer-legal">
-  <div class="container">
-    <div class="row align-items-center text-center text-md-start">
-      <div class="col-md-5 mb-4 mb-md-0">
-        <button class="footer-link fw-bold" data-bs-toggle="collapse" data-bs-target="#desplegableLegal">
-          AVISO LEGAL, TÉRMINOS, PRIVACIDAD Y COOKIES
-        </button>
-        <div class="mt-2 text-muted small">Contacto: info@luapol.com</div>
-      </div>
-      <div class="col-md-2 text-center mb-4 mb-md-0">
-        <a href="https://www.instagram.com/luapol_cnp" target="_blank">
-          <img src="img/instagram.svg" class="instagram-icon" alt="Instagram Luapol">
-        </a>
-      </div>
-      <div class="col-md-5 text-md-end text-muted small">
-        © 2026 LUAPOL. Todos los derechos reservados.
-      </div>
-    </div>
-  </div>
-</footer>
-
-<div class="collapse seccion-legal bg-light" id="desplegableLegal">
-  <div class="container py-5">
-    <h2 class="text-start mb-4">AVISO LEGAL Y CONDICIONES GENERALES</h2>
-    <p class="text-muted mb-4">Última actualización: Febrero 2026</p>
-    
-    <div class="legal-content">
-      <h3>1. INFORMACIÓN GENERAL Y TITULARIDAD</h3>
-      <p>En cumplimiento con el artículo 10 de la Ley 34/2002 (LSSI-CE), se informa que este sitio web es titularidad de <strong>Genís Del Pino Vives</strong> (NIF: 39735453D). La infraestructura técnica de la plataforma se encuentra alojada en los servidores de <strong>Render</strong>, garantizando un entorno seguro y cifrado para los datos.</p>
-
-      <h3>2. CONDICIONES DE SUSCRIPCIÓN Y PAGOS</h3>
-      <p>El acceso a los test se realiza bajo un modelo de suscripción recurrente:</p>
+    <section>
+      <h2>3. Condiciones de Pago y Suscripción</h2>
       <ul>
-        <li><strong>Pagos:</strong> Se gestionan de forma segura a través de la pasarela <strong>Stripe</strong>. LUAPOL no almacena ni tiene acceso a datos de tarjetas bancarias.</li>
-        <li><strong>Renovación:</strong> Salvo cancelación expresa por parte del usuario, la suscripción se renovará automáticamente cada 30 días naturales.</li>
-        <li><strong>Cancelación:</strong> El usuario puede darse de baja en cualquier momento desde su panel de control. No existe compromiso de permanencia.</li>
-        <li><strong>Desistimiento:</strong> Debido a la naturaleza del contenido digital (test online), el derecho de desistimiento no será aplicable una vez que el usuario haya iniciado sesión y accedido a los materiales, según el art. 103.m del RDL 1/2007.</li>
+        <li><strong>Pasarela de Pago:</strong> Los pagos se procesan exclusivamente a través de <strong>Stripe</strong>. No almacenamos datos de tarjetas en nuestros servidores.</li>
+        <li><strong>Suscripción Recurrente:</strong> Al contratar un plan, el usuario acepta un cargo automático mensual. El precio vigente se indicará siempre antes de la contratación.</li>
+        <li><strong>Cancelación:</strong> El usuario puede cancelar su suscripción en cualquier momento desde su panel de usuario en <em>app.luapol.com</em>. La cancelación surtirá efecto al finalizar el periodo ya pagado.</li>
       </ul>
+    </section>
 
-      <h3>3. PROTECCIÓN DE DATOS (RGPD)</h3>
-      <p>De acuerdo con el Reglamento (UE) 2016/679, los datos de los usuarios se tratan con la única finalidad de gestionar el servicio y el progreso académico.</p>
+    <section>
+      <h2>4. Derecho de Desistimiento</h2>
+      <p>De acuerdo con el Artículo 103.m del Real Decreto Legislativo 1/2007, al tratarse de contenido digital que no se presta en soporte material, el usuario acepta que <strong>pierde su derecho de desistimiento</strong> en el momento en que inicia sesión por primera vez o accede a cualquier material de test de la plataforma.</p>
+    </section>
+
+    <section>
+      <h2>5. Propiedad Intelectual y Seguridad</h2>
+      <p>Todos los contenidos (preguntas, algoritmos, diseño y textos) son propiedad exclusiva de LUAPOL. Se prohíbe terminantemente:</p>
       <ul>
-        <li><strong>Transferencias Internacionales:</strong> Al utilizar <strong>Render</strong> y <strong>Stripe</strong>, los datos pueden procesarse en servidores que cumplen con el Marco de Privacidad de Datos (Data Privacy Framework) o Cláusulas Contractuales Tipo.</li>
-        <li><strong>Derechos:</strong> Puede ejercer sus derechos de acceso, rectificación o supresión enviando un correo a <strong>info@luapol.com</strong>.</li>
+        <li>El uso de bots, scrapers o cualquier software para la extracción de datos.</li>
+        <li>Compartir cuentas de acceso. El sistema detecta accesos simultáneos y procederá al bloqueo de la cuenta por seguridad.</li>
+        <li>La reproducción o distribución del contenido en foros, redes sociales o cualquier otro medio.</li>
       </ul>
+    </section>
 
-      <h3>4. POLÍTICA DE COOKIES Y TECNOLOGÍAS</h3>
-      <p>Este sitio web <strong>no utiliza cookies de publicidad ni de seguimiento de terceros</strong>. Se utilizan exclusivamente tecnologías de almacenamiento técnico en el servidor para gestionar la sesión del alumno y proteger la seguridad de la cuenta.</p>
+    <section>
+      <h2>6. Protección de Datos y Privacidad</h2>
+      <p>Tratamos sus datos para la ejecución del contrato y la mejora del servicio. Al utilizar servicios de terceros (Render y Stripe), el usuario reconoce que pueden producirse transferencias técnicas de datos necesarias para la prestación del servicio, siempre bajo el amparo del RGPD y el marco de privacidad UE-EE.UU.</p>
+    </section>
 
-      <h3>5. PROPIEDAD INTELECTUAL Y ANTIFRAUDE</h3>
-      <p>Todo el contenido (preguntas, explicaciones y algoritmos) es propiedad de LUAPOL. Queda estrictamente prohibida la copia, captura de pantalla o extracción de datos mediante "web scraping" o bots. El sistema monitoriza comportamientos anómalos; cualquier uso indebido resultará en la expulsión inmediata de la plataforma sin reembolso.</p>
+    <section>
+      <h2>7. Cookies</h2>
+      <p>Este sitio web <strong>no utiliza cookies de seguimiento, publicidad o analítica de terceros</strong>. Únicamente se emplean datos de sesión técnicos necesarios para mantener al usuario conectado y guardar su progreso.</p>
+    </section>
 
-      <div class="text-center mt-5">
-        <button class="btn btn-secondary btn-sm" data-bs-toggle="collapse" data-bs-target="#desplegableLegal">Cerrar documento legal</button>
-      </div>
+    <div class="footer-back">
+      <a href="/" class="btn btn-outline-primary btn-sm">Volver a la página principal</a>
     </div>
   </div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
