@@ -3,172 +3,445 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Términos y Condiciones - LUAPOL</title>
+  <title>Luapol – Preparadores Policía Nacional</title>
+
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
-    body { 
-      background-color: #f8f9fa; 
-      color: #333; 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      line-height: 1.6;
-      padding: 40px 0;
-    }
-    .legal-container {
-      background-color: #ffffff;
-      padding: 50px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      max-width: 900px;
-      margin: auto;
-    }
-    h1 { color: #002244; font-weight: 700; margin-bottom: 20px; }
-    h2 { color: #0d6efd; font-size: 1.3rem; margin-top: 25px; font-weight: 600; border-left: 4px solid #0d6efd; padding-left: 15px; }
-    h3 { color: #002244; font-size: 1.1rem; margin-top: 20px; font-weight: 700; text-transform: uppercase; border-bottom: 1px solid #eee; padding-bottom: 5px;}
-    p, li { text-align: justify; font-size: 0.95rem; }
-    .nav-tabs .nav-link { color: #6c757d; font-weight: 600; border: none; border-bottom: 3px solid transparent; }
-    .nav-tabs .nav-link.active { color: #0d6efd; border: none; border-bottom: 3px solid #0d6efd; background: none; }
-    .tab-content { margin-top: 30px; }
-    .dpa-section { background-color: #f1f8ff; padding: 25px; border-radius: 8px; border: 1px dashed #0d6efd; margin-top: 40px; }
-    .footer-back { margin-top: 40px; text-align: center; border-top: 1px solid #eee; padding-top: 20px; }
-    strong { color: #000; }
-    @media (max-width: 600px) { .legal-container { padding: 20px; } .nav-tabs .nav-link { font-size: 0.85rem; padding: 8px; } }
+  
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; font-family: system-ui, -apple-system, sans-serif; color: #333; line-height: 1.6; }
+    .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+    h1, h2, h3, h4, h5, h6 { text-align: center; font-weight: 700; }
+    p, li { text-align: justify; }
+
+    .navbar { padding: 1rem 0; }
+    .navbar-brand { font-size: 1.8rem; letter-spacing: 1px; }
+
+.navbar-logo {
+  height: 1.8rem; 
+  width: auto;   
+  margin-right: 10px; 
+  vertical-align: middle; 
+}
+    
+.navbar { 
+  padding: 1rem 0; 
+  border-bottom: 5px solid
+  border-image: linear-gradient(90deg, #002244 0%, #0055aa 50%, #d4af37 100%) 1;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.hero { 
+  padding: clamp(4rem, 12vh, 8rem) 0;
+  background-color: #00152e; 
+  background-image: linear-gradient(rgba(0, 15, 35, 0.8), rgba(0, 15, 35, 0.8)), url('img/fondo2.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  color: white !important;
+}
+
+.hero h1 { 
+  font-size: clamp(2rem, 8vw, 5.5rem) !important; 
+  margin-bottom: 1.5rem; 
+  text-align: center !important;
+  color: white !important;
+  word-wrap: break-word; 
+}
+
+.hero p.lead { 
+  font-size: clamp(1rem, 3vw, 1.4rem); 
+  max-width: 900px; 
+  margin: 0 auto 2.5rem auto !important; 
+  text-align: justify !important; 
+  text-justify: inter-word; 
+  color: rgba(255,255,255,0.95) !important;
+}
+
+.promo-block { 
+  text-align: center !important; 
+  max-width: 800px; 
+  margin: 0 auto; 
+}
+
+.btn-cta { 
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important; 
+  padding: 1rem 3.5rem !important; 
+  font-weight: 700;
+  border-radius: 0.6rem;
+  transition: transform 0.2s;
+}
+.btn-cta:hover { transform: scale(1.03); }
+
+.especialistas-tag {
+  margin-top: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.seccion-herramientas { 
+  padding: 2.5rem 0; 
+  background-color: #f8f9fa;
+}
+    
+.card { 
+  border: none; 
+  border-radius: 1rem; 
+  padding: 1.5rem; 
+  height: 100%; 
+  transition: box-shadow 0.3s ease; 
+}
+
+.card:hover { 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important; 
+}
+
+.card h6 { 
+  color: #0d6efd; 
+  font-size: 1.05rem;      
+  margin-bottom: 1rem; 
+  text-transform: uppercase; 
+  letter-spacing: 0.01em;    
+  white-space: nowrap;      
+  overflow: hidden;          
+  text-overflow: ellipsis;  
+  text-align: center; 
+}
+
+.card p.small { 
+  font-size: 0.95rem; 
+  color: #444; 
+  margin-bottom: 1rem; 
+  text-align: justify; 
+}
+
+.card ul { padding-left: 1.1rem; margin-bottom: 0; }
+.card ul li { 
+  font-size: 0.85rem; 
+  color: #555; 
+  margin-bottom: 0.6rem; 
+  text-align: justify; 
+}
+
+.titulo-seccion-separado {
+  margin-bottom: 2.5rem !important; 
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+  
+@media (max-width: 380px) {
+  .card h6 { font-size: 0.95rem; }
+ }
+
+.bloque-imagen { 
+  margin-top: 4rem; 
+  margin-bottom: 6rem; 
+  text-align: center; 
+}
+
+.img-grande {
+  width: 100% !important;
+  max-width: 900px !important; 
+  height: auto;
+  display: block;
+  margin: 0 auto 2rem auto; 
+  border-radius: 1rem;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
+ 
+}
+
+
+
+.bloque-imagen p.caption { 
+  text-align: center !important; 
+  margin-top: 1.5rem; 
+  font-size: 1.1rem; 
+  color: #6c757d; 
+  font-weight: 500;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 992px) {
+  .img-grande {
+    max-width: 95% !important; 
+  }}
+
+.footer-legal { 
+  padding: 3rem 0; 
+  border-top: 1px solid #eee; 
+  background: #fff; 
+  width: 100%;
+}
+
+.footer-link { 
+  color: #333; 
+  text-decoration: underline; 
+  background: none; 
+  border: none; 
+  padding: 0; 
+  font-size: 0.85rem; 
+  cursor: pointer;
+}
+
+.instagram-icon { 
+  width: 30px !important; 
+  height: auto;
+  transition: opacity 0.3s; 
+}
+
+.footer-legal .small, .footer-legal .text-muted {
+  font-size: 0.8rem !important;
+}
+
+
+.seccion-legal { 
+  border-top: 2px solid #0d6efd; 
+  background-color: #f8f9fa;
+}
+
+.legal-content h3 { 
+  margin-top: 2rem; 
+  color: #0d6efd; 
+  font-size: 1.2rem; 
+  text-align: left !important; 
+  font-weight: 700;
+}
+
+.legal-content p, .legal-content li { 
+  text-align: justify; 
+  font-size: 0.95rem; 
+  color: #444; 
+  line-height: 1.7;
+}
+
+.legal-content ul { 
+  padding-left: 1.5rem; 
+  margin-bottom: 1.5rem;
+}
+
+.legal-content strong { 
+  color: #222; 
+}
+
+.footer-legal .small {
+  font-size: 0.8rem !important;
+}
+  
   </style>
 </head>
+
 <body>
 
-<div class="container">
-  <div class="legal-container">
-    <h1>Términos y Condiciones</h1>
-    <p class="text-muted small">Por favor, seleccione el apartado correspondiente a su tipo de usuario:</p>
-
-    <ul class="nav nav-tabs" id="legalTabs" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="luapol-tab" data-bs-toggle="tab" data-bs-target="#luapol" type="button" role="tab">ALUMNOS LUAPOL</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="coach-tab" data-bs-toggle="tab" data-bs-target="#coach" type="button" role="tab">PROGRAMA LUACOACH (PREPARADORES)</button>
-      </li>
-    </ul>
-
-    <div class="tab-content">
-      
-      <div class="tab-pane fade show active" id="luapol" role="tabpanel">
-        <p class="text-muted">Última actualización: 18 de marzo de 2026 [cite: 61]</p>
-        
-        <section>
-          <h2>1. Información General</h2>
-          <p>En cumplimiento de la Ley 34/2002, de Servicios de la Sociedad de la Información y de Comercio Electrónico, se informa que este sitio web es titularidad de <strong>Genís Del Pino Vives (NIF: 39735453D)</strong>, y correo electrónico de contacto <strong>info@luapol.com</strong>[cite: 63]. La plataforma está alojada en la infraestructura de <strong>Render</strong>, bajo altos estándares de seguridad y cifrado[cite: 64].</p>
-        </section>
-
-        <section>
-          <h2>2. Objeto del Servicio</h2>
-          <p>LUAPOL ofrece una plataforma de formación online especializada en test para la prueba de conocimientos de la oposición a Escala Básica de la Policía Nacional[cite: 66]. El acceso se realiza mediante una licencia de uso personal, temporal e intransferible vinculada a una suscripción de pago[cite: 67].</p>
-        </section>
-
-        <section>
-          <h2>3. Condiciones de Pago y Suscripción</h2>
-          <p><strong>Pasarela de Pago:</strong> Los pagos se procesan exclusivamente a través de <strong>Stripe</strong>[cite: 69]. No almacenamos datos de tarjetas en nuestros servidores[cite: 70].</p>
-          <p><strong>Suscripción Recurrente:</strong> Al contratar un plan, el usuario acepta un cargo automático mensual al precio vigente indicado antes de la contratación[cite: 71, 72].</p>
-          <p><strong>Cancelación e Impago:</strong> El usuario puede cancelar en cualquier momento desde su panel en <em>app.luapol.com</em>[cite: 73]. El fallo en el cobro facultará a LUAPOL para la suspensión inmediata del acceso[cite: 75].</p>
-          <p>LUAPOL se reserva el derecho de modificar el precio notificándolo con una antelación mínima de 30 días naturales[cite: 76, 77].</p>
-        </section>
-
-        <section>
-          <h2>4. Derecho de Desistimiento</h2>
-          <p>De acuerdo con el Artículo 103.m del RDL 1/2007, el usuario acepta y consiente expresamente que <strong>pierde su derecho de desistimiento</strong> en el momento en que inicia sesión por primera vez o accede a cualquier material, dado que la ejecución del servicio comienza de forma inmediata[cite: 81].</p>
-        </section>
-
-        <section>
-          <h2>5. Propiedad Intelectual y Seguridad</h2>
-          <p>Todos los contenidos son propiedad exclusiva de LUAPOL[cite: 83]. Se prohíbe el uso de bots, scrapers, compartir cuentas de acceso o la reproducción y distribución del contenido en cualquier medio[cite: 84, 85, 86].</p>
-        </section>
-
-        <section>
-          <h2>6. Exención de Responsabilidad</h2>
-          <p>LUAPOL no garantiza el aprobado de la oposición ni se hace responsable de cambios imprevistos en el temario oficial o errores tipográficos[cite: 88].</p>
-        </section>
-
-        <section>
-          <h2>11. Prohibición de Materiales de Terceros</h2>
-          <p>Queda estrictamente prohibido volcar en la plataforma materiales sujetos a derechos de autor de terceros (capturas de otras academias, libros con copyright, etc.)[cite: 104]. El usuario será el único responsable ante cualquier reclamación legal[cite: 105].</p>
-        </section>
-
-        <section>
-          <h2>12. Conservación de Datos tras la Baja</h2>
-          <p>Tras un periodo de inactividad superior a <strong>6 meses</strong> desde la última suscripción activa, LUAPOL se reserva el derecho de eliminar de forma definitiva los datos vinculados a la cuenta[cite: 108].</p>
-        </section>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+     <a class="navbar-brand fw-bold d-flex align-items-center" href="https://www.luapol.com/">
+  <img src="img/logo.png" alt="Logo Luapol" class="navbar-logo">
+  <span>LUAPOL</span>
+</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="https://www.luapol.com/">LUAPOL ALUMNOS</a></li>
+          <li class="nav-item"><a class="nav-link active" href="/preparadores">LUAPOL PREPARADORES</a></li>
+        </ul>
+        <div class="d-flex flex-column flex-lg-row gap-2 ms-lg-4">
+          <a href="https://app.luapol.com/login/" class="btn btn-primary px-4">ACCESO ALUMNOS</a>
+          <a href="https://www.luapol.com/preparadores#" class="btn btn-primary px-4">ACCESO PREPARADORES</a>
+        </div>
       </div>
+    </div>
+  </nav>
+  
+<section class="hero">
+  <div class="container">
+    <h1>LUAPOL <span style="color: #4da3ff !important;">PREPARADORES</span></h1>
+    
+    <p class="lead">
+      Plataforma profesional de test diseñada para que academias y preparadores tengan <strong>control total</strong> sobre la formación teórica de Escala Básica. Supervisa el rendimiento grupal e individual mediante análisis avanzados de progreso y gestión de contenido exclusivo.
+    </p>
 
-      <div class="tab-pane fade" id="coach" role="tabpanel">
-        <p class="text-muted">Última actualización: 20 de marzo de 2026 [cite: 2]</p>
-        
-        <section>
-          <h2>1. Información General y Figuras</h2>
-          <p>LUAPOL cede el uso de su plataforma al <strong>Preparador (Coach)</strong> para que gestione su propia academia bajo un subdominio personalizado[cite: 7].</p>
+   <div class="promo-block">
+  <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+    <a href="#" class="btn btn-primary btn-lg btn-cta">ACCESO PREPARADORES</a>
+    
+    <a href="registro.html" class="btn btn-primary btn-lg btn-cta">
+       FORMULARIO REGISTRO
+    </a>
+  </div>
+  <div class="especialistas-tag">
+    ESPECIALISTAS EN POLICÍA NACIONAL
+  </div>
+</div>
+  </div>
+</section>
+
+        <section class="seccion-herramientas bg-light">
+  <div class="container">
+    <h2 class="titulo-seccion-separado">🚀 GESTIONA TU ACADEMIA CON <span class="text-primary">HERRAMIENTAS PROFESIONALES:</span></h2>
+    <div class="row g-4 justify-content-center"> 
+
+ <div class="col-lg-3">
+        <div class="card shadow-sm">
+          <h6>PLATAFORMA EXCLUSIVA</h6>
+          <p class="small">Utiliza nuestros test y añade tus propias preguntas.</p>
           <ul>
-            <li><strong>El Coach:</strong> Responsable pedagógico, comercial y fiscal de su curso[cite: 8].</li>
-            <li><strong>El Alumno:</strong> Usuario final que contrata los servicios del Coach[cite: 9].</li>
-            <li><strong>LUAPOL:</strong> Proveedor tecnológico y soporte de la infraestructura[cite: 10].</li>
+            <li>Utiliza la base de preguntas de LUAPOL.</li>
+            <li>Añade tus propias preguntas de forma exclusiva para tus alumnos.</li>
+            <li>Crea tus propios supuestos en Operativo Élite.</li>
           </ul>
-        </section>
-
-        <section>
-          <h2>2. Condiciones Económicas y Suspensión</h2>
-          <p>El Coach abona una licencia a LUAPOL vía Stripe[cite: 12]. El impago de esta cuota facultará a LUAPOL para la <strong>suspensión del subdominio</strong> y del acceso de sus alumnos[cite: 13]. El Coach es el único responsable de la facturación y obligaciones tributarias (IVA/IRPF) ante sus alumnos[cite: 14].</p>
-        </section>
-
-        <section>
-          <h2>3. Exención de Responsabilidad y Limitaciones Técnicas</h2>
+        </div>
+      </div>
+      
+      <div class="col-lg-3">
+        <div class="card shadow-sm">
+          <h6>CONTROL DE ALUMNOS</h6>
+          <p class="small">Supervisa el rendimiento grupal desde un panel centralizado.</p>
           <ul>
-            <li><strong>Contenido:</strong> LUAPOL no supervisa el material subido por los preparadores independientes[cite: 26].</li>
-            <li><strong>Intromisiones:</strong> No nos hacemos responsables de daños por virus o malware ajenos, pese a las medidas de seguridad adoptadas en Render[cite: 27].</li>
-            <li><strong>Compatibilidad:</strong> No se garantiza el acceso desde dispositivos obsoletos o navegadores no actualizados[cite: 29].</li>
-            <li><strong>Uso Anómalo:</strong> LUAPOL puede suspender el acceso ante usos excesivos que pongan en peligro la estabilidad global en Render[cite: 30].</li>
-          </ul>
-        </section>
-
-        <section>
-          <h2>4. Moderación del Foro</h2>
-          <p>La moderación técnica es ejecutada por LUAPOL[cite: 37]. El Coach debe notificar comportamientos inadecuados para su eliminación[cite: 38]. LUAPOL se reserva el derecho de intervenir de oficio ante contenidos ofensivos o violación de copyright[cite: 39].</p>
-        </section>
-
-        <section>
-          <h2>5. Conservación de Datos y Cese de Actividad</h2>
-          <p>LUAPOL no garantiza la conservación del progreso de los alumnos si la licencia del Coach ha expirado por más de <strong>6 meses</strong>[cite: 44]. En caso de fallecimiento o cese imprevisto del Coach, LUAPOL podrá mantener el acceso técnico durante el periodo mensual ya abonado, sin asumir tutorización ni devoluciones[cite: 49, 50].</p>
-        </section>
-
-        <div class="dpa-section">
-          <h3>Anexo: Contrato de Encargado de Tratamiento (RGPD)</h3>
-          <p>En cumplimiento del Art. 28 del Reglamento (UE) 2016/679[cite: 52]:</p>
-          <ul>
-            <li><strong>Objeto:</strong> El Coach (Responsable) autoriza a LUAPOL (Encargado) a tratar los datos personales de sus Alumnos con el fin de prestar el servicio técnico[cite: 53].</li>
-            <li><strong>Obligaciones:</strong> Tratar datos según instrucciones, no comunicarlos a terceros (salvo Render/Stripe) y notificar brechas de seguridad en 72 horas[cite: 54, 55, 57].</li>
-            <li><strong>Destino:</strong> Finalizada la relación, los datos se bloquearán durante los plazos legales previstos antes de su eliminación definitiva[cite: 59].</li>
+            <li>Control total de la actividad y resultados de cada grupo.</li>
+            <li>Analiza la evolución mediante gráficos e indicadores claros.</li>
+            <li>Visualiza rankings y comparativas internas actualizadas.</li>
           </ul>
         </div>
       </div>
 
-    </div> <div class="footer-back">
-      <a href="/" class="btn btn-outline-primary btn-sm">Volver a la página principal</a>
+      <div class="col-lg-3">
+        <div class="card shadow-sm">
+          <h6>ANÁLISIS INDIVIDUAL</h6>
+          <p class="small">Seguimiento detallado por cada opositor de tu academia.</p>
+          <ul>
+            <li>Identifica los temas con mayor tasa de error por alumno.</li>
+            <li>Consulta históricos de intentos, tiempos y calificaciones.</li>
+            <li>Accede a los resultados detallados de cada test realizado.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-3">
+        <div class="card shadow-sm">
+          <h6>FORO EXCLUSIVO</h6>
+          <p class="small">Comunicación directa en un entorno privado y profesional.</p>
+          <ul>
+            <li>Resuelve dudas y publica avisos importantes para tus grupos.</li>
+            <li>Modera y gestiona los mensajes y temas de tus alumnos.</li>
+            <li>Espacio privado para mejorar la comunicación y el seguimiento.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div> </div> </section>
+
+  <section class="py-5">
+  <div class="container">
+    <h2 class="mb-5">📊 ASÍ FUNCIONA <span class="text-primary">LUAPOL PARA PREPARADORES:</span></h2>
+
+    <div class="bloque-imagen">
+      <img src="img/2editarpregunta1.png" alt="Edición 1" class="img-grande">
+      <img src="img/2editarpregunta2.png" alt="Edición 2" class="img-grande">
+      <p class="caption">Crea tus propias preguntas para los test y los juegos.</p>
+    </div>
+
+    <div class="bloque-imagen">
+      <img src="img/2seguimiento3.png" alt="Seguimiento" class="img-grande">
+      <img src="img/2usuariosregistrados4.png" alt="Usuarios" class="img-grande">
+      <p class="caption">Gestión y control de alumnos registrados en el sistema con listados detallados.</p>
+    </div>
+
+    <div class="bloque-imagen">
+      <img src="img/2analisisglobal5.png" alt="Análisis Global" class="img-grande">
+      <img src="img/2seguimientoestudio6.png" alt="Individual" class="img-grande">
+      <p class="caption">Control individualizado y detallado de cada opositor mediante análisis de fallos y progreso.</p>
+    </div>
+
+    <div class="bloque-imagen">
+      <img src="img/2foro7.png" alt="Foro" class="img-grande">
+      <p class="caption">Participa y modera tu propio foro de dudas privado para tus grupos.</p>
+    </div>
+
+  </div>
+</section>
+  
+  <footer class="footer-legal">
+    <div class="container">
+      <div class="row align-items-center text-center text-md-start">
+        <div class="col-md-5 mb-4 mb-md-0">
+  <a href="terminos.html" class="footer-link fw-bold text-decoration-none">
+    AVISO LEGAL, TÉRMINOS DE USO, POLÍTICA DE PRIVACIDAD Y COOKIES
+  </a>
+  <div class="mt-2 text-muted small">Contacto: info@luapol.com</div>
+</div>
+        <div class="col-md-2 text-center mb-4 mb-md-0">
+          <a href="https://www.instagram.com/luapol_cnp" target="_blank">
+            <img src="img/instagram.svg" class="instagram-icon" alt="Instagram Luapol">
+          </a>
+        </div>
+        <div class="col-md-5 text-md-end text-muted small">
+          © 2026 LUAPOL. Todos los derechos reservados.
+        </div>
+      </div>
+    </div>
+  </footer>
+  
     </div>
   </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-  // Permite abrir una pestaña específica mediante el hash en la URL (ej: terminos.html#coach)
-  const hash = window.location.hash;
-  if (hash) {
-    const triggerEl = document.querySelector(`.nav-tabs button[data-bs-target="${hash}"]`);
-    if (triggerEl) {
-      const tab = new bootstrap.Tab(triggerEl);
-      tab.show();
-    }
-  }
-</script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
