@@ -1,0 +1,554 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Luapol – Crea y gestiona tu propia academia de oposiciones</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { overflow-x: hidden; font-family: system-ui, -apple-system, sans-serif; color: #333; line-height: 1.6; }
+    .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+    h1, h2, h3, h4, h5, h6 { text-align: center; font-weight: 700; }
+    p, li { text-align: justify; }
+
+    .navbar { 
+      padding: 1rem 0; 
+      border-bottom: 5px solid transparent;
+      border-image: linear-gradient(90deg, #002244 0%, #0055aa 50%, #d4af37 100%) 1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .navbar-brand { font-size: 1.8rem; letter-spacing: 1px; }
+    .navbar-logo {
+      height: 1.8rem; 
+      width: auto;   
+      margin-right: 10px; 
+      vertical-align: middle; 
+    }
+
+    .hero { 
+      padding: clamp(4rem, 12vh, 8rem) 0;
+      background-color: #00152e; 
+      background-image: linear-gradient(rgba(0, 15, 35, 0.8), rgba(0, 15, 35, 0.8)), url('img/fondo2.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      position: relative;
+      color: white !important;
+    }
+    .hero h1 { 
+      font-size: clamp(2rem, 6vw, 4.5rem) !important; 
+      margin-bottom: 1.5rem; 
+      text-align: center !important;
+      color: white !important;
+      word-wrap: break-word; 
+    }
+    .hero p.lead { 
+      font-size: clamp(1rem, 2.5vw, 1.3rem); 
+      max-width: 900px; 
+      margin: 0 auto 2.5rem auto !important; 
+      text-align: justify !important; 
+      text-justify: inter-word; 
+      color: rgba(255,255,255,0.95) !important;
+    }
+
+    .promo-block { 
+      text-align: center !important; 
+      max-width: 800px; 
+      margin: 0 auto; 
+    }
+    .btn-cta { 
+      font-size: clamp(1.1rem, 2vw, 1.3rem) !important; 
+      padding: 1rem 2.5rem !important; 
+      font-weight: 700;
+      border-radius: 0.6rem;
+      transition: transform 0.2s;
+    }
+    .btn-cta:hover { transform: scale(1.03); }
+
+    .especialistas-tag {
+      margin-top: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* Puntos de dolor / Soluciones */
+    .seccion-dolor {
+      padding: 4rem 0;
+      background-color: #ffffff;
+    }
+    .caja-dolor {
+      border-radius: 1rem;
+      padding: 2rem;
+      height: 100%;
+    }
+    .caja-antes {
+      background-color: #fff5f5;
+      border: 1px solid #feb2b2;
+    }
+    .caja-ahora {
+      background-color: #f0fff4;
+      border: 1px solid #9ae6b4;
+    }
+
+    /* Estilos Tarifa y Precios */
+    .tarifa-wrapper {
+      background-color: #ffffff; 
+      padding: 60px 20px; 
+      text-align: center; 
+      border-bottom: 1px solid #eee; 
+      display: flex; 
+      justify-content: center; 
+      position: relative;
+    }
+    .tarifa-card {
+      display: inline-block; 
+      border: 2px solid #0d6efd; 
+      border-radius: 15px; 
+      padding: 0; 
+      background-color: #f8f9fa; 
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+      width: 100%; 
+      max-width: 600px; 
+      overflow: hidden; 
+      position: relative;
+    }
+    .tarifa-header {
+      background-color: #0d6efd; 
+      padding: 25px 20px; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center;
+    }
+    .tarifa-header p {
+      margin: 0 !important; 
+      font-weight: 700 !important; 
+      color: #ffffff !important; 
+      text-transform: uppercase; 
+      letter-spacing: 2px; 
+      font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important; 
+      text-align: center !important; 
+      width: 100%;
+    }
+    .tarifa-body {
+      padding: 45px 20px; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      justify-content: center; 
+      position: relative;
+    }
+    .tarifa-badge {
+      background-color: #ffc107; 
+      color: #000; 
+      padding: 5px 15px; 
+      border-radius: 20px; 
+      font-weight: 800; 
+      font-size: 0.85rem; 
+      text-transform: uppercase; 
+      margin-bottom: 15px; 
+      border: 1px solid #e0a800;
+    }
+    .tarifa-precio {
+      margin: 0 !important; 
+      font-size: 4rem; 
+      color: #002244 !important; 
+      font-weight: 800; 
+      line-height: 1; 
+      text-align: center !important;
+    }
+    .tarifa-precio span {
+      font-size: 1.4rem; 
+      font-weight: 400; 
+      color: #666; 
+      vertical-align: middle;
+    }
+    .tarifa-subprecio {
+      margin: 10px 0 0 0 !important; 
+      color: #0d6efd !important; 
+      font-size: 1.1rem; 
+      font-weight: 700; 
+      text-align: center !important;
+    }
+    .tarifa-condiciones {
+      margin: 25px 0 0 0 !important; 
+      color: #6c757d !important; 
+      font-size: 0.95rem; 
+      font-weight: 500; 
+      opacity: 0.9; 
+      text-align: center !important; 
+      border-top: 1px solid #ddd; 
+      width: 80%; 
+      padding-top: 15px;
+    }
+
+    .seccion-herramientas { 
+      padding: 2.5rem 0; 
+      background-color: #f8f9fa;
+    }
+    .card { 
+      border: none; 
+      border-radius: 1rem; 
+      padding: 1.5rem; 
+      height: 100%; 
+      transition: box-shadow 0.3s ease; 
+    }
+    .card:hover { 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important; 
+    }
+    .card h6 { 
+      color: #0d6efd; 
+      font-size: 1.05rem;       
+      margin-bottom: 1rem; 
+      text-transform: uppercase; 
+      letter-spacing: 0.01em;    
+      text-align: center; 
+    }
+    .card p.small { 
+      font-size: 0.95rem; 
+      color: #444; 
+      margin-bottom: 1rem; 
+      text-align: justify; 
+    }
+    .card ul { padding-left: 1.1rem; margin-bottom: 0; }
+    .card ul li { 
+      font-size: 0.85rem; 
+      color: #555; 
+      margin-bottom: 0.6rem; 
+      text-align: justify; 
+    }
+
+    .titulo-seccion-separado {
+      margin-bottom: 2.5rem !important; 
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .bloque-imagen { 
+      margin-top: 4rem; 
+      margin-bottom: 6rem; 
+      text-align: center; 
+    }
+    .img-grande {
+      width: 100% !important;
+      max-width: 900px !important; 
+      height: auto;
+      display: block;
+      margin: 0 auto 2rem auto; 
+      border-radius: 1rem;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
+    }
+    .bloque-imagen p.caption { 
+      text-align: center !important; 
+      margin-top: 1.5rem; 
+      font-size: 1.1rem; 
+      color: #6c757d; 
+      font-weight: 500;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: #0d6efd;
+      background-color: #e7f1ff;
+    }
+
+    .footer-legal { 
+      padding: 3rem 0; 
+      border-top: 1px solid #eee; 
+      background: #fff; 
+      width: 100%;
+    }
+    .footer-link { 
+      color: #333; 
+      text-decoration: underline; 
+      background: none; 
+      border: none; 
+      padding: 0; 
+      font-size: 0.85rem; 
+      cursor: pointer;
+    }
+    .instagram-icon { 
+      width: 30px !important; 
+      height: auto;
+      transition: opacity 0.3s; 
+    }
+    .footer-legal .small, .footer-legal .text-muted {
+      font-size: 0.8rem !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="https://www.luapol.com/">
+        <img src="img/logo.png" alt="Logo Luapol" class="navbar-logo">
+        <span>LUAPOL</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
+          <a href="https://app.luapol.com/login/" class="btn btn-primary px-4">ACCESO PREPARADORES</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- 1. ENCABEZADO PRINCIPAL (HERO SECTION) -->
+  <section class="hero">
+    <div class="container">
+      <h1>LANZA Y GESTIONA TU PROPIA ACADEMIA DE OPOSICIONES EN MINUTOS</span></h1>
+      
+      <p class="lead">
+        Ahorra tiempo en la creación de exámenes tipo test, organiza tus materiales y haz un seguimiento completo de tus alumnos en una sola plataforma profesional.
+      </p>
+
+      <div class="promo-block">
+        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+          <a href="https://app.luapol.com/register/preparadores" class="btn btn-primary btn-lg btn-cta">CREA TU ACADEMIA GRATIS 14 DÍAS</a>
+          <a href="#demo" class="btn btn-outline-light btn-lg btn-cta">PIDE UNA DEMO PERSONALIZADA</a>
+        </div>
+        <div class="especialistas-tag">
+          PLATAFORMA ESPECIALIZADA PARA PREPARADORES
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. PUNTOS DE DOLOR DEL PREPARADOR (SOLUCIONES) -->
+  <section class="seccion-dolor">
+    <div class="container">
+      <h2 class="titulo-seccion-separado text-center">EL CAMBIO QUE TU ACADEMIA <span class="text-primary">NECESITA</span></h2>
+      <div class="row g-4 justify-content-center mt-2">
+        <div class="col-lg-5">
+          <div class="caja-dolor caja-antes shadow-sm">
+            <h4 class="text-danger mb-3">❌ ANTES</h4>
+            <ul>
+              <li class="mb-2">Pérdida de horas corrigiendo exámenes a mano o en plantillas.</li>
+              <li class="mb-2">Materiales y PDFs dispersos enviados por correo o WhatsApp.</li>
+              <li class="mb-2">Falta de control real sobre si los alumnos estudian o progresan.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="caja-dolor caja-ahora shadow-sm">
+            <h4 class="text-success mb-3">✅ AHORA CON LUAPOL</h4>
+            <ul>
+              <li class="mb-2">Automatización total de simulacros y correcciones inmediatas.</li>
+              <li class="mb-2">Planes de estudio organizados y biblioteca centralizada.</li>
+              <li class="mb-2">Estadísticas avanzadas en tiempo real del progreso individual y grupal.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. FUNCIONALIDADES CLAVE (FEATURES) -->
+  <section class="seccion-herramientas bg-light">
+    <div class="container">
+      <h2 class="titulo-seccion-separado">🚀 FUNCIONALIDADES <span class="text-primary">CLAVE:</span></h2>
+      <div class="row g-4 justify-content-center"> 
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="card shadow-sm">
+            <h6>CARGA DE PREGUNTAS SIN ESFUERZO</h6>
+            <p class="small">Subida masiva e individual de preguntas para tener tu base de datos lista rápidamente.</p>
+            <ul>
+              <li>Importación masiva mediante plantillas simples.</li>
+              <li>Creación de preguntas personalizadas en minutos.</li>
+              <li>Edición rápida y retroalimentación para cada respuesta.</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="card shadow-sm">
+            <h6>BIBLIOTECA DE MATERIALES</h6>
+            <p class="small">Agrupa documentos, vídeos y enlaces web organizados para tus alumnos.</p>
+            <ul>
+              <li>Centralización de temarios, PDFs y esquemas.</li>
+              <li>Enlace de vídeos explicativos y clases grabadas.</li>
+              <li>Acceso estructurado por temas y bloques.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card shadow-sm">
+            <h6>PLANES DE ESTUDIO INTELIGENTES</h6>
+            <p class="small">Configura la metodología que mejor se adapte a tu grupo.</p>
+            <ul>
+              <li><strong>Simulacro:</strong> Exámenes automáticos periódicos idénticos para el grupo.</li>
+              <li><strong>Reto:</strong> Configuración de objetivos y distribución de contenidos por bloques.</li>
+              <li><strong>Libre:</strong> Creación flexible por temas y cantidad de preguntas.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="card shadow-sm">
+            <h6>ANALÍTICA Y SEGUIMIENTO</h6>
+            <p class="small">Estadísticas grupales e individuales para revisar el progreso.</p>
+            <ul>
+              <li>Seguimiento de cada examen realizado en detalle.</li>
+              <li>Identificación de fallos más frecuentes por tema.</li>
+              <li>Métricas de evolución del grupo en tiempo real.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div> 
+    </div> 
+  </section>
+
+  <!-- 4. TRANSPARENCIA DE PRECIOS (PRICING) -->
+  <div class="tarifa-wrapper">
+    <div class="tarifa-card">
+      <div class="tarifa-header">
+        <p>TARIFA BASE Y ESCALABLE</p>
+      </div>
+      <div class="tarifa-body">
+        <div class="tarifa-badge">
+          💡 TRANSPARENCIA TOTAL
+        </div>
+        <h2 class="tarifa-precio">
+          49€ <span>/ MES</span>
+        </h2>
+        <p class="tarifa-subprecio">
+          Incluye hasta 20 alumnos
+        </p>
+        <p class="fw-bold mt-3 mb-1 text-dark">
+          Escalabilidad sin riesgo: solo +2,50 € / alumno adicional al mes
+        </p>
+        <p class="tarifa-condiciones">
+          "Pagas solo por lo que usas a medida que tu academia crece"
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. PRUEBA SOCIAL Y DEMOSTRACIÓN -->
+  <section class="py-5 bg-white" id="demo">
+    <div class="container">
+      <h2 class="mb-3">MIRA LO FÁCIL QUE ES <span class="text-primary">EMPEZAR</span></h2>
+      <p class="text-center mb-4 text-muted">Descubre en este vídeo de 2 minutos cómo crear un simulacro o subir una batería de preguntas.</p>
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="ratio ratio-16x9 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
+            <iframe 
+              src="https://www.youtube.com/embed/icgiDJSwrB0" 
+              title="Demo Luapol Preparadores" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAPTURAS / DEMOSTRACIÓN DE LA PLATAFORMA -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-5">ASÍ SE VE TU PANEL DE <span class="text-primary">CONTROL:</span></h2>
+
+      <div class="bloque-imagen">
+        <img src="img/2editarpregunta1.png" alt="Gestión de preguntas" class="img-grande">
+        <p class="caption">Subida masiva e individual de preguntas con explicaciones detalladas.</p>
+      </div>
+
+      <div class="bloque-imagen">
+        <img src="img/2analisisglobal5.png" alt="Analítica y seguimiento" class="img-grande">
+        <p class="caption">Análisis y seguimiento en tiempo real del desempeño de cada opositor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES (FAQ) -->
+  <section class="py-5 bg-white">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="mb-4">PREGUNTAS <span class="text-primary">FRECUENTES</span></h2>
+      
+      <div class="accordion shadow-sm" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              ¿Cómo puedo migrar mis preguntas actuales a la plataforma?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Disponemos de plantillas de importación masiva para cargar tus preguntas rápidamente desde archivos Excel o Word, además de la opción de subida manual simplificada.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              ¿Hay un límite de alumnos que pueda dar de alta?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              No hay límite. La tarifa base incluye los primeros 20 alumnos y el sistema se adapta de forma automática sumando solo 2,50 €/mes por cada alumno adicional.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              ¿Cómo gestiono los pagos o cobros a mis estudiantes?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Tú mantienes la independencia total en el cobro a tus alumnos. Nosotros solo te facturamos la tarifa de uso del sistema según la cantidad de alumnos activos que tengas.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-legal">
+    <div class="container">
+      <div class="row align-items-center text-center text-md-start">
+        <div class="col-md-5 mb-4 mb-md-0">
+          <a href="terminos.html" class="footer-link fw-bold text-decoration-none">
+            AVISO LEGAL, TÉRMINOS DE USO, POLÍTICA DE PRIVACIDAD Y COOKIES
+          </a>
+          <div class="mt-2 text-muted small">Contacto: info@luapol.com</div>
+        </div>
+        <div class="col-md-2 text-center mb-4 mb-md-0">
+          <a href="https://www.instagram.com/luapol_cnp" target="_blank">
+            <img src="img/instagram.svg" class="instagram-icon" alt="Instagram Luapol">
+          </a>
+        </div>
+        <div class="col-md-5 text-md-end text-muted small">
+          © 2026 LUAPOL. Todos los derechos reservados.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
