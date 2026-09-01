@@ -12,24 +12,24 @@
   
   <style>
     :root {
-      --brand-yellow: #ffcc00;     /* Amarillo de contraste comercial */
-      --brand-blue: #003366;       /* Azul marino corporativo */
-      --brand-action: #22c55e;     /* Verde conversión comercial */
-      --brand-action-hover: #16a34a;
-      --bg-gray: #f4f5f7;
-      --border-dash: #cbd5e1;
+      --masmovil-yellow: #FFCC00;   /* Amarillo corporativo MásMóvil */
+      --masmovil-green: #28A745;    /* Verde de botones "LO QUIERO / ME INTERESA" */
+      --masmovil-green-hover: #218838;
+      --masmovil-dark: #000000;
+      --masmovil-gray-bg: #F4F4F4;
+      --masmovil-card-border: #E5E5E5;
     }
 
     body { 
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-      color: #1e293b; 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
+      color: #000000; 
       background-color: #ffffff;
     }
 
     /* NAVBAR */
     .navbar { 
       background: #ffffff !important;
-      border-bottom: 2px solid #e2e8f0;
+      border-bottom: 3px solid var(--masmovil-yellow);
       padding: 0.8rem 0;
     }
 
@@ -40,31 +40,33 @@
     }
 
     .btn-top-acc {
-      background-color: var(--brand-blue);
+      background-color: var(--masmovil-dark);
       color: #ffffff !important;
-      font-weight: 700;
+      font-weight: 800;
       padding: 0.5rem 1.2rem;
-      border-radius: 0.4rem;
+      border-radius: 0.2rem;
+      text-transform: uppercase;
+      font-size: 0.85rem;
     }
 
-    /* HERO IMPACTO TIPO MÁSMÓVIL */
+    /* HERO ESTILO MÁSMÓVIL (Con imagen fondo.png) */
     .hero { 
       padding: 3.5rem 0 4rem 0;
-      background-color: var(--brand-blue); 
-      background-image: linear-gradient(rgba(0, 30, 65, 0.88), rgba(0, 30, 65, 0.88)), url('img/fondo.png');
+      background-color: var(--masmovil-yellow); 
+      background-image: linear-gradient(rgba(255, 204, 0, 0.90), rgba(255, 204, 0, 0.90)), url('img/fondo.png');
       background-size: cover;
       background-position: center;
-      color: #ffffff;
-      border-bottom: 5px solid var(--brand-yellow);
+      color: #000000;
+      border-bottom: 4px solid var(--masmovil-dark);
     }
 
     .hero-badge {
-      background-color: var(--brand-yellow);
-      color: #000000;
-      font-weight: 800;
+      background-color: #000000;
+      color: var(--masmovil-yellow);
+      font-weight: 900;
       font-size: 0.85rem;
       padding: 0.4rem 1rem;
-      border-radius: 20px;
+      border-radius: 0.2rem;
       display: inline-block;
       margin-bottom: 1.2rem;
       text-transform: uppercase;
@@ -76,48 +78,59 @@
       font-weight: 900;
       line-height: 1.15;
       margin-bottom: 1rem;
+      text-transform: uppercase;
     }
 
     .hero-box-dashed {
-      border: 2px dashed var(--brand-yellow);
-      background: rgba(255, 255, 255, 0.05);
-      border-radius: 0.8rem;
+      border: 2px dashed #000000;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 0.4rem;
       padding: 1.5rem;
       max-width: 800px;
       margin: 0 auto 2rem auto;
+      color: #000000;
     }
 
+    /* BOTÓN VERDE MÁSMÓVIL */
     .btn-action-green {
-      background-color: var(--brand-action);
+      background-color: var(--masmovil-green);
       color: #ffffff !important;
-      font-weight: 800;
+      font-weight: 900;
       font-size: 1.1rem;
       padding: 0.9rem 2.2rem;
-      border-radius: 0.5rem;
+      border-radius: 0.3rem;
       border: none;
       text-decoration: none;
       display: inline-block;
-      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
       transition: all 0.2s;
     }
 
     .btn-action-green:hover {
-      background-color: var(--brand-action-hover);
-      transform: translateY(-2px);
+      background-color: var(--masmovil-green-hover);
+      transform: translateY(-1px);
     }
 
-    .btn-outline-white {
-      background-color: transparent;
+    .btn-dark-outline {
+      background-color: #000000;
       color: #ffffff !important;
-      font-weight: 700;
+      font-weight: 800;
       padding: 0.9rem 1.8rem;
-      border-radius: 0.5rem;
-      border: 2px solid #ffffff;
+      border-radius: 0.3rem;
+      border: 2px solid #000000;
       text-decoration: none;
       display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.95rem;
     }
 
-    /* BLOQUES Y TARJETAS DE OFERTA */
+    .btn-dark-outline:hover {
+      background-color: #222222;
+      color: #ffffff !important;
+    }
+
+    /* SECCIONES Y CABECERAS */
     .section-head {
       font-weight: 900;
       text-transform: uppercase;
@@ -125,49 +138,48 @@
       letter-spacing: -0.01em;
       margin-bottom: 2rem;
       text-align: center;
+      color: #000000;
     }
 
+    /* TARJETAS TIPO OFERTA MÁSMÓVIL */
     .card-offer {
       background: #ffffff;
-      border: 1px solid #cbd5e1;
-      border-radius: 0.8rem;
+      border: 1px solid var(--masmovil-card-border);
+      border-radius: 0.4rem;
       overflow: hidden;
       height: 100%;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
     }
 
     .card-offer-header {
-      background-color: var(--brand-yellow);
+      background-color: var(--masmovil-yellow);
       color: #000000;
       font-weight: 900;
       padding: 0.8rem 1rem;
       text-align: center;
       font-size: 1.05rem;
       text-transform: uppercase;
-    }
-
-    .card-offer-header.blue {
-      background-color: var(--brand-blue);
-      color: #ffffff;
+      border-bottom: 1px solid #e5c100;
     }
 
     .card-offer-body {
       padding: 1.5rem;
     }
 
+    /* CAJA CON BORDE PUNTEADO (PRECIO / DESTACADO) */
     .coupon-box {
-      border: 2px dashed #94a3b8;
-      background-color: #f8fafc;
-      border-radius: 0.5rem;
+      border: 2px dashed #000000;
+      background-color: #ffffff;
+      border-radius: 0.3rem;
       padding: 1rem;
       text-align: center;
       margin-bottom: 1.2rem;
     }
 
     .coupon-price {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 900;
-      color: var(--brand-blue);
+      color: #000000;
       line-height: 1;
     }
 
@@ -183,60 +195,69 @@
       display: flex;
       align-items: flex-start;
       gap: 8px;
+      color: #333333;
     }
 
     .list-checks li i {
-      color: var(--brand-action);
+      color: var(--masmovil-green);
       font-size: 1.1rem;
       line-height: 1;
+      font-weight: bold;
     }
 
     /* PUNTOS DE DOLOR (ANTES / AHORA) */
     .box-before-after {
-      border-radius: 0.8rem;
+      border-radius: 0.4rem;
       padding: 1.5rem;
       height: 100%;
     }
 
     .box-before {
       background-color: #fff1f2;
-      border: 2px solid #fecdd3;
+      border: 2px solid #dc3545;
     }
 
     .box-after {
       background-color: #f0fdf4;
-      border: 2px solid #bbf7d0;
+      border: 2px solid var(--masmovil-green);
     }
 
     /* ACCORDION FAQ */
     .accordion-item {
-      border: 1px solid #cbd5e1;
-      border-radius: 0.5rem !important;
+      border: 1px solid var(--masmovil-card-border);
+      border-radius: 0.3rem !important;
       margin-bottom: 0.6rem;
       overflow: hidden;
     }
 
     .accordion-button {
-      font-weight: 700;
+      font-weight: 800;
       background-color: #ffffff;
+      color: #000000;
     }
 
     .accordion-button:not(.collapsed) {
-      background-color: #f1f5f9;
-      color: var(--brand-blue);
+      background-color: var(--masmovil-yellow);
+      color: #000000;
     }
 
-    /* FOOTER COMMERCIAL */
+    /* FOOTER TIPO MÁSMÓVIL */
     footer {
-      background-color: #0f172a;
-      color: #94a3b8;
-      padding: 2.5rem 0;
+      background-color: #000000;
+      color: #ffffff;
+      padding: 2rem 0;
       font-size: 0.85rem;
+      border-top: 4px solid var(--masmovil-yellow);
     }
 
     footer a {
-      color: #ffffff;
+      color: var(--masmovil-yellow);
       text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -248,7 +269,7 @@
     <div class="container">
       <a class="navbar-brand d-flex align-items-center fw-bold text-dark" href="https://www.luapol.com/">
         <img src="img/logo.png" alt="Luapol" class="navbar-logo">
-        <span>LUAPOL</span>
+        <span class="fw-black fs-4">LUAPOL</span>
       </a>
       <div class="ms-auto">
         <a href="https://app.luapol.com/login/" class="btn btn-top-acc">
@@ -258,23 +279,23 @@
     </div>
   </nav>
 
-  <!-- HERO PROMOCIONAL -->
+  <!-- HERO PROMOCIONAL AMARILLO MÁSMÓVIL -->
   <section class="hero text-center">
     <div class="container">
-      <span class="hero-badge"><i class="bi bi-star-fill me-1"></i> Software Especializado para Preparadores</span>
+      <span class="hero-badge"><i class="bi bi-star-fill me-1"></i> Plataforma para Preparadores</span>
       <h1>LANZA Y GESTIONA TU PROPIA ACADEMIA<br>DE OPOSICIONES EN MINUTOS</h1>
       
       <div class="hero-box-dashed">
-        <p class="lead m-0 fw-semibold">
+        <p class="lead m-0 fw-bold">
           Ahorra tiempo en la creación de exámenes tipo test, organiza tus materiales de estudio y realiza un seguimiento preciso de tus alumnos en una sola plataforma.
         </p>
       </div>
 
       <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
         <a href="https://app.luapol.com/register/preparadores" class="btn-action-green">
-          CREA TU ACADEMIA GRATIS (14 DÍAS)
+          PROBAR GRATIS 14 DÍAS
         </a>
-        <a href="#demo" class="btn-outline-white">
+        <a href="#demo" class="btn-dark-outline">
           VER DEMOSTRACIÓN
         </a>
       </div>
@@ -282,9 +303,9 @@
   </section>
 
   <!-- ANTES VS AHORA (OFERTA DE VALOR) -->
-  <section class="py-5 bg-light">
+  <section class="py-5" style="background-color: var(--masmovil-gray-bg);">
     <div class="container">
-      <h2 class="section-head">EL CAMBIO QUE TU ACADEMIA NECESITA</h2>
+      <h2 class="section-head">OPTIMIZA LA GESTIÓN DE TU ACADEMIA</h2>
       <div class="row g-4 justify-content-center">
         
         <div class="col-md-5">
@@ -316,7 +337,7 @@
   <!-- MÓDULOS / BLOQUES DESTACADOS -->
   <section class="py-5">
     <div class="container">
-      <h2 class="section-head">HERRAMIENTAS INCLUIDAS EN TU PLATAFORMA</h2>
+      <h2 class="section-head">HERRAMIENTAS INCLUIDAS</h2>
       
       <div class="row g-4">
         
@@ -332,7 +353,7 @@
                 <li><i class="bi bi-check2"></i> Creación rápida de preguntas.</li>
                 <li><i class="bi bi-check2"></i> Explicaciones personalizadas.</li>
               </ul>
-              <a href="https://app.luapol.com/register/preparadores" class="btn btn-sm btn-outline-primary w-100 fw-bold">PROBAR AHORA</a>
+              <a href="https://app.luapol.com/register/preparadores" class="btn btn-sm btn-outline-dark w-100 fw-bold">MÁS INFORMACIÓN</a>
             </div>
           </div>
         </div>
@@ -349,7 +370,7 @@
                 <li><i class="bi bi-check2"></i> Subida de PDFs y documentos.</li>
                 <li><i class="bi bi-check2"></i> Integración de clases grabadas.</li>
               </ul>
-              <a href="https://app.luapol.com/register/preparadores" class="btn btn-sm btn-outline-primary w-100 fw-bold">VER MÁS</a>
+              <a href="https://app.luapol.com/register/preparadores" class="btn btn-sm btn-outline-dark w-100 fw-bold">MÁS INFORMACIÓN</a>
             </div>
           </div>
         </div>
@@ -366,7 +387,7 @@
                 <li><i class="bi bi-check2"></i> Retos por temas específicos.</li>
                 <li><i class="bi bi-check2"></i> Generador de exámenes libres.</li>
               </ul>
-              <a href="https://app.luapol.com/register/preparadores" class="btn btn-sm btn-outline-primary w-100 fw-bold">CONFIGURAR</a>
+              <a href="https://app.luapol.com/register/preparadores" class="btn btn-sm btn-outline-dark w-100 fw-bold">MÁS INFORMACIÓN</a>
             </div>
           </div>
         </div>
@@ -383,7 +404,7 @@
                 <li><i class="bi bi-check2"></i> Detección de fallos habituales.</li>
                 <li><i class="bi bi-check2"></i> Estadísticas globales del grupo.</li>
               </ul>
-              <a href="https://app.luapol.com/register/preparadores" class="btn btn-sm btn-outline-primary w-100 fw-bold">VER REPORTES</a>
+              <a href="https://app.luapol.com/register/preparadores" class="btn btn-sm btn-outline-dark w-100 fw-bold">MÁS INFORMACIÓN</a>
             </div>
           </div>
         </div>
@@ -392,33 +413,33 @@
     </div>
   </section>
 
-  <!-- TARIFA DESTACADA TIPO MÁSMÓVIL -->
-  <section class="py-5 bg-light">
+  <!-- TARIFA DESTACADA ESTILO MÁSMÓVIL -->
+  <section class="py-5" style="background-color: var(--masmovil-gray-bg);">
     <div class="container">
-      <h2 class="section-head">NUESTRAS TARIFAS PARA PREPARADORES</h2>
+      <h2 class="section-head">NUESTRAS TARIFAS</h2>
       
       <div class="row justify-content-center">
         <div class="col-md-7 col-lg-5">
-          <div class="card-offer">
-            <div class="card-offer-header blue">
-              <i class="bi bi-tag-fill text-warning me-1"></i> TARIFA PLANA ESCALABLE
+          <div class="card-offer" style="border: 2px solid #000000;">
+            <div class="card-offer-header" style="background-color: #000000; color: var(--masmovil-yellow);">
+              <i class="bi bi-tag-fill me-1"></i> TARIFA PARA PREPARADORES
             </div>
             <div class="card-offer-body text-center">
               
               <div class="coupon-box">
-                <span class="text-uppercase fw-bold text-muted small">Precio Base Final</span>
-                <div class="coupon-price">49€<span class="fs-6 fw-normal text-muted"> / mes</span></div>
-                <span class="badge bg-warning text-dark fw-bold mt-1">HASTA 20 ALUMNOS INCLUIDOS</span>
+                <span class="text-uppercase fw-black text-muted small">Precio Final</span>
+                <div class="coupon-price">49€<span class="fs-6 fw-bold text-muted"> / mes</span></div>
+                <span class="badge bg-warning text-dark fw-black mt-1">HASTA 20 ALUMNOS INCLUIDOS</span>
               </div>
 
               <ul class="list-checks text-start mx-auto" style="max-width: 320px;">
-                <li><i class="bi bi-check-circle-fill text-success"></i> <strong>+2,50 € / mes</strong> por alumno adicional.</li>
-                <li><i class="bi bi-check-circle-fill text-success"></i> Sin permanencia ni compromisos.</li>
-                <li><i class="bi bi-check-circle-fill text-success"></i> Soporte técnico especializado.</li>
+                <li><i class="bi bi-check-circle-fill"></i> <strong>+2,50 € / mes</strong> por alumno adicional.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Sin permanencia ni compromisos.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Soporte técnico especializado.</li>
               </ul>
 
               <a href="https://app.luapol.com/register/preparadores" class="btn-action-green w-100">
-                EMPEZAR AHORA
+                ME INTERESA
               </a>
             </div>
           </div>
@@ -431,7 +452,7 @@
   <!-- DEMO Y CAPTURAS -->
   <section class="py-5" id="demo">
     <div class="container text-center">
-      <h2 class="section-head">DEMOSTRACIÓN Y CAPTURAS DE PANTALLA</h2>
+      <h2 class="section-head">DEMOSTRACIÓN Y CAPTURAS</h2>
       
       <div class="row justify-content-center mb-5">
         <div class="col-lg-9">
@@ -456,7 +477,7 @@
   </section>
 
   <!-- PREGUNTAS FRECUENTES -->
-  <section class="py-5 bg-light">
+  <section class="py-5" style="background-color: var(--masmovil-gray-bg);">
     <div class="container" style="max-width: 800px;">
       <h2 class="section-head">PREGUNTAS FRECUENTES</h2>
       
@@ -504,7 +525,7 @@
     </div>
   </section>
 
-  <!-- FOOTER ESTILO MÁSMÓVIL -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="row align-items-center">
@@ -517,7 +538,7 @@
           <a href="https://www.instagram.com/luapol_cnp" target="_blank" class="me-3">
             <i class="bi bi-instagram me-1"></i> Instagram
           </a>
-          <span>© 2026 LUAPOL. Todos los derechos reservados.</span>
+          <span>© 2026 LUAPOL</span>
         </div>
       </div>
     </div>
