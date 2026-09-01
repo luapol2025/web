@@ -12,24 +12,26 @@
   
   <style>
     :root {
-      --masmovil-yellow: #FFCC00;   /* Amarillo corporativo MásMóvil */
-      --masmovil-green: #28A745;    /* Verde de botones "LO QUIERO / ME INTERESA" */
-      --masmovil-green-hover: #218838;
-      --masmovil-dark: #000000;
-      --masmovil-gray-bg: #F4F4F4;
-      --masmovil-card-border: #E5E5E5;
+      --academic-navy: #0B2545;       /* Azul marino profundo universitario */
+      --academic-gold: #C5A059;       /* Dorado / Oro antiguo institucional */
+      --academic-gold-light: #FBF7EE; /* Fondo dorado muy tenue */
+      --academic-green: #15803D;      /* Verde esmeralda de conversión */
+      --academic-green-hover: #166534;
+      --academic-dark: #1E293B;       /* Texto oscuro legible */
+      --academic-gray-bg: #F8FAFC;    /* Fondo claro de estudio */
+      --academic-border: #E2E8F0;     /* Bordes sutiles */
     }
 
     body { 
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
-      color: #000000; 
+      color: var(--academic-dark); 
       background-color: #ffffff;
     }
 
     /* NAVBAR */
     .navbar { 
       background: #ffffff !important;
-      border-bottom: 3px solid var(--masmovil-yellow);
+      border-bottom: 3px solid var(--academic-navy);
       padding: 0.8rem 0;
     }
 
@@ -40,7 +42,7 @@
     }
 
     .btn-top-acc {
-      background-color: var(--masmovil-dark);
+      background-color: var(--academic-navy);
       color: #ffffff !important;
       font-weight: 800;
       padding: 0.5rem 1.2rem;
@@ -49,20 +51,20 @@
       font-size: 0.85rem;
     }
 
-    /* HERO ESTILO MÁSMÓVIL (Con imagen fondo.png) */
+    /* HERO ESTILO COMERCIAL CON TONOS ACADÉMICOS */
     .hero { 
       padding: 3.5rem 0 4rem 0;
-      background-color: var(--masmovil-yellow); 
-      background-image: linear-gradient(rgba(255, 204, 0, 0.90), rgba(255, 204, 0, 0.90)), url('img/fondo.png');
+      background-color: var(--academic-navy); 
+      background-image: linear-gradient(rgba(11, 37, 69, 0.92), rgba(11, 37, 69, 0.92)), url('img/fondo.png');
       background-size: cover;
       background-position: center;
-      color: #000000;
-      border-bottom: 4px solid var(--masmovil-dark);
+      color: #ffffff;
+      border-bottom: 4px solid var(--academic-gold);
     }
 
     .hero-badge {
-      background-color: #000000;
-      color: var(--masmovil-yellow);
+      background-color: var(--academic-gold);
+      color: #ffffff;
       font-weight: 900;
       font-size: 0.85rem;
       padding: 0.4rem 1rem;
@@ -79,21 +81,22 @@
       line-height: 1.15;
       margin-bottom: 1rem;
       text-transform: uppercase;
+      color: #ffffff;
     }
 
     .hero-box-dashed {
-      border: 2px dashed #000000;
-      background: rgba(255, 255, 255, 0.6);
+      border: 2px dashed var(--academic-gold);
+      background: rgba(255, 255, 255, 0.06);
       border-radius: 0.4rem;
       padding: 1.5rem;
       max-width: 800px;
       margin: 0 auto 2rem auto;
-      color: #000000;
+      color: #ffffff;
     }
 
-    /* BOTÓN VERDE MÁSMÓVIL */
+    /* BOTÓN VERDE ESMERALDA DE ACCIÓN */
     .btn-action-green {
-      background-color: var(--masmovil-green);
+      background-color: var(--academic-green);
       color: #ffffff !important;
       font-weight: 900;
       font-size: 1.1rem;
@@ -105,20 +108,21 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       transition: all 0.2s;
+      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
     }
 
     .btn-action-green:hover {
-      background-color: var(--masmovil-green-hover);
+      background-color: var(--academic-green-hover);
       transform: translateY(-1px);
     }
 
     .btn-dark-outline {
-      background-color: #000000;
+      background-color: transparent;
       color: #ffffff !important;
       font-weight: 800;
       padding: 0.9rem 1.8rem;
       border-radius: 0.3rem;
-      border: 2px solid #000000;
+      border: 2px solid var(--academic-gold);
       text-decoration: none;
       display: inline-block;
       text-transform: uppercase;
@@ -126,7 +130,7 @@
     }
 
     .btn-dark-outline:hover {
-      background-color: #222222;
+      background-color: var(--academic-gold);
       color: #ffffff !important;
     }
 
@@ -138,28 +142,28 @@
       letter-spacing: -0.01em;
       margin-bottom: 2rem;
       text-align: center;
-      color: #000000;
+      color: var(--academic-navy);
     }
 
-    /* TARJETAS TIPO OFERTA MÁSMÓVIL */
+    /* TARJETAS TIPO OFERTA */
     .card-offer {
       background: #ffffff;
-      border: 1px solid var(--masmovil-card-border);
+      border: 1px solid var(--academic-border);
       border-radius: 0.4rem;
       overflow: hidden;
       height: 100%;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 12px rgba(11, 37, 69, 0.05);
     }
 
     .card-offer-header {
-      background-color: var(--masmovil-yellow);
-      color: #000000;
+      background-color: var(--academic-navy);
+      color: #ffffff;
       font-weight: 900;
       padding: 0.8rem 1rem;
       text-align: center;
       font-size: 1.05rem;
       text-transform: uppercase;
-      border-bottom: 1px solid #e5c100;
+      border-bottom: 2px solid var(--academic-gold);
     }
 
     .card-offer-body {
@@ -168,8 +172,8 @@
 
     /* CAJA CON BORDE PUNTEADO (PRECIO / DESTACADO) */
     .coupon-box {
-      border: 2px dashed #000000;
-      background-color: #ffffff;
+      border: 2px dashed var(--academic-navy);
+      background-color: var(--academic-gold-light);
       border-radius: 0.3rem;
       padding: 1rem;
       text-align: center;
@@ -179,7 +183,7 @@
     .coupon-price {
       font-size: 3rem;
       font-weight: 900;
-      color: #000000;
+      color: var(--academic-navy);
       line-height: 1;
     }
 
@@ -195,11 +199,11 @@
       display: flex;
       align-items: flex-start;
       gap: 8px;
-      color: #333333;
+      color: #334155;
     }
 
     .list-checks li i {
-      color: var(--masmovil-green);
+      color: var(--academic-green);
       font-size: 1.1rem;
       line-height: 1;
       font-weight: bold;
@@ -213,18 +217,18 @@
     }
 
     .box-before {
-      background-color: #fff1f2;
-      border: 2px solid #dc3545;
+      background-color: #fef2f2;
+      border: 2px solid #ef4444;
     }
 
     .box-after {
       background-color: #f0fdf4;
-      border: 2px solid var(--masmovil-green);
+      border: 2px solid var(--academic-green);
     }
 
     /* ACCORDION FAQ */
     .accordion-item {
-      border: 1px solid var(--masmovil-card-border);
+      border: 1px solid var(--academic-border);
       border-radius: 0.3rem !important;
       margin-bottom: 0.6rem;
       overflow: hidden;
@@ -233,25 +237,25 @@
     .accordion-button {
       font-weight: 800;
       background-color: #ffffff;
-      color: #000000;
+      color: var(--academic-navy);
     }
 
     .accordion-button:not(.collapsed) {
-      background-color: var(--masmovil-yellow);
-      color: #000000;
+      background-color: var(--academic-navy);
+      color: #ffffff;
     }
 
-    /* FOOTER TIPO MÁSMÓVIL */
+    /* FOOTER ACADÉMICO */
     footer {
-      background-color: #000000;
+      background-color: var(--academic-navy);
       color: #ffffff;
       padding: 2rem 0;
       font-size: 0.85rem;
-      border-top: 4px solid var(--masmovil-yellow);
+      border-top: 4px solid var(--academic-gold);
     }
 
     footer a {
-      color: var(--masmovil-yellow);
+      color: var(--academic-gold);
       text-decoration: none;
       font-weight: 600;
     }
@@ -269,7 +273,7 @@
     <div class="container">
       <a class="navbar-brand d-flex align-items-center fw-bold text-dark" href="https://www.luapol.com/">
         <img src="img/logo.png" alt="Luapol" class="navbar-logo">
-        <span class="fw-black fs-4">LUAPOL</span>
+        <span class="fw-black fs-4" style="color: var(--academic-navy);">LUAPOL</span>
       </a>
       <div class="ms-auto">
         <a href="https://app.luapol.com/login/" class="btn btn-top-acc">
@@ -279,10 +283,10 @@
     </div>
   </nav>
 
-  <!-- HERO PROMOCIONAL AMARILLO MÁSMÓVIL -->
+  <!-- HERO PROMOCIONAL CON FONDO.PNG -->
   <section class="hero text-center">
     <div class="container">
-      <span class="hero-badge"><i class="bi bi-star-fill me-1"></i> Plataforma para Preparadores</span>
+      <span class="hero-badge"><i class="bi bi-mortarboard-fill me-1"></i> Plataforma para Preparadores</span>
       <h1>LANZA Y GESTIONA TU PROPIA ACADEMIA<br>DE OPOSICIONES EN MINUTOS</h1>
       
       <div class="hero-box-dashed">
@@ -303,7 +307,7 @@
   </section>
 
   <!-- ANTES VS AHORA (OFERTA DE VALOR) -->
-  <section class="py-5" style="background-color: var(--masmovil-gray-bg);">
+  <section class="py-5" style="background-color: var(--academic-gray-bg);">
     <div class="container">
       <h2 class="section-head">OPTIMIZA LA GESTIÓN DE TU ACADEMIA</h2>
       <div class="row g-4 justify-content-center">
@@ -413,15 +417,15 @@
     </div>
   </section>
 
-  <!-- TARIFA DESTACADA ESTILO MÁSMÓVIL -->
-  <section class="py-5" style="background-color: var(--masmovil-gray-bg);">
+  <!-- TARIFA DESTACADA -->
+  <section class="py-5" style="background-color: var(--academic-gray-bg);">
     <div class="container">
       <h2 class="section-head">NUESTRAS TARIFAS</h2>
       
       <div class="row justify-content-center">
         <div class="col-md-7 col-lg-5">
-          <div class="card-offer" style="border: 2px solid #000000;">
-            <div class="card-offer-header" style="background-color: #000000; color: var(--masmovil-yellow);">
+          <div class="card-offer" style="border: 2px solid var(--academic-navy);">
+            <div class="card-offer-header">
               <i class="bi bi-tag-fill me-1"></i> TARIFA PARA PREPARADORES
             </div>
             <div class="card-offer-body text-center">
@@ -429,7 +433,7 @@
               <div class="coupon-box">
                 <span class="text-uppercase fw-black text-muted small">Precio Final</span>
                 <div class="coupon-price">49€<span class="fs-6 fw-bold text-muted"> / mes</span></div>
-                <span class="badge bg-warning text-dark fw-black mt-1">HASTA 20 ALUMNOS INCLUIDOS</span>
+                <span class="badge bg-dark text-white fw-black mt-1" style="background-color: var(--academic-navy) !important;">HASTA 20 ALUMNOS INCLUIDOS</span>
               </div>
 
               <ul class="list-checks text-start mx-auto" style="max-width: 320px;">
@@ -477,7 +481,7 @@
   </section>
 
   <!-- PREGUNTAS FRECUENTES -->
-  <section class="py-5" style="background-color: var(--masmovil-gray-bg);">
+  <section class="py-5" style="background-color: var(--academic-gray-bg);">
     <div class="container" style="max-width: 800px;">
       <h2 class="section-head">PREGUNTAS FRECUENTES</h2>
       
