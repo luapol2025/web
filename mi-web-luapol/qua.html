@@ -3,20 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Luapol – Preparadores Policía Nacional</title>
+  <title>Luapol – Crea y gestiona tu propia academia de oposiciones</title>
 
+  <!-- Bootstrap 5.3 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  
   <style>
+    :root {
+      --primary-color: #0d6efd;
+      --primary-hover: #0b5ed7;
+      --dark-navy: #00152e;
+      --brand-gradient: linear-gradient(90deg, #002244 0%, #0055aa 50%, #d4af37 100%);
+    }
+
     html { 
       scroll-behavior: smooth; 
     }
-    
+
     body { 
       overflow-x: hidden; 
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; 
-      color: #333; 
+      color: #333333; 
       line-height: 1.6; 
+      background-color: #ffffff;
     }
 
     .container { 
@@ -25,242 +34,295 @@
     }
 
     h1, h2, h3, h4, h5, h6 { 
-      text-align: center; 
-      font-weight: 700; 
+      font-weight: 800; 
+      letter-spacing: -0.02em;
     }
 
     /* BARRA DE NAVEGACIÓN */
     .navbar { 
       padding: 0.8rem 0; 
-      border-bottom: 4px solid;
-      border-image: linear-gradient(90deg, #002244 0%, #0055aa 50%, #d4af37 100%) 1;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      border-bottom: 4px solid transparent;
+      border-image: var(--brand-gradient) 1;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
     }
 
     .navbar-brand { 
       font-size: 1.6rem; 
-      letter-spacing: 1px; 
+      letter-spacing: 1.5px; 
     }
 
     .navbar-logo {
-      height: 1.8rem; 
-      width: auto; 
+      height: 2rem; 
+      width: auto;   
       margin-right: 10px; 
       vertical-align: middle; 
     }
 
     /* SECCIÓN HERO (ENCABEZADO PRINCIPAL) */
     .hero { 
-      padding: clamp(3.5rem, 10vh, 7rem) 0;
-      background-color: #00152e; 
-      background-image: linear-gradient(rgba(0, 15, 35, 0.92), rgba(0, 15, 35, 0.92)), url('img/fondo2.png');
+      padding: clamp(4rem, 10vh, 7.5rem) 0;
+      background-color: var(--dark-navy); 
+      background-image: linear-gradient(rgba(0, 15, 35, 0.88), rgba(0, 15, 35, 0.88)), url('img/fondo.png');
       background-size: cover;
-      background-position: center center;
+      background-position: center;
       background-repeat: no-repeat;
       position: relative;
       color: #ffffff !important;
     }
 
     .hero h1 { 
-      font-size: clamp(1.9rem, 5vw, 3.8rem) !important; 
-      margin-bottom: 1.5rem !important; 
+      font-size: clamp(2.2rem, 5vw, 3.8rem) !important; 
+      margin-bottom: 1.5rem; 
       text-align: center !important;
       color: #ffffff !important;
-      font-weight: 800;
-      line-height: 1.25;
-      word-wrap: break-word; 
+      line-height: 1.2;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
     }
 
     .hero p.lead { 
-      font-size: clamp(0.95rem, 2.5vw, 1.2rem); 
+      font-size: clamp(1rem, 2vw, 1.25rem); 
       max-width: 850px; 
       margin: 0 auto 2.5rem auto !important; 
       text-align: center !important; 
-      color: rgba(255, 255, 255, 0.9) !important;
+      color: rgba(255,255,255,0.9) !important;
       line-height: 1.6;
-      padding: 0 0.5rem;
     }
 
     .promo-block { 
       text-align: center !important; 
-      width: 100%;
       max-width: 800px; 
       margin: 0 auto; 
     }
 
-    /* BOTONES CTA PRINCIPALES */
-    .btn-cta { 
-      font-size: clamp(0.95rem, 2vw, 1.1rem) !important; 
-      padding: 1rem 2rem !important; 
+    /* BOTONES CTA */
+    .btn-cta-primary { 
+      font-size: clamp(1rem, 1.8vw, 1.15rem) !important; 
+      padding: 0.9rem 2rem !important; 
       font-weight: 700;
       border-radius: 0.6rem;
-      transition: transform 0.2s, background-color 0.2s;
-      background-color: #0d6efd !important;
-      border: 1px solid #0d6efd !important;
-      color: #ffffff !important;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      width: 100%;
-      max-width: 340px;
-      margin: 0 auto;
+      transition: all 0.25s ease;
+      background-color: var(--primary-color) !important; 
+      border: 1px solid var(--primary-color) !important;
+      color: #ffffff !important; 
+      box-shadow: 0 4px 15px rgba(13, 110, 253, 0.4);
     }
 
-    .btn-cta:hover { 
+    .btn-cta-primary:hover { 
       transform: translateY(-2px); 
-      background-color: #0b5ed7 !important;
+      background-color: var(--primary-hover) !important;
+      box-shadow: 0 6px 20px rgba(13, 110, 253, 0.6);
+    }
+
+    .btn-cta-outline {
+      font-size: clamp(1rem, 1.8vw, 1.15rem) !important; 
+      padding: 0.9rem 2rem !important; 
+      font-weight: 700;
+      border-radius: 0.6rem;
+      transition: all 0.25s ease;
+      border: 2px solid rgba(255, 255, 255, 0.8) !important;
       color: #ffffff !important;
+    }
+
+    .btn-cta-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1) !important;
+      border-color: #ffffff !important;
+      transform: translateY(-2px);
     }
 
     .especialistas-tag {
-      margin-top: 2.5rem !important;
-      text-align: center;
+      margin-top: 2rem;
       text-transform: uppercase;
       letter-spacing: 2px;
       font-weight: 700;
-      font-size: clamp(0.75rem, 1.5vw, 0.85rem);
-      color: rgba(255, 255, 255, 0.75);
-      padding: 0 1rem;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.7);
     }
 
-    /* CAJA DE TARIFA PROFESIONAL */
-    .tarifa-container {
-      background-color: #ffffff; 
-      padding: 50px 20px; 
-      text-align: center; 
-      border-bottom: 1px solid #eee; 
-      display: flex; 
-      justify-content: center; 
-      position: relative;
+    /* PUNTOS DE DOLOR (ANTES VS AHORA) */
+    .seccion-dolor {
+      padding: 5rem 0;
+      background-color: #ffffff;
     }
 
-    .tarifa-card {
-      display: inline-block; 
-      border: 2px solid #0d6efd; 
-      border-radius: 15px; 
-      padding: 0; 
-      background-color: #f8f9fa; 
-      box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
-      width: 100%; 
-      max-width: 600px; 
-      overflow: hidden; 
-      position: relative;
+    .caja-dolor {
+      border-radius: 1rem;
+      padding: 2.2rem 2rem;
+      height: 100%;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+      transition: transform 0.2s ease;
     }
 
-    .tarifa-header {
-      background-color: #0d6efd; 
-      padding: 20px; 
-      display: flex; 
-      justify-content: center; 
-      align-items: center;
-    }
-
-    .tarifa-title {
-      margin: 0 !important; 
-      font-weight: 700 !important; 
-      color: #ffffff !important; 
-      text-transform: uppercase; 
-      letter-spacing: 2px; 
-      font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important; 
-      text-align: center !important; 
-      width: 100%;
-    }
-
-    .tarifa-body {
-      padding: 35px 20px; 
-      display: flex; 
-      flex-direction: column; 
-      align-items: center; 
-      justify-content: center;
-    }
-
-    .promo-badge {
-      background-color: #ffc107; 
-      color: #000; 
-      padding: 5px 15px; 
-      border-radius: 20px; 
-      font-weight: 800; 
-      font-size: 0.85rem; 
-      text-transform: uppercase; 
-      margin-bottom: 15px; 
-      border: 1px solid #e0a800;
-    }
-
-    .precio-principal {
-      margin: 0 !important; 
-      font-size: clamp(2.8rem, 6vw, 4rem); 
-      color: #002244 !important; 
-      font-weight: 800; 
-      line-height: 1; 
-      text-align: center !important;
-    }
-
-    .precio-sub {
-      font-size: clamp(1rem, 2vw, 1.3rem); 
-      font-weight: 400; 
-      color: #666; 
-      vertical-align: middle;
-    }
-
-    /* SECCIÓN DE TARJETAS / HERRAMIENTAS */
-    .seccion-herramientas { 
-      padding: 4rem 0; 
-      background-color: #f8f9fa;
-    }
-
-    .titulo-seccion-separado {
-      margin-bottom: 2.5rem !important; 
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: clamp(1.4rem, 3vw, 2.2rem);
-    }
-
-    .card { 
-      border: none; 
-      border-radius: 1rem; 
-      padding: 1.5rem; 
-      height: 100%; 
-      transition: box-shadow 0.3s ease, transform 0.2s ease; 
-    }
-
-    .card:hover { 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important; 
+    .caja-dolor:hover {
       transform: translateY(-3px);
     }
 
-    .card h6 { 
-      color: #0d6efd; 
-      font-size: 1.05rem;     
-      margin-bottom: 1rem; 
+    .caja-antes {
+      background-color: #fff8f8;
+      border: 1px solid #fecaca;
+      border-left: 6px solid #ef4444;
+    }
+
+    .caja-ahora {
+      background-color: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-left: 6px solid #22c55e;
+    }
+
+    .caja-dolor ul {
+      padding-left: 1.2rem;
+      margin-bottom: 0;
+    }
+
+    .caja-dolor li {
+      font-size: 0.95rem;
+      margin-bottom: 0.8rem;
+    }
+
+    /* SECCIÓN HERRAMIENTAS / CARDS */
+    .seccion-herramientas { 
+      padding: 5rem 0; 
+      background-color: #f8fafc;
+    }
+
+    .card-feature { 
+      border: 1px solid #e2e8f0; 
+      border-radius: 1rem; 
+      padding: 1.8rem 1.5rem; 
+      height: 100%; 
+      background: #ffffff;
+      transition: all 0.3s ease; 
+    }
+
+    .card-feature:hover { 
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08) !important; 
+      transform: translateY(-4px);
+      border-color: #cbd5e1;
+    }
+
+    .card-feature h6 { 
+      color: var(--primary-color); 
+      font-size: 1.1rem;        
+      margin-bottom: 0.8rem; 
       text-transform: uppercase; 
-      letter-spacing: 0.05em;    
+      letter-spacing: 0.03em;    
       text-align: center; 
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    .card p.small { 
-      font-size: 0.95rem; 
-      color: #444; 
-      margin-bottom: 1rem; 
-      text-align: left; 
+    .card-feature p.small { 
+      font-size: 0.92rem; 
+      color: #64748b; 
+      margin-bottom: 1.2rem; 
+      text-align: center; 
     }
 
-    .card ul { 
+    .card-feature ul { 
       padding-left: 1.2rem; 
       margin-bottom: 0; 
     }
 
-    .card ul li { 
+    .card-feature ul li { 
       font-size: 0.88rem; 
-      color: #555; 
+      color: #334155; 
       margin-bottom: 0.6rem; 
-      text-align: left; 
     }
 
-    /* GALERÍA DE CAPTURAS */
+    .titulo-seccion-separado {
+      margin-bottom: 3rem !important; 
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+    }
+
+    /* SECCIÓN PRECIOS Y TARIFA */
+    .tarifa-wrapper {
+      background-color: #ffffff; 
+      padding: 5rem 1.25rem; 
+      text-align: center; 
+      border-bottom: 1px solid #e2e8f0; 
+      display: flex; 
+      justify-content: center; 
+    }
+
+    .tarifa-card {
+      border: 2px solid var(--primary-color); 
+      border-radius: 1.2rem; 
+      padding: 0; 
+      background-color: #ffffff; 
+      box-shadow: 0 15px 35px rgba(13, 110, 253, 0.1); 
+      width: 100%; 
+      max-width: 580px; 
+      overflow: hidden; 
+    }
+
+    .tarifa-header {
+      background-color: var(--primary-color); 
+      padding: 1.5rem 1rem; 
+    }
+
+    .tarifa-header p {
+      margin: 0 !important; 
+      font-weight: 800 !important; 
+      color: #ffffff !important; 
+      text-transform: uppercase; 
+      letter-spacing: 2px; 
+      font-size: 1.25rem !important; 
+      text-align: center !important; 
+    }
+
+    .tarifa-body {
+      padding: 2.5rem 2rem; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+    }
+
+    .tarifa-badge {
+      background-color: #fef08a; 
+      color: #854d0e; 
+      padding: 6px 16px; 
+      border-radius: 20px; 
+      font-weight: 800; 
+      font-size: 0.8rem; 
+      text-transform: uppercase; 
+      margin-bottom: 1.2rem; 
+      border: 1px solid #fde047;
+    }
+
+    .tarifa-precio {
+      margin: 0 !important; 
+      font-size: 3.8rem; 
+      color: var(--dark-navy) !important; 
+      font-weight: 800; 
+      line-height: 1; 
+    }
+
+    .tarifa-precio span {
+      font-size: 1.2rem; 
+      font-weight: 600; 
+      color: #64748b; 
+    }
+
+    .tarifa-subprecio {
+      margin: 0.8rem 0 0 0 !important; 
+      color: var(--primary-color) !important; 
+      font-size: 1.15rem; 
+      font-weight: 700; 
+    }
+
+    .tarifa-condiciones {
+      margin: 1.8rem 0 0 0 !important; 
+      color: #64748b !important; 
+      font-size: 0.9rem; 
+      font-style: italic;
+      border-top: 1px solid #f1f5f9; 
+      width: 90%; 
+      padding-top: 1.2rem;
+    }
+
+    /* GALERÍA / CAPTURAS */
     .bloque-imagen { 
-      margin-top: 3rem; 
+      margin-top: 2.5rem; 
       margin-bottom: 4rem; 
       text-align: center; 
     }
@@ -270,32 +332,56 @@
       max-width: 900px !important; 
       height: auto;
       display: block;
-      margin: 0 auto 1.5rem auto; 
+      margin: 0 auto 1.2rem auto; 
       border-radius: 0.8rem;
-      box-shadow: 0 12px 35px rgba(0,0,0,0.1); 
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1); 
     }
 
     .bloque-imagen p.caption { 
       text-align: center !important; 
-      margin-top: 1rem; 
-      font-size: 1.05rem; 
-      color: #555; 
+      font-size: 1rem; 
+      color: #475569; 
       font-weight: 600;
       max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
     }
 
-    /* PIE DE PÁGINA */
+    /* FAQ ACCORDION */
+    .accordion-item {
+      border: 1px solid #e2e8f0;
+      border-radius: 0.8rem !important;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .accordion-button {
+      font-weight: 700;
+      color: #1e293b;
+      padding: 1.2rem;
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: var(--primary-color);
+      background-color: #f0f7ff;
+      box-shadow: none;
+    }
+
+    .accordion-body {
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
     .footer-legal { 
       padding: 3rem 0; 
-      border-top: 1px solid #eee; 
-      background: #fff; 
-      width: 100%;
+      border-top: 1px solid #e2e8f0; 
+      background: #ffffff; 
     }
 
     .footer-link { 
-      color: #333; 
+      color: #334155; 
       text-decoration: underline; 
       font-size: 0.85rem; 
     }
@@ -303,31 +389,18 @@
     .instagram-icon { 
       width: 28px !important; 
       height: auto;
-      transition: opacity 0.3s; 
+      transition: opacity 0.2s; 
     }
     
     .instagram-icon:hover {
-      opacity: 0.8;
-    }
-
-    /* ADAPTACIONES RESPONSIVAS */
-    @media (max-width: 575.98px) {
-      .hero {
-        padding: 3rem 0;
-      }
-      .btn-cta {
-        width: 100%;
-      }
-      .img-grande {
-        max-width: 100% !important; 
-      }
+      opacity: 0.75;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAVEGACIÓN -->
+  <!-- NAVBAR -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
     <div class="container">
       <a class="navbar-brand fw-bold d-flex align-items-center" href="https://www.luapol.com/">
@@ -338,13 +411,8 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="menu">
-        <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="https://www.luapol.com/">LUAPOL ALUMNOS</a></li>
-          <li class="nav-item"><a class="nav-link active" href="/preparadores">LUAPOL PREPARADORES</a></li>
-        </ul>
-        <div class="d-flex flex-column flex-lg-row gap-2 ms-lg-4">
-          <a href="https://app.luapol.com/login/" class="btn btn-primary px-4">ACCESO ALUMNOS</a>
-          <a href="https://app.luapol.com/login/" class="btn btn-outline-light px-4">ACCESO PREPARADORES</a>
+        <div class="ms-auto mt-3 mt-lg-0">
+          <a href="https://app.luapol.com/login/" class="btn btn-primary fw-bold px-4">ACCESO PREPARADORES</a>
         </div>
       </div>
     </div>
@@ -353,105 +421,103 @@
   <!-- 1. ENCABEZADO PRINCIPAL (HERO SECTION) -->
   <section class="hero">
     <div class="container">
-      <h1>LUAPOL <span style="color: #4da3ff !important;">PREPARADORES</span></h1>
+      <h1>LANZA Y GESTIONA TU PROPIA ACADEMIA DE OPOSICIONES EN MINUTOS</h1>
       
       <p class="lead">
-        Plataforma profesional de test diseñada para que academias y preparadores tengan <strong>control total</strong> sobre la formación teórica de Escala Básica. Supervisa el rendimiento grupal e individual mediante análisis avanzados de progreso y gestión de contenido exclusivo.
+        Ahorra tiempo en la creación de exámenes tipo test, organiza tus materiales y haz un seguimiento completo de tus alumnos en una sola plataforma profesional.
       </p>
 
       <div class="promo-block">
         <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-          <a href="https://app.luapol.com/login/" class="btn btn-cta">
-            ACCESO PREPARADORES
-          </a>
-          <a href="https://app.luapol.com/register/preparadores" class="btn btn-cta">
-            REGISTRO PREPARADORES
-          </a>
+          <a href="https://app.luapol.com/register/preparadores" class="btn btn-cta-primary">CREA TU ACADEMIA GRATIS 14 DÍAS</a>
+          <a href="#demo" class="btn btn-cta-outline">PIDE UNA DEMO PERSONALIZADA</a>
         </div>
         <div class="especialistas-tag">
-          ESPECIALISTAS EN POLICÍA NACIONAL
+          PLATAFORMA ESPECIALIZADA PARA PREPARADORES
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 2. TARIFA PROFESIONAL -->
-  <div class="tarifa-container">
-    <div class="tarifa-card">
-      <div class="tarifa-header">
-        <p class="tarifa-title">TARIFA PROFESIONAL</p>
-      </div>
-      
-      <div class="tarifa-body">
-        <div class="promo-badge">
-          🎁 ¡PROMO LANZAMIENTO!
+  <!-- 2. PUNTOS DE DOLOR (SOLUCIONES) -->
+  <section class="seccion-dolor">
+    <div class="container">
+      <h2 class="titulo-seccion-separado text-center">EL CAMBIO QUE TU ACADEMIA NECESITA</h2>
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-5">
+          <div class="caja-dolor caja-antes">
+            <h4 class="text-danger mb-3 fw-bold">❌ ANTES</h4>
+            <ul>
+              <li>Pérdida de horas corrigiendo exámenes a mano o en plantillas.</li>
+              <li>Materiales y PDFs dispersos enviados por correo o WhatsApp.</li>
+              <li>Falta de control real sobre si los alumnos estudian o progresan.</li>
+            </ul>
+          </div>
         </div>
-
-        <h2 class="precio-principal">
-          4€ <span class="precio-sub">/ ALUMNO PRIMER MES</span>
-        </h2>
-        
-        <p style="margin: 10px 0 0 0 !important; color: #0d6efd !important; font-size: 1.1rem; font-weight: 700; text-align: center !important;">
-          Luego solo 8€ / alumno al mes
-        </p>
-
-        <p style="margin: 25px 0 0 0 !important; color: #6c757d !important; font-size: 0.95rem; font-weight: 500; text-align: center !important; border-top: 1px solid #ddd; width: 85%; padding-top: 15px;">
-          Sin cuotas de alta · Sin permanencia · Todo incluido
-        </p>
+        <div class="col-lg-5">
+          <div class="caja-dolor caja-ahora">
+            <h4 class="text-success mb-3 fw-bold">✅ AHORA CON LUAPOL</h4>
+            <ul>
+              <li>Automatización total de simulacros y correcciones inmediatas.</li>
+              <li>Planes de estudio organizados y biblioteca centralizada.</li>
+              <li>Estadísticas avanzadas en tiempo real del progreso individual y grupal.</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- 3. CARACTERÍSTICAS Y HERRAMIENTAS -->
+  <!-- 3. FUNCIONALIDADES CLAVE -->
   <section class="seccion-herramientas">
     <div class="container">
-      <h2 class="titulo-seccion-separado">🚀 GESTIONA TU ACADEMIA CON <span class="text-primary">HERRAMIENTAS PROFESIONALES</span></h2>
+      <h2 class="titulo-seccion-separado text-center">FUNCIONALIDADES CLAVE</h2>
       <div class="row g-4 justify-content-center"> 
-
-        <div class="col-md-6 col-lg-3">
-          <div class="card shadow-sm">
-            <h6>PLATAFORMA EXCLUSIVA</h6>
-            <p class="small">Utiliza nuestros test y añade tus propias preguntas.</p>
+        
+        <div class="col-lg-3 col-md-6">
+          <div class="card-feature">
+            <h6>CARGA DE PREGUNTAS SIN ESFUERZO</h6>
+            <p class="small">Subida masiva e individual para tener tu base de datos lista rápidamente.</p>
             <ul>
-              <li>Utiliza la base de preguntas de LUAPOL.</li>
-              <li>Añade tus propias preguntas de forma exclusiva para tus alumnos.</li>
-              <li>Crea tus propios supuestos en Operativo Élite.</li>
+              <li>Importación masiva mediante plantillas simples.</li>
+              <li>Creación de preguntas personalizadas en minutos.</li>
+              <li>Edición rápida y retroalimentación para cada respuesta.</li>
             </ul>
           </div>
         </div>
         
-        <div class="col-md-6 col-lg-3">
-          <div class="card shadow-sm">
-            <h6>CONTROL DE ALUMNOS</h6>
-            <p class="small">Supervisa el rendimiento grupal desde un panel centralizado.</p>
+        <div class="col-lg-3 col-md-6">
+          <div class="card-feature">
+            <h6>BIBLIOTECA DE MATERIALES</h6>
+            <p class="small">Agrupa documentos, vídeos y enlaces web organizados para tus alumnos.</p>
             <ul>
-              <li>Control total de la actividad y resultados de cada grupo.</li>
-              <li>Analiza la evolución mediante gráficos e indicadores claros.</li>
-              <li>Visualiza rankings y comparativas internas actualizadas.</li>
+              <li>Centralización de temarios, PDFs y esquemas.</li>
+              <li>Enlace de vídeos explicativos y clases grabadas.</li>
+              <li>Acceso estructurado por temas y bloques.</li>
             </ul>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3">
-          <div class="card shadow-sm">
-            <h6>ANÁLISIS INDIVIDUAL</h6>
-            <p class="small">Seguimiento detallado por cada opositor de tu academia.</p>
+        <div class="col-lg-3 col-md-6">
+          <div class="card-feature">
+            <h6>PLANES DE ESTUDIO INTELIGENTES</h6>
+            <p class="small">Configura la metodología que mejor se adapte a tu grupo.</p>
             <ul>
-              <li>Identifica los temas con mayor tasa de error por alumno.</li>
-              <li>Consulta históricos de intentos, tiempos y calificaciones.</li>
-              <li>Accede a los resultados detallados de cada test realizado.</li>
+              <li><strong>Simulacro:</strong> Exámenes automáticos idénticos para el grupo.</li>
+              <li><strong>Reto:</strong> Objetivos y distribución de contenidos por bloques.</li>
+              <li><strong>Libre:</strong> Creación flexible por temas y cantidad de preguntas.</li>
             </ul>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-3">
-          <div class="card shadow-sm">
-            <h6>FORO EXCLUSIVO</h6>
-            <p class="small">Comunicación directa en un entorno privado y profesional.</p>
+        <div class="col-lg-3 col-md-6">
+          <div class="card-feature">
+            <h6>ANALÍTICA Y SEGUIMIENTO</h6>
+            <p class="small">Estadísticas grupales e individuales para revisar el progreso.</p>
             <ul>
-              <li>Resuelve dudas y publica avisos importantes para tus grupos.</li>
-              <li>Modera y gestiona los mensajes y temas de tus alumnos.</li>
-              <li>Espacio privado para mejorar la comunicación y el seguimiento.</li>
+              <li>Seguimiento en detalle de cada examen realizado.</li>
+              <li>Identificación de fallos más frecuentes por tema.</li>
+              <li>Métricas de evolución del grupo en tiempo real.</li>
             </ul>
           </div>
         </div>
@@ -460,16 +526,43 @@
     </div> 
   </section>
 
-  <!-- 4. SECCIÓN VIDEO -->
-  <section class="py-5 bg-white">
+  <!-- 4. PRECIOS -->
+  <section class="tarifa-wrapper">
+    <div class="tarifa-card">
+      <div class="tarifa-header">
+        <p>TARIFA BASE Y ESCALABLE</p>
+      </div>
+      <div class="tarifa-body">
+        <div class="tarifa-badge">
+          💡 TRANSPARENCIA TOTAL
+        </div>
+        <h2 class="tarifa-precio">
+          49€ <span>/ MES</span>
+        </h2>
+        <p class="tarifa-subprecio">
+          Incluye hasta 20 alumnos
+        </p>
+        <p class="fw-bold mt-3 mb-0 text-dark">
+          Escalabilidad sin riesgo: solo +2,50 € / alumno adicional al mes
+        </p>
+        <p class="tarifa-condiciones">
+          "Pagas solo por lo que usas a medida que tu academia crece"
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PRUEBA SOCIAL Y DEMOSTRACIÓN -->
+  <section class="py-5 bg-white" id="demo">
     <div class="container">
-      <h2 class="mb-4">CONOCE NUESTRA <span class="text-primary">PLATAFORMA</span></h2>
+      <h2 class="mb-2 text-center">MIRA LO FÁCIL QUE ES <span class="text-primary">EMPEZAR</span></h2>
+      <p class="text-center mb-4 text-muted">Descubre en este vídeo cómo crear un simulacro o subir una batería de preguntas.</p>
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="ratio ratio-16x9 shadow-lg" style="border-radius: 1rem; overflow: hidden;">
             <iframe 
               src="https://www.youtube.com/embed/icgiDJSwrB0" 
-              title="YouTube video player" 
+              title="Demo Luapol Preparadores" 
               style="border:0;" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
               allowfullscreen>
@@ -480,38 +573,73 @@
     </div>
   </section>
 
-  <!-- 5. GALERÍA / CÓMO FUNCIONA -->
-  <section class="py-5">
+  <!-- CAPTURAS DE LA PLATAFORMA -->
+  <section class="py-5 bg-light">
     <div class="container">
-      <h2 class="mb-5">📊 ASÍ FUNCIONA <span class="text-primary">LUAPOL PARA PREPARADORES:</span></h2>
+      <h2 class="mb-5 text-center">ASÍ SE VE TU PANEL DE <span class="text-primary">CONTROL:</span></h2>
 
       <div class="bloque-imagen">
-        <img src="img/2editarpregunta1.png" alt="Edición 1" class="img-grande">
-        <img src="img/2editarpregunta2.png" alt="Edición 2" class="img-grande">
-        <p class="caption">Crea tus propias preguntas para los test y los juegos.</p>
+        <img src="img/2editarpregunta1.png" alt="Gestión de preguntas" class="img-grande">
+        <p class="caption">Subida masiva e individual de preguntas con explicaciones detalladas.</p>
       </div>
 
       <div class="bloque-imagen">
-        <img src="img/2seguimiento3.png" alt="Seguimiento" class="img-grande">
-        <img src="img/2usuariosregistrados4.png" alt="Usuarios" class="img-grande">
-        <p class="caption">Gestión y control de alumnos registrados en el sistema con listados detallados.</p>
+        <img src="img/2analisisglobal5.png" alt="Analítica y seguimiento" class="img-grande">
+        <p class="caption">Análisis y seguimiento en tiempo real del desempeño de cada opositor.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="bloque-imagen">
-        <img src="img/2analisisglobal5.png" alt="Análisis Global" class="img-grande">
-        <img src="img/2seguimientoestudio6.png" alt="Individual" class="img-grande">
-        <p class="caption">Control individualizado y detallado de cada opositor mediante análisis de fallos y progreso.</p>
-      </div>
+  <!-- PREGUNTAS FRECUENTES (FAQ) -->
+  <section class="py-5 bg-white">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="mb-4 text-center">PREGUNTAS <span class="text-primary">FRECUENTES</span></h2>
+      
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              ¿Cómo puedo migrar mis preguntas actuales a la plataforma?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Disponemos de plantillas de importación masiva para cargar tus preguntas rápidamente desde archivos Excel o Word, además de la opción de subida manual simplificada.
+            </div>
+          </div>
+        </div>
 
-      <div class="bloque-imagen">
-        <img src="img/2foro7.png" alt="Foro" class="img-grande">
-        <p class="caption">Participa y modera tu propio foro de dudas privado para tus grupos.</p>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              ¿Hay un límite de alumnos que pueda dar de alta?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              No hay límite. La tarifa base incluye los primeros 20 alumnos y el sistema se adapta de forma automática sumando solo 2,50 €/mes por cada alumno adicional.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              ¿Cómo gestiono los pagos o cobros a mis estudiantes?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Tú mantienes la independencia total en el cobro a tus alumnos. Nosotros solo te facturamos la tarifa de uso del sistema según la cantidad de alumnos activos que tengas.
+            </div>
+          </div>
+        </div>
       </div>
 
     </div>
   </section>
-  
-  <!-- PIE DE PÁGINA -->
+
+  <!-- FOOTER -->
   <footer class="footer-legal">
     <div class="container">
       <div class="row align-items-center text-center text-md-start">
@@ -533,6 +661,7 @@
     </div>
   </footer>
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
