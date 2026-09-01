@@ -51,11 +51,11 @@
       font-size: 0.85rem;
     }
 
-    /* HERO ESTILO COMERCIAL CON TONOS ACADÉMICOS */
+    /* HERO CON IMAGEN CASI PURA (FILTRO MUY SUAVE) */
     .hero { 
-      padding: 3.5rem 0 4rem 0;
+      padding: 4rem 0 4.5rem 0;
       background-color: var(--academic-navy); 
-      background-image: linear-gradient(rgba(11, 37, 69, 0.92), rgba(11, 37, 69, 0.92)), url('img/fondo.png');
+      background-image: linear-gradient(rgba(11, 37, 69, 0.15), rgba(11, 37, 69, 0.15)), url('img/fondo.png');
       background-size: cover;
       background-position: center;
       color: #ffffff;
@@ -63,7 +63,7 @@
     }
 
     .hero-badge {
-      background-color: var(--academic-gold);
+      background-color: var(--academic-navy);
       color: #ffffff;
       font-weight: 900;
       font-size: 0.85rem;
@@ -73,6 +73,7 @@
       margin-bottom: 1.2rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
+      border: 1px solid var(--academic-gold);
     }
 
     .hero h1 { 
@@ -82,16 +83,18 @@
       margin-bottom: 1rem;
       text-transform: uppercase;
       color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
     }
 
     .hero-box-dashed {
       border: 2px dashed var(--academic-gold);
-      background: rgba(255, 255, 255, 0.06);
+      background: rgba(11, 37, 69, 0.75); /* Fondo semitransparente oscuro solo tras el texto para máxima legibilidad */
       border-radius: 0.4rem;
       padding: 1.5rem;
       max-width: 800px;
       margin: 0 auto 2rem auto;
       color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
 
     /* BOTÓN VERDE ESMERALDA DE ACCIÓN */
@@ -108,7 +111,7 @@
       text-transform: uppercase;
       letter-spacing: 0.5px;
       transition: all 0.2s;
-      box-shadow: 0 4px 12px rgba(21, 128, 61, 0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
     .btn-action-green:hover {
@@ -117,7 +120,7 @@
     }
 
     .btn-dark-outline {
-      background-color: transparent;
+      background-color: rgba(11, 37, 69, 0.85);
       color: #ffffff !important;
       font-weight: 800;
       padding: 0.9rem 1.8rem;
@@ -127,6 +130,7 @@
       display: inline-block;
       text-transform: uppercase;
       font-size: 0.95rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
     }
 
     .btn-dark-outline:hover {
@@ -283,7 +287,7 @@
     </div>
   </nav>
 
-  <!-- HERO PROMOCIONAL CON FONDO.PNG -->
+  <!-- HERO PROMOCIONAL CON FONDO PRÁCTICAMENTE LIMPIO -->
   <section class="hero text-center">
     <div class="container">
       <span class="hero-badge"><i class="bi bi-mortarboard-fill me-1"></i> Plataforma para Preparadores</span>
