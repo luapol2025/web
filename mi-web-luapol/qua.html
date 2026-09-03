@@ -34,13 +34,14 @@
       border-bottom: 3px solid var(--academic-navy);
       padding: 0.8rem 0;
     }
-
-    .navbar-logo {
-      height: 2.3rem; 
-      width: auto;   
-      margin-right: 10px; 
-    }
-
+    
+.navbar-logo {
+  height: 1.2em; /* Mismo alto que la tipografía */
+  width: auto;   
+  margin-right: 0.35rem; 
+  vertical-align: sub; /* Alineación perfecta con el texto LUAPOL */
+}
+ 
     .btn-top-acc {
       background-color: var(--academic-navy);
       color: #ffffff !important;
@@ -280,12 +281,14 @@
 <body>
 
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center fw-bold text-dark" href="https://www.luapol.com/">
-        <img src="img/logo.png" alt="Luapol" class="navbar-logo">
-        <span class="fw-black fs-4" style="color: var(--academic-navy);">LUAPOL</span>
-      </a>
+<a class="navbar-brand d-flex align-items-center text-dark text-decoration-none m-0" href="https://www.luapol.com/">
+  <span class="fw-black fs-4 d-flex align-items-center" style="color: var(--academic-navy);">
+    <img src="shield-alt-solid.png" alt="Luapol" class="navbar-logo">
+    LUAPOL
+  </span>
+  <span class="brand-tagline text-uppercase d-none d-md-inline ms-2">– CREA TU PROPIA ACADEMIA</span>
+</a>
+      
       <div class="ms-auto">
         <a href="https://app.luapol.com/login/" class="btn btn-top-acc">
           <i class="bi bi-person-fill me-1"></i> ACCESO PREPARADORES
