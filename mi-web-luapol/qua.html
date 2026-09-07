@@ -531,63 +531,79 @@
 
     </div>
   </section>
-  
-<!-- FORMULARIO DE CONTACTO SIN RECARGA -->
-<form id="contactForm" action="https://formspree.io/f/xzdvyklr" method="POST" class="card p-4 shadow-sm border" style="border-radius: 0.5rem;">
-  <div class="mb-3">
-    <label for="userEmail" class="form-label fw-bold">Tu Email de contacto <span class="text-danger">*</span></label>
-    <div class="input-group">
-      <span class="input-group-text bg-light"><i class="bi bi-envelope-fill text-muted"></i></span>
-      <input type="email" class="form-control" id="userEmail" name="email" placeholder="ejemplo@correo.com" required>
+<!-- FORMULARIO SOLICITUD DE INFORMACIÓN / CONTACTO -->
+  <section class="py-5" style="background-color: #ffffff;">
+    <div class="container" style="max-width: 650px;">
+      <h2 class="section-head">¿QUIERES MÁS INFORMACIÓN?</h2>
+      <p class="text-center text-muted mb-4 fs-6">
+        Déjanos tu correo electrónico y nos pondremos en contacto contigo para resolver tus dudas.
+      </p>
+
+      <form id="contactForm" action="https://formspree.io/f/xzdvyklr" method="POST" class="card p-4 shadow-sm border" style="border-radius: 0.5rem;">
+        <div class="mb-3">
+          <label for="userEmail" class="form-label fw-bold">Tu Email de contacto <span class="text-danger">*</span></label>
+          <div class="input-group">
+            <span class="input-group-text bg-light"><i class="bi bi-envelope-fill text-muted"></i></span>
+            <input type="email" class="form-control" id="userEmail" name="email" placeholder="ejemplo@correo.com" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="userName" class="form-label fw-bold">Nombre o Academia (Opcional)</label>
+          <input type="text" class="form-control" id="userName" name="nombre" placeholder="Tu nombre o el de tu academia">
+        </div>
+
+        <div class="mb-3">
+          <label for="userMessage" class="form-label fw-bold">¿Tienes alguna duda en particular? (Opcional)</label>
+          <textarea class="form-control" id="userMessage" name="mensaje" rows="3" placeholder="Escribe aquí tu consulta..."></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn-action-primary w-100 text-center mt-2 border-0">
+          <i class="bi bi-send-fill me-1"></i> SOLICITAR INFORMACIÓN
+        </button>
+
+        <!-- Mensaje de respuesta -->
+        <div id="formStatus" class="mt-3 text-center fw-bold d-none"></div>
+      </form>
     </div>
-  </div>
+  </section>
 
-  <div class="mb-3">
-    <label for="userName" class="form-label fw-bold">Nombre o Academia (Opcional)</label>
-    <input type="text" class="form-control" id="userName" name="nombre" placeholder="Tu nombre o el de tu academia">
-  </div>
+  <script>
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("formStatus");
+    const btn = document.getElementById("submitBtn");
 
-  <div class="mb-3">
-    <label for="userMessage" class="form-label fw-bold">¿Tienes alguna duda en particular? (Opcional)</label>
-    <textarea class="form-control" id="userMessage" name="mensaje" rows="3" placeholder="Escribe aquí tu consulta..."></textarea>
-  </div>
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+      btn.disabled = true;
+      btn.innerHTML = "Enviando...";
 
-  <button type="submit" id="submitBtn" class="btn-action-primary w-100 text-center mt-2 border-0">
-    <i class="bi bi-send-fill me-1"></i> SOLICITAR INFORMACIÓN
-  </button>
+      try {
+        const data = new FormData(event.target);
+        const response = await fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
 
-  <div id="formStatus" class="mt-3 text-center fw-bold d-none"></div>
-</form>
-
-<script>
-  const form = document.getElementById("contactForm");
-  const status = document.getElementById("formStatus");
-  const btn = document.getElementById("submitBtn");
-
-  form.addEventListener("submit", async function(event) {
-    event.preventDefault();
-    btn.disabled = true;
-    btn.innerHTML = "Enviando...";
-
-    const data = new FormData(event.target);
-    const response = await fetch(event.target.action, {
-      method: form.method,
-      body: data,
-      headers: { 'Accept': 'application/json' }
+        if (response.ok) {
+          status.classList.remove("d-none", "text-danger");
+          status.classList.add("text-success");
+          status.innerHTML = "¡Muchas gracias! Hemos recibido tu mensaje correctamente.";
+          form.reset();
+          btn.innerHTML = "<i class='bi bi-check-lg'></i> ¡ENVIADO CON ÉXITO!";
+        } else {
+          throw new Error('Error en el envío');
+        }
+      } catch (error) {
+        status.classList.remove("d-none", "text-success");
+        status.classList.add("text-danger");
+        status.innerHTML = "Hubo un problema al enviar. Por favor, inténtalo de nuevo.";
+        btn.disabled = false;
+        btn.innerHTML = "<i class='bi bi-send-fill me-1'></i> SOLICITAR INFORMACIÓN";
+      }
     });
-
-    if (response.ok) {
-      status.classList.remove("d-none", "text-danger");
-      status.classList.add("text-success");
-      status.innerHTML = "¡Gracias! Hemos recibido tu mensaje correctamente.";
-      form.reset();
-      btn.innerHTML = "<i class='bi bi-check-lg'></i> ENVIADO";
-    } else {
-      status.classList.remove("d-none", "text-success");
-      status.classList.add("text-danger");
-      status.innerHTML = "Hubo un problema al enviar el mensaje. Inténtalo de nuevo.";
-      btn.disabled = false;
-      btn.innerHTML = "<i class='bi bi-send-fill me-1'></i> SOLICITAR INFORMACIÓN";
+  </script>
     }
   });
 </script>
