@@ -3,288 +3,426 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Luapol – Test Policía Nacional</title>
+  <title>Luapol – Plataforma para Oposiciones</title>
 
+  <!-- Bootstrap 5.3 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
   <style>
-   
-    html { scroll-behavior: smooth; }
-    body { overflow-x: hidden; font-family: system-ui, -apple-system, sans-serif; color: #333; line-height: 1.6; }
-    
-    .container { padding-left: 1.25rem; padding-right: 1.25rem; }
-    h1, h2, h3, h4, h5, h6 { text-align: center; font-weight: 700; }
-    
-    p, li { text-align: justify; }
-
-    .navbar { padding: 1rem 0; }
-    .navbar-brand { font-size: 1.8rem; letter-spacing: 1px; }
-
-    .navbar-logo {
-      height: 1.8rem; 
-      width: auto;
-      margin-right: 12px; 
-      vertical-align: middle;
-      transition: transform 0.3s ease;
+    :root {
+      --academic-navy: #0B2545;       /* Azul marino profundo universitario */
+      --academic-gold: #C5A059;       /* Dorado / Oro antiguo institucional */
+      --academic-gold-light: #FBF7EE; /* Fondo dorado muy tenue */
+      --academic-green: #15803D;      /* Verde esmeralda */
+      --academic-dark: #1E293B;       /* Texto oscuro legible */
+      --academic-gray-bg: #F8FAFC;    /* Fondo claro de estudio */
+      --academic-border: #E2E8F0;     /* Bordes sutiles */
+      --faq-bg-closed: #EEF2F6;       /* Color de fondo para las FAQs no seleccionadas */
     }
 
-    .navbar-brand:hover .navbar-logo {
-      transform: scale(1.05);
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
+      color: var(--academic-dark); 
+      background-color: #ffffff;
     }
 
+    /* NAVBAR */
+    .navbar { 
+      background: #ffffff !important;
+      border-bottom: 3px solid var(--academic-navy);
+      padding: 0.8rem 0;
+    }
+    
+.navbar-logo {
+  height: 1.2em; /* Mismo alto que la tipografía */
+  width: auto;   
+  margin-right: 0.35rem; 
+  vertical-align: sub; /* Alineación perfecta con el texto LUAPOL */
+}
+
+    .brand-tagline {
+  font-size: 1.5rem; /* Mismo tamaño que LUAPOL */
+  color: #000000 !important;
+  font-weight: 800; /* Grosor destacado pero equilibrado */
+  letter-spacing: -0.02em;
+}
+    .btn-top-acc {
+      background-color: var(--academic-navy);
+      color: #ffffff !important;
+      font-weight: 800;
+      padding: 0.5rem 1.2rem;
+      border-radius: 0.2rem;
+      text-transform: uppercase;
+      font-size: 0.85rem;
+    }
+
+    /* HERO LIMPIO SIN RECUADRO CENTRAL */
     .hero { 
-      padding: clamp(4rem, 12vh, 8rem) 0;
-      background-color: #00152e; 
-      background-image: linear-gradient(rgba(0, 15, 35, 0.8), rgba(0, 15, 35, 0.8)), url('img/fondo.png');
+      padding: 5rem 0 5.5rem 0;
+      background-color: var(--academic-navy); 
+      background-image: linear-gradient(rgba(11, 37, 69, 0.45), rgba(11, 37, 69, 0.45)), url('img/fondo.png');
       background-size: cover;
-      background-position: center center;
-      background-repeat: no-repeat;
-      position: relative;
-      color: white !important;
+      background-position: center;
+      color: #ffffff;
+      border-bottom: 4px solid var(--academic-gold);
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 5px;
-      background: linear-gradient(90deg, #002244 0%, #0055aa 50%, #d4af37 100%);
-      z-index: 1;
+    .hero-badge {
+      background-color: var(--academic-navy);
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 0.85rem;
+      padding: 0.4rem 1rem;
+      border-radius: 0.2rem;
+      display: inline-block;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border: 1px solid var(--academic-gold);
     }
 
     .hero h1 { 
-      font-size: clamp(3rem, 10vw, 5.5rem) !important; 
-      line-height: 1; 
-      margin-bottom: 2rem; 
-      text-align: center !important;
-    }
-    
-    .hero p.lead { 
-      font-size: clamp(1.1rem, 3vw, 1.4rem); 
-      max-width: 900px; 
-      margin: 0 auto 3rem auto !important; 
-      text-align: justify !important; /* Justificado como pediste */
-      color: rgba(255,255,255,0.95) !important;
+      font-size: clamp(2.2rem, 4.5vw, 3.4rem); 
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
     }
 
-    .hero .promo-block { 
-      text-align: center !important; 
-      margin: 0 auto; 
+    .hero-text {
+      font-size: 1.25rem;
+      font-weight: 600;
+      max-width: 800px;
+      margin: 0 auto 2.5rem auto;
+      color: #ffffff;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+      line-height: 1.5;
     }
 
-    .btn-cta { 
-      font-size: clamp(1.2rem, 2.5vw, 1.5rem) !important; 
-      padding: 1rem 3.5rem !important; 
-      font-weight: 700;
+    /* NUEVO BOTÓN PRINCIPAL UNIFICADO EN AZUL Y DORADO */
+    .btn-action-primary {
+      background-color: var(--academic-navy);
+      color: #ffffff !important;
+      font-weight: 900;
+      font-size: 1.05rem;
+      padding: 0.9rem 2.2rem;
+      border-radius: 0.3rem;
+      border: 2px solid var(--academic-gold);
+      text-decoration: none;
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     }
 
-    .hero .precio-hero { color: #4da3ff !important; margin-bottom: 1.5rem; text-align: center; }
-    .hero .texto-descuento { color: white !important; margin-top: 1.8rem; text-align: center !important; }
-    .hero .texto-legal-hero { color: rgba(255,255,255,0.6) !important; text-align: center !important; }
+    .btn-action-primary:hover {
+      background-color: var(--academic-gold);
+      color: var(--academic-navy) !important;
+      transform: translateY(-2px);
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 5px;
-      background: linear-gradient(90deg, #002244 0%, #0055aa 50%, #d4af37 100%);
+    .btn-dark-outline {
+      background-color: rgba(11, 37, 69, 0.7);
+      color: #ffffff !important;
+      font-weight: 800;
+      padding: 0.9rem 1.8rem;
+      border-radius: 0.3rem;
+      border: 2px solid rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 0.95rem;
+      transition: all 0.2s ease-in-out;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     }
 
-    .hero h1 { color: white !important; text-align: center; }
-    .hero p.lead { color: rgba(255,255,255,0.9) !important; text-align: center; }
-    .hero .text-primary { color: #4da3ff !important; }
-    .hero .precio-hero { color: #4da3ff !important; text-align: center; }
-    .hero .precio-hero .precio { color: white; }
-    .hero .texto-descuento { color: white; text-align: center; }
-    .hero .texto-legal-hero { color: rgba(255,255,255,0.6) !important; text-align: center; }
+    .btn-dark-outline:hover {
+      background-color: #ffffff;
+      color: var(--academic-navy) !important;
+      border-color: #ffffff;
     }
 
-    .promo-block { 
-      text-align: center !important; 
-      max-width: 800px; 
-      margin: 0 auto; 
-    }
-    .precio-hero { font-size: clamp(1.2rem, 2.5vw, 1.5rem); margin-bottom: 1.5rem; }
-    .precio-hero .precio { font-size: 1.3em; }
-
-    .btn-cta { 
-      font-size: clamp(1.1rem, 2vw, 1.3rem); 
-      padding: 0.9rem 3rem; 
-      border-radius: 0.6rem; 
-      font-weight: 700;
-      transition: transform 0.2s;
-    }
-    .btn-cta:hover { transform: scale(1.03); }
-
-    .texto-descuento { font-size: 1.1rem; margin-top: 1.8rem; text-align: center !important; }
-    .texto-legal-hero { font-size: 0.95rem; color: #6c757d; margin-top: 0.6rem; text-align: center !important; }
-    
-    .seccion-herramientas { padding: 5rem 0; }
-    .card { border: none; border-radius: 1rem; padding: 1.5rem; height: 100%; transition: box-shadow 0.3s; }
-    .card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important; }
-    
-    .card h6 { 
-      color: #0d6efd; 
-      font-size: 1.05rem;      
-      margin-bottom: 1rem; 
-      text-transform: uppercase; 
-      letter-spacing: 0.01em;    
-      white-space: nowrap;      
-      overflow: hidden;         
-      text-overflow: ellipsis;  
+    /* SECCIONES Y CABECERAS */
+    .section-head {
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 1.6rem;
+      letter-spacing: -0.01em;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: var(--academic-navy);
     }
 
-    .card p.small { font-size: 0.95rem; color: #444; margin-bottom: 1rem; }
-    .card ul { padding-left: 1.1rem; margin-bottom: 0; }
-    .card ul li { font-size: 0.85rem; color: #555; margin-bottom: 0.6rem; }
+    /* TARJETAS TIPO OFERTA */
+.card-offer {
+  background: #ffffff;
+  border: 2px solid var(--academic-navy); 
+  border-radius: 0.4rem;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.05);
+}
 
-  
-    @media (max-width: 380px) {
-      .card h6 { font-size: 0.95rem; }
+    .card-offer-header {
+      background-color: var(--academic-navy);
+      color: #ffffff;
+      font-weight: 900;
+      padding: 0.8rem 1rem;
+      text-align: center;
+      font-size: 1.05rem;
+      text-transform: uppercase;
+      border-bottom: 2px solid var(--academic-gold);
     }
 
-  
-    .bloque-imagen { margin-top: 3rem; margin-bottom: 5rem; text-align: center; }
-    .bloque-imagen img { 
-      max-width: 95%; 
-      border-radius: 1rem; 
-      box-shadow: 0 15px 40px rgba(0,0,0,0.12); 
+    .card-offer-body {
+      padding: 1.5rem;
     }
-    .bloque-imagen p.caption { 
-      text-align: center !important; 
-      margin-top: 1.5rem; 
-      font-size: 1rem; 
-      color: #6c757d; 
-      font-weight: 500;
-    }
-    
-    @media (min-width: 992px) { .bloque-imagen img { max-width: 80%; } }
 
-    .footer-legal { padding: 3rem 0; border-top: 1px solid #eee; background: #fff; }
-    .footer-link { 
-      color: #333; 
-      text-decoration: underline; 
-      background: none; 
-      border: none; 
-      padding: 0; 
-      font-size: 0.9rem;
-      cursor: pointer;
+    .coupon-box {
+      border: 2px dashed var(--academic-navy);
+      background-color: var(--academic-gold-light);
+      border-radius: 0.3rem;
+      padding: 1rem;
+      text-align: center;
+      margin-bottom: 1.2rem;
     }
-    
-    .seccion-legal { border-top: 2px solid #0d6efd; }
-    .seccion-legal h3 { margin-top: 2.5rem; color: #0d6efd; font-size: 1.2rem; text-align: left; }
-    .seccion-legal ul { padding-left: 1.5rem; }
-    
-    .instagram-icon { width: 35px; transition: opacity 0.3s; }
-    .instagram-icon:hover { opacity: 0.7; }
 
-  .img-grande {
-    width: 100% !important;
-    max-width: 900px !important; 
-    display: block;
-    margin: 0 auto;
-  }
-    
+    .coupon-price {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--academic-navy);
+      line-height: 1;
+    }
+
+    .list-checks {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem 0;
+    }
+
+    .list-checks li {
+      margin-bottom: 0.6rem;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: #334155;
+    }
+
+    .list-checks li i {
+      color: var(--academic-navy);
+      font-size: 1.1rem;
+      line-height: 1;
+      font-weight: bold;
+    }
+
+    /* PUNTOS DE DOLOR (ANTES / AHORA) */
+    .box-before-after {
+      border-radius: 0.4rem;
+      padding: 1.5rem;
+      height: 100%;
+    }
+
+    .box-before {
+      background-color: #fef2f2;
+      border: 2px solid #ef4444;
+    }
+
+    .box-after {
+      background-color: #f0fdf4;
+      border: 2px solid var(--academic-green);
+    }
+
+    /* ACCORDION FAQ */
+    .accordion-item {
+      border: 1px solid #CBD5E1;
+      border-radius: 0.3rem !important;
+      margin-bottom: 0.8rem;
+      overflow: hidden;
+    }
+
+    .accordion-button.collapsed {
+      background-color: var(--faq-bg-closed);
+      color: var(--academic-navy);
+      font-weight: 800;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: var(--academic-navy);
+      color: #ffffff;
+      font-weight: 800;
+    }
+
+    .accordion-body {
+      background-color: #ffffff;
+      color: var(--academic-dark);
+    }
+
+    /* FOOTER ACADÉMICO */
+    footer {
+      background-color: var(--academic-navy);
+      color: #ffffff;
+      padding: 2rem 0;
+      font-size: 0.85rem;
+      border-top: 4px solid var(--academic-gold);
+    }
+
+    footer a {
+      color: var(--academic-gold);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    <div class="container">
-     <a class="navbar-brand fw-bold d-flex align-items-center" href="https://www.luapol.com/">
-  <img src="img/logo.png" alt="Logo Luapol" class="navbar-logo">
-  <span>LUAPOL</span>
-</a>
-      
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto mb-3 mb-lg-0">
-        <li class="nav-item"><a class="nav-link active" href="https://www.luapol.com/">LUAPOL ALUMNOS</a></li>
-        <li class="nav-item"><a class="nav-link" href="/preparadores">LUAPOL PREPARADORES</a></li>
-      </ul>
-      <div class="d-flex flex-column flex-lg-row gap-2 ms-lg-4">
-        <a href="https://app.luapol.com/login/" class="btn btn-primary px-4">ACCESO ALUMNOS</a>
-        <a href="https://app.luapol.com/login/" class="btn btn-primary px-4">ACCESO PREPARADORES</a>
-      </div>
-    </div>
+<nav class="navbar sticky-top">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a class="navbar-brand d-flex align-items-center text-decoration-none m-0" href="https://www.luapol.com/">
+      <img src="img/shield-alt-solid.png" alt="Luapol" class="navbar-logo" style="height: 1.8rem; width: auto; margin-right: 8px;">
+      <span class="text-uppercase" style="color: #000000 !important; font-weight: 800; font-size: 1.4rem; line-height: 1; opacity: 1 !important;">
+        LUAPOL<span class="d-none d-md-inline ms-2" style="color: #000000 !important; font-weight: 800; font-size: 1.4rem; opacity: 1 !important;">– CREA TU PROPIA ACADEMIA</span>
+      </span>
+    </a>
+    
+    <a href="https://app.luapol.com/login/" class="btn btn-top-acc">
+      <i class="bi bi-person-fill me-1"></i> ACCESO PREPARADORES
+    </a>
   </div>
 </nav>
- <section class="hero">
+
+  <!-- HERO PROMOCIONAL LIMPIO -->
+  <section class="hero text-center">
     <div class="container">
-      <h1 class="text-white">¡BIENVENIDO A <span style="color: #4da3ff !important;">LUAPOL</span>!</h1>
+      <span class="hero-badge"><i class="bi bi-mortarboard-fill me-1"></i> Plataforma para Preparadores</span>
+      <h1>LANZA Y GESTIONA TU PROPIA ACADEMIA<br>DE OPOSICIONES EN MINUTOS</h1>
       
-      <p class="lead">
-        Sabemos que el camino hacia la <strong>Policía Nacional</strong> no es fácil. Con nuestra <strong>plataforma de test para la prueba de conocimientos</strong> entrenas de forma inteligente para llegar preparado al día del examen oficial.
+      <p class="hero-text">
+        Ahorra tiempo en la creación de exámenes tipo test, organiza tus materiales de estudio y realiza un seguimiento preciso de tus alumnos en una sola plataforma.
       </p>
 
-      <div class="promo-block">
-        <div class="fw-bold precio-hero">
-          Prueba nuestra DEMO GRATIS sin registro<br>
-          o únete ahora por solo <span class="text-white" style="font-size: 1.3em;">1,99 €</span> el primer mes
-        </div>
-        
-        <div class="d-flex justify-content-center">
-          <a href="https://app.luapol.com/register/" class="btn btn-primary btn-lg btn-cta">¡Únete ya!</a>
-        </div>
-        
-        <p class="texto-descuento"><strong>Código descuento:</strong> EMPIEZAYA199</p>
-        <p class="texto-legal-hero">Date de baja sin permanencias o sigue con nosotros por 11,99 € / mes.</p>
+      <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+        <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary">
+          PROBAR GRATIS 14 DÍAS
+        </a>
+     <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary">
+          VER DEMOSTRACIÓN
+        </a>
       </div>
     </div>
   </section>
 
-  <section class="seccion-herramientas bg-light">
+  <!-- ANTES VS AHORA -->
+  <section class="py-5" style="background-color: var(--academic-gray-bg);">
     <div class="container">
-      <h2 class="mb-5">🚀 TE ENTRENAMOS CON <span class="text-primary">CUATRO HERRAMIENTAS CLAVE:</span></h2>
+      <h2 class="section-head">OPTIMIZA LA GESTIÓN DE TU ACADEMIA</h2>
+      <div class="row g-4 justify-content-center">
+        
+<div class="col-md-5">
+  <div class="box-before-after box-before">
+    <h4 class="text-danger fw-black mb-3"><i class="bi bi-x-circle-fill me-2"></i>GESTIÓN TRADICIONAL</h4>
+    <ul class="list-checks">
+      <li><i class="bi bi-x-lg text-danger"></i> Corrección manual de exámenes y pérdida de tiempo.</li>
+      <li><i class="bi bi-x-lg text-danger"></i> Materiales dispersos en correos o grupos de mensajería.</li>
+      <li><i class="bi bi-x-lg text-danger"></i> Dificultad para medir el progreso real de los estudiantes.</li>
+      <li><i class="bi bi-x-lg text-danger"></i> Riesgo de filtración y copia sin control de tus test.</li>
+    </ul>
+  </div>
+</div>
+
+<!-- COLUMNA DESPUÉS: CON LUAPOL -->
+<div class="col-md-5">
+  <div class="box-before-after box-after">
+    <h4 class="text-success fw-black mb-3"><i class="bi bi-check-circle-fill me-2"></i>CON LUAPOL</h4>
+    <ul class="list-checks">
+      <li><i class="bi bi-check-lg text-success"></i> Automatización total de exámenes y corrección inmediata.</li>
+      <li><i class="bi bi-check-lg text-success"></i> Biblioteca centralizada para subir tus materiales de apoyo.</li>
+      <li><i class="bi bi-check-lg text-success"></i> Métricas claras del rendimiento individual y del grupo.</li>
+      <li><i class="bi bi-check-lg text-success"></i> Visualización segura de contenido para proteger tu propiedad intelectual.</li>
+    </ul>
+  </div>
+</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MÓDULOS / BLOQUES DESTACADOS -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="section-head">HERRAMIENTAS INCLUIDAS</h2>
+      
       <div class="row g-4">
         
         <div class="col-md-6 col-lg-3">
-          <div class="card shadow-sm">
-            <h6>RETO LUAPOL</h6>
-            <p class="small">Sistema de práctica de test y repaso estratégico diseñado para temarios largos.</p>
-            <ul>
-              <li>Practica muchos temas a la vez, incluso los estudiados hace semanas.</li>
-              <li>Evita la curva del olvido con test constantes y espaciados.</li>
-              <li>Mantén activa tu memoria para rendir al máximo el día del examen.</li>
-            </ul>
+          <div class="card-offer">
+            <div class="card-offer-header">
+              <i class="bi bi-file-earmark-check me-1"></i> GESTIÓN DE TEST
+            </div>
+            <div class="card-offer-body">
+              <ul class="list-checks">
+                <li><i class="bi bi-check2"></i> Importa de forma masiva tus preguntas desde plantillas.</li>
+                <li><i class="bi bi-check2"></i> Crea y modifica tus test, planes de estudio y simulacros.</li>
+                <li><i class="bi bi-check2"></i> Modifica y personaliza fácilmente los temas y preguntas.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-3">
+          <div class="card-offer">
+            <div class="card-offer-header">
+              <i class="bi bi-calendar-event me-1"></i> PLANES ESTUDIO
+            </div>
+            <div class="card-offer-body">
+              <ul class="list-checks">
+                <li><i class="bi bi-check2"></i> Configura automáticamente planes de estudio por bloques de estudio.</li>
+                <li><i class="bi bi-check2"></i> Programa tus propios simulacros y exámenes de repaso de errores.</li>
+                <li><i class="bi bi-check2"></i> Genera test libremente. </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        
+        <div class="col-md-6 col-lg-3">
+          <div class="card-offer">
+            <div class="card-offer-header">
+              <i class="bi bi-folder-symlink me-1"></i> ALUMNOS
+            </div>
+            <div class="card-offer-body">
+              <ul class="list-checks">
+                <li><i class="bi bi-check2"></i> Gestiona fácilmente las altas y bajas.</li>
+                <li><i class="bi bi-check2"></i> Cobros 100% directos: tú fijas las tarifas y cobras como quieras, sin comisiones.</li>
+                <li><i class="bi bi-check2"></i> Monitorización individualizada de la actividad.</li>
+              </ul>
+            </div>
           </div>
         </div>
 
         <div class="col-md-6 col-lg-3">
-          <div class="card shadow-sm">
-            <h6>SIMULACROS SEMANALES</h6>
-            <p class="small">Exámenes completos con la misma estructura, tiempo y dificultad que el día oficial.</p>
-            <ul>
-              <li>Un simulacro completo cada semana.</li>
-              <li>Mismo formato y duración que el examen oficial de la escala básica.</li>
-              <li>Análisis del resultado para mejorar tu técnica de examen.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="card shadow-sm">
-            <h6>REPASOS INTELIGENTES</h6>
-            <p class="small">Test de repaso personalizados basados en tu actividad y en los temas donde más fallas.</p>
-            <ul>
-              <li>Repaso diario de tus 5 temas con más errores.</li>
-              <li>Repaso semanal con preguntas de los 10 temas más fallados.</li>
-              <li>Guarda tus preguntas favoritas para repasarlas siempre.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="card shadow-sm">
-            <h6>ESTADÍSTICAS Y JUEGOS</h6>
-            <p class="small">Seguimiento detallado de tu evolución a través de estadísticas por temas y globales.</p>
-            <ul>
-              <li>Participa en el foro para resolver dudas con la comunidad.</li>
-              <li>Aprende jugando a "Operativo Élite" con casos policiales.</li>
-              <li>Aprendizaje colaborativo y motivación constante.</li>
-            </ul>
+          <div class="card-offer">
+            <div class="card-offer-header">
+              <i class="bi bi-bar-chart-line me-1"></i> ESTADÍSTICAS
+            </div>
+            <div class="card-offer-body">
+              <ul class="list-checks">
+                <li><i class="bi bi-check2"></i> Informes detallados por alumno y globales.</li>
+                <li><i class="bi bi-check2"></i> Detección de fallos habituales.</li>
+                <li><i class="bi bi-check2"></i> Mide el progreso de tus alumnos para personalizar su preparación.</li>
+              </ul>
+            
+            </div>
           </div>
         </div>
 
@@ -292,96 +430,206 @@
     </div>
   </section>
 
-<section class="py-5">
-  <div class="container">
-    <h2 class="mb-5">📊 ASÍ FUNCIONA <span class="text-primary">LUAPOL POR DENTRO:</span></h2>
-
-    <div class="bloque-imagen">
-      <img src="img/inicial1.png" alt="Pantalla Inicial" class="img-grande">
-      <p class="caption">Pantalla inicial y visión general de la plataforma.</p>
-    </div>
-
-    <div class="bloque-imagen">
-      <img src="img/reto2.png" alt="Reto Test" class="img-grande mb-4">
-      <img src="img/ejemplotest.png" alt="Ejemplo Test" class="img-grande">
-      <p class="caption">Sistema principal de test y práctica interactiva.</p>
-    </div>
-
-    <div class="bloque-imagen">
-      <img src="img/estadistica3.png" alt="Progreso" class="img-grande">
-      <p class="caption">Visión global del rendimiento y progreso acumulado.</p>
-    </div>
-    
-    <div class="bloque-imagen">
-      <img src="img/estadistica4.png" alt="Estadísticas temas" class="img-grande mb-4">
-      <img src="img/revision.png" alt="Revisión temas" class="img-grande">
-      <p class="caption">Análisis de resultados y revisión detallada de temas.</p>
-    </div>
-
-    <div class="bloque-imagen">
-      <img src="img/seguimiento5.png" alt="Evolución" class="img-grande">
-      <p class="caption">Seguimiento continuo de la evolución del opositor.</p>
-    </div>
-
-    <div class="bloque-imagen">
-      <img src="img/foro6.png" alt="Foro Comunidad" class="img-grande">
-      <p class="caption">Comunidad para resolver dudas y compartir experiencias.</p>
-    </div>
-
-    <div class="bloque-imagen">
-      <img src="img/juego7.png" alt="Operativo Élite" class="img-grande">
-      <p class="caption">Entrenamiento gamificado para reforzar el aprendizaje.</p>
-    </div>
-  </div>
-</section>
-  <footer class="footer-legal">
+  <!-- TARIFA DESTACADA -->
+  <section class="py-5" style="background-color: var(--academic-gray-bg);">
     <div class="container">
-      <div class="row align-items-center text-center text-md-start">
-        <div class="col-md-5 mb-4 mb-md-0">
-  <a href="terminos.html" class="footer-link fw-bold text-decoration-none">
-    AVISO LEGAL, TÉRMINOS DE USO, POLÍTICA DE PRIVACIDAD Y COOKIES
-  </a>
-  <div class="mt-2 text-muted small">Contacto: info@luapol.com</div>
-</div>
-        <div class="col-md-2 text-center mb-4 mb-md-0">
-          <a href="https://www.instagram.com/luapol_cnp" target="_blank">
-            <img src="img/instagram.svg" class="instagram-icon" alt="Instagram Luapol">
-          </a>
+      <h2 class="section-head">NUESTRAS TARIFAS</h2>
+      
+      <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-5">
+          <div class="card-offer" style="border: 2px solid var(--academic-navy);">
+            <div class="card-offer-header">
+              <i class="bi bi-tag-fill me-1"></i> TARIFA PARA PREPARADORES
+            </div>
+            <div class="card-offer-body text-center">
+              
+              <div class="coupon-box">
+                <span class="text-uppercase fw-black text-muted small">Precio Final</span>
+                <div class="coupon-price">49€<span class="fs-6 fw-bold text-muted"> / mes</span></div>
+                <span class="badge bg-dark text-white fw-black mt-1" style="background-color: var(--academic-navy) !important;">HASTA 20 ALUMNOS INCLUIDOS</span>
+              </div>
+
+              <ul class="list-checks text-start mx-auto" style="max-width: 320px;">
+                <li><i class="bi bi-check-circle-fill"></i> <strong>+ 3 € / mes</strong> por alumno adicional.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Sin permanencia ni compromisos.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Soporte técnico especializado.</li>
+              </ul>
+
+              <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary w-100">
+                ME INTERESA
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="col-md-5 text-md-end text-muted small">
-          © 2026 LUAPOL. Todos los derechos reservados.<br>
-        
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DEMO Y CAPTURAS -->
+  <section class="py-5" id="demo">
+    <div class="container text-center">
+      <h2 class="section-head"> DEMOSTRACIÓN </h2>
+      
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-9">
+          <div class="ratio ratio-16x9 rounded border shadow-sm">
+          <iframe src="https://www.youtube.com/embed/ypcjAmbndus" title="Demo Luapol" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  
+  
+  <!-- PREGUNTAS FRECUENTES -->
+  <section class="py-5" style="background-color: var(--academic-gray-bg);">
+    <div class="container" style="max-width: 800px;">
+      <h2 class="section-head">PREGUNTAS FRECUENTES</h2>
+      
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              ¿Puedo importar mis preguntas actuales?
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Sí, disponemos de plantillas simples para importar tus baterías de preguntas masivamente o añadirlas de forma individual.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              ¿Existe un límite de estudiantes?
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              No hay límite. La tarifa base cubre los primeros 20 alumnos y el sistema calcula automáticamente el ajuste por alumnos adicionales.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              ¿Cómo se realiza el cobro a los alumnos?
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              Mantienes independencia total. Sigues cobrando a tus alumnos con tu método habitual; nosotros solo te facturamos el uso de la plataforma.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+<!-- FORMULARIO SOLICITUD DE INFORMACIÓN / CONTACTO -->
+  <section class="py-5" style="background-color: #ffffff;">
+    <div class="container" style="max-width: 650px;">
+      <h2 class="section-head">¿QUIERES MÁS INFORMACIÓN?</h2>
+      <p class="text-center text-muted mb-4 fs-6">
+        Déjanos tu correo electrónico y nos pondremos en contacto contigo para resolver tus dudas.
+      </p>
+
+      <form id="contactForm" action="https://formspree.io/f/xzdvyklr" method="POST" class="card p-4 shadow-sm border" style="border-radius: 0.5rem;">
+        <div class="mb-3">
+          <label for="userEmail" class="form-label fw-bold">Tu Email de contacto <span class="text-danger">*</span></label>
+          <div class="input-group">
+            <span class="input-group-text bg-light"><i class="bi bi-envelope-fill text-muted"></i></span>
+            <input type="email" class="form-control" id="userEmail" name="email" placeholder="ejemplo@correo.com" required>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="userName" class="form-label fw-bold">Nombre o Academia (Opcional)</label>
+          <input type="text" class="form-control" id="userName" name="nombre" placeholder="Tu nombre o el de tu academia">
+        </div>
+
+        <div class="mb-3">
+          <label for="userMessage" class="form-label fw-bold">¿Tienes alguna duda en particular? (Opcional)</label>
+          <textarea class="form-control" id="userMessage" name="mensaje" rows="3" placeholder="Escribe aquí tu consulta..."></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn" class="btn-action-primary w-100 text-center mt-2 border-0">
+          <i class="bi bi-send-fill me-1"></i> SOLICITAR INFORMACIÓN
+        </button>
+
+        <!-- Mensaje de respuesta -->
+        <div id="formStatus" class="mt-3 text-center fw-bold d-none"></div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const status = document.getElementById("formStatus");
+    const btn = document.getElementById("submitBtn");
+
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+      btn.disabled = true;
+      btn.innerHTML = "Enviando...";
+
+      try {
+        const data = new FormData(event.target);
+        const response = await fetch(event.target.action, {
+          method: form.method,
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          status.classList.remove("d-none", "text-danger");
+          status.classList.add("text-success");
+          status.innerHTML = "¡Muchas gracias! Hemos recibido tu mensaje correctamente.";
+          form.reset();
+          btn.innerHTML = "<i class='bi bi-check-lg'></i> ¡ENVIADO CON ÉXITO!";
+        } else {
+          throw new Error('Error en el envío');
+        }
+      } catch (error) {
+        status.classList.remove("d-none", "text-success");
+        status.classList.add("text-danger");
+        status.innerHTML = "Hubo un problema al enviar. Por favor, inténtalo de nuevo.";
+        btn.disabled = false;
+        btn.innerHTML = "<i class='bi bi-send-fill me-1'></i> SOLICITAR INFORMACIÓN";
+      }
+    });
+  </script>
+    }
+  });
+</script>
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <a href="terminos.html">Aviso Legal, Privacidad y Cookies</a>
+          <span class="mx-2">|</span>
+          <span>Contacto: info@luapol.com</span>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="https://www.instagram.com/luapol_cnp" target="_blank" class="me-3">
+            <i class="bi bi-instagram me-1"></i> Instagram
+          </a>
+          <span>© 2026 LUAPOL</span>
         </div>
       </div>
     </div>
   </footer>
-  
-</p>
-    </div>
-  </div>
 
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
