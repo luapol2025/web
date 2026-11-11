@@ -22,7 +22,6 @@
       --faq-bg-closed: #EEF2F6;       /* Color de fondo para las FAQs no seleccionadas */
     }
 
-    /* CORRECCIÓN ABSOLUTA DE DESBORDAMIENTO HORIZONTAL EN MÓVIL */
     html, body {
       width: 100%;
       overflow-x: hidden;
@@ -271,8 +270,8 @@
       text-decoration: underline;
     }
 
-    /* CARRUSEL FLUIDO EN MÓVIL Y GRID FIJO EN PC PARA TARIFAS */
-    .pricing-track {
+    /* CARRUSEL FLUIDO EN MÓVIL Y GRID FIJO EN PC (HERRAMIENTAS Y TARIFAS) */
+    .cards-track {
       display: flex;
       gap: 1rem;
       overflow-x: auto;
@@ -282,37 +281,37 @@
       margin: 0 -1rem;
     }
 
-    .pricing-track::-webkit-scrollbar {
+    .cards-track::-webkit-scrollbar {
       height: 6px;
     }
 
-    .pricing-track::-webkit-scrollbar-thumb {
+    .cards-track::-webkit-scrollbar-thumb {
       background-color: rgba(11, 37, 69, 0.35);
       border-radius: 4px;
     }
 
-    .pricing-col {
+    .cards-col {
       flex: 0 0 85%;
       max-width: 85%;
       scroll-snap-align: center;
     }
 
     @media (min-width: 576px) and (max-width: 991.98px) {
-      .pricing-col {
+      .cards-col {
         flex: 0 0 65%;
         max-width: 65%;
       }
     }
 
     @media (min-width: 992px) {
-      .pricing-track {
+      .cards-track {
         overflow-x: visible;
         scroll-snap-type: none;
         padding: 0;
         margin: 0;
         justify-content: center;
       }
-      .pricing-col {
+      .cards-col {
         flex: 0 0 23.5%;
         max-width: 23.5%;
         scroll-snap-align: none;
@@ -395,20 +394,21 @@
   </div>
 </section>
 
-<!-- MÓDULOS -->
+<!-- HERRAMIENTAS INCLUIDAS (4 VIÑETAS DESLIZABLES EN MÓVIL Y GRID EN PC) -->
 <section class="py-5">
   <div class="container">
     <h2 class="section-head">HERRAMIENTAS INCLUIDAS</h2>
     
-    <div class="row g-4">
+    <div class="cards-track">
       
-      <div class="col-md-6 col-lg-3">
-        <div class="card-offer">
+      <!-- HERRAMIENTA 1 -->
+      <div class="cards-col">
+        <div class="card-offer d-flex flex-column h-100">
           <div class="card-offer-header">
             <i class="bi bi-file-earmark-check me-1"></i> GESTIÓN DE TEST
           </div>
           <div class="card-offer-body">
-            <ul class="list-checks">
+            <ul class="list-checks mb-0">
               <li><i class="bi bi-check2"></i> Importa de forma masiva tus preguntas desde plantillas.</li>
               <li><i class="bi bi-check2"></i> Crea y modifica tus test, planes de estudio y simulacros.</li>
               <li><i class="bi bi-check2"></i> Modifica y personaliza fácilmente los temas y preguntas.</li>
@@ -417,28 +417,30 @@
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-3">
-        <div class="card-offer">
+      <!-- HERRAMIENTA 2 -->
+      <div class="cards-col">
+        <div class="card-offer d-flex flex-column h-100">
           <div class="card-offer-header">
             <i class="bi bi-calendar-event me-1"></i> PLANES ESTUDIO
           </div>
           <div class="card-offer-body">
-            <ul class="list-checks">
+            <ul class="list-checks mb-0">
               <li><i class="bi bi-check2"></i> Configura automáticamente planes de estudio en bloques.</li>
               <li><i class="bi bi-check2"></i> Programa tus propios simulacros y exámenes de repaso de errores.</li>
-              <li><i class="bi bi-check2"></i> Genera test libremente. </li>
+              <li><i class="bi bi-check2"></i> Genera test libremente.</li>
             </ul>
           </div>
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-3">
-        <div class="card-offer">
+      <!-- HERRAMIENTA 3 -->
+      <div class="cards-col">
+        <div class="card-offer d-flex flex-column h-100">
           <div class="card-offer-header">
             <i class="bi bi-folder-symlink me-1"></i> ALUMNOS
           </div>
           <div class="card-offer-body">
-            <ul class="list-checks">
+            <ul class="list-checks mb-0">
               <li><i class="bi bi-check2"></i> Gestiona fácilmente las altas y bajas.</li>
               <li><i class="bi bi-check2"></i> Cobros 100% directos: tú fijas las tarifas y cobras como quieras, sin comisiones.</li>
               <li><i class="bi bi-check2"></i> Monitorización individualizada de la actividad.</li>
@@ -447,13 +449,14 @@
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-3">
-        <div class="card-offer">
+      <!-- HERRAMIENTA 4 -->
+      <div class="cards-col">
+        <div class="card-offer d-flex flex-column h-100">
           <div class="card-offer-header">
             <i class="bi bi-bar-chart-line me-1"></i> ESTADÍSTICAS
           </div>
           <div class="card-offer-body">
-            <ul class="list-checks">
+            <ul class="list-checks mb-0">
               <li><i class="bi bi-check2"></i> Informes detallados por alumno y globales.</li>
               <li><i class="bi bi-check2"></i> Detección de fallos habituales.</li>
               <li><i class="bi bi-check2"></i> Mide el progreso de tus alumnos para personalizar su preparación.</li>
@@ -463,20 +466,25 @@
       </div>
 
     </div>
+
+    <div class="text-center text-muted d-lg-none mt-2 small">
+      <i class="bi bi-arrow-left-right me-1"></i> Desliza horizontalmente para ver todas las herramientas
+    </div>
+
   </div>
 </section>
 
-<!-- NUESTRAS TARIFAS (4 PLANES) -->
+<!-- NUESTRAS TARIFAS (4 PLANES DESLIZABLES EN MÓVIL Y GRID EN PC) -->
 <section class="py-5" style="background-color: var(--academic-gray-bg);">
   <div class="container">
     <h2 class="section-head">NUESTRAS TARIFAS</h2>
     <p class="text-center text-muted mb-4 fs-6">Ofrecemos una estructura de planes adaptada a cada necesidad:</p>
     
-    <div class="pricing-track">
+    <div class="cards-track">
       
       <!-- PLAN FREE -->
-      <div class="pricing-col">
-        <div class="card-offer d-flex flex-column h-100" style="border: 2px solid var(--academic-navy);">
+      <div class="cards-col">
+        <div class="card-offer d-flex flex-column h-100">
           <div class="card-offer-header">
             <i class="bi bi-tag me-1"></i> PLAN FREE
           </div>
@@ -500,8 +508,8 @@
       </div>
 
       <!-- PLAN PRO INDIVIDUAL -->
-      <div class="pricing-col">
-        <div class="card-offer d-flex flex-column h-100" style="border: 2px solid var(--academic-navy);">
+      <div class="cards-col">
+        <div class="card-offer d-flex flex-column h-100">
           <div class="card-offer-header">
             <i class="bi bi-tag-fill me-1"></i> PRO INDIVIDUAL
           </div>
@@ -526,8 +534,8 @@
       </div>
 
       <!-- PLAN ACADEMIA PRO -->
-      <div class="pricing-col">
-        <div class="card-offer d-flex flex-column h-100" style="border: 2px solid var(--academic-navy);">
+      <div class="cards-col">
+        <div class="card-offer d-flex flex-column h-100">
           <div class="card-offer-header">
             <i class="bi bi-award-fill me-1"></i> ACADEMIA PRO
           </div>
@@ -552,8 +560,8 @@
       </div>
 
       <!-- PLAN ACADEMIA ENTERPRISE -->
-      <div class="pricing-col">
-        <div class="card-offer d-flex flex-column h-100" style="border: 2px solid var(--academic-navy);">
+      <div class="cards-col">
+        <div class="card-offer d-flex flex-column h-100">
           <div class="card-offer-header">
             <i class="bi bi-gem me-1"></i> ENTERPRISE
           </div>
@@ -616,25 +624,6 @@
         <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
           <div class="accordion-body">
             Sí, disponemos de plantillas simples para importar tus baterías de preguntas masivamente o añadirlas de forma individual.
-          </div>
-        </div>
-      </div>
-
-      <div class="accordion-item">
-        <h2 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-            ¿Qué tipo de tarifas existen?
-          </button>
-        </h2>
-        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-          <div class="accordion-body">
-            <p>Ofrecemos una estructura de planes adaptada a cada necesidad:</p>
-            <ul>
-              <li><strong>Plan Free (0 €):</strong> Pensado para pruebas o docentes puntuales con 1 profesor, 1 curso y hasta 15 alumnos.</li>
-              <li><strong>Plan Pro Individual:</strong> Ideal para profesores autónomos. Incluye cursos ilimitados y hasta 60 alumnos por 150 €/año en precio de lanzamiento (posteriormente 200 €/año) o 20 €/mes.</li>
-              <li><strong>Plan Academia Pro:</strong> Diseñado para academias pequeñas y medianas con hasta 3 profesores, cursos ilimitados y 150 alumnos por 990 €/año (82,50 €/mes) o 99 €/mes.</li>
-              <li><strong>Plan Academia Enterprise:</strong> Orientado a grandes centros o preparación de oposiciones. Incluye profesores y alumnos ilimitados por tramos desde 1.800 €/año, con tarifa mensual personalizada.</li>
-            </ul>
           </div>
         </div>
       </div>
