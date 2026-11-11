@@ -282,6 +282,33 @@
       text-decoration: underline;
     }
   </style>
+
+  /* Estilo para habilitar el scroll horizontal fluido en móviles para las tarifas */
+  @media (max-width: 991.98px) {
+    .pricing-scroll-container {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 10px;
+    }
+    .pricing-scroll-container::-webkit-scrollbar {
+      height: 6px;
+    }
+    .pricing-scroll-container::-webkit-scrollbar-thumb {
+      background-color: rgba(11, 37, 69, 0.3);
+      border-radius: 4px;
+    }
+    .pricing-col {
+      flex: 0 0 80%; /* Ancho de la tarjeta en móvil para que se vea parte de la siguiente */
+      max-width: 80%;
+    }
+  }
+  @media (min-width: 992px) {
+    .pricing-col {
+      flex: 0 0 25%; /* 4 columnas exactas en PC */
+      max-width: 25%;
+    }
+  }
+  
 </head>
 
 <body>
@@ -433,39 +460,128 @@
     </div>
   </section>
 
-  <!-- TARIFA DESTACADA -->
+<!-- TARIFA DESTACADA / PLANES -->
   <section class="py-5" style="background-color: var(--academic-gray-bg);">
     <div class="container">
       <h2 class="section-head">NUESTRAS TARIFAS</h2>
+      <p class="text-center text-muted mb-4 fs-6">Ofrecemos una estructura de planes adaptada a cada necesidad:</p>
       
-      <div class="row justify-content-center">
-        <div class="col-md-7 col-lg-5">
-          <div class="card-offer" style="border: 2px solid var(--academic-navy);">
-            <div class="card-offer-header">
-              <i class="bi bi-tag-fill me-1"></i> TARIFA PARA PREPARADORES
-            </div>
-            <div class="card-offer-body text-center">
-              
-              <div class="coupon-box">
-                <span class="text-uppercase fw-black text-muted small">Precio Final Desde</span>
-                <div class="coupon-price">150€<span class="fs-6 fw-bold text-muted"> / año</span></div>
-                <span class="badge bg-dark text-white fw-black mt-1" style="background-color: var(--academic-navy) !important;">HASTA 60 ALUMNOS INCLUIDOS, CURSOS ILIMITADOS</span>
+      <!-- Contenedor con scroll horizontal en móvil y grid normal de 4 columnas en PC -->
+      <div class="pricing-scroll-container">
+        <div class="row flex-row flex-nowrap flex-lg-wrap justify-content-lg-center g-4 pb-3">
+          
+          <!-- PLAN FREE -->
+          <div class="col-10 col-sm-8 col-md-6 col-lg-3 pricing-col">
+            <div class="card-offer d-flex flex-column h-100" style="border: 2px solid var(--academic-navy);">
+              <div class="card-offer-header">
+                <i class="bi bi-tag me-1"></i> PLAN FREE
               </div>
-
-              <ul class="list-checks text-start mx-auto" style="max-width: 320px;">
-                <li><i class="bi bi-check-circle-fill"></i> Consultar tarifas para más alumnos.</li>
-                <li><i class="bi bi-check-circle-fill"></i> Sin permanencia ni compromisos.</li>
-                <li><i class="bi bi-check-circle-fill"></i> Soporte técnico especializado.</li>
-              </ul>
-
-              <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary w-100">
-                ME INTERESA
-              </a>
+              <div class="card-offer-body text-center d-flex flex-column justify-content-between">
+                <div>
+                  <div class="coupon-box">
+                    <span class="text-uppercase fw-black text-muted small">Precio</span>
+                    <div class="coupon-price">0€</div>
+                    <span class="badge bg-dark text-white fw-black mt-1" style="background-color: var(--academic-navy) !important;">1 PROFESOR • 1 CURSO • 15 ALUMNOS</span>
+                  </div>
+                  <ul class="list-checks text-start mx-auto" style="max-width: 260px;">
+                    <li><i class="bi bi-check-circle-fill"></i> Pensado para pruebas o docentes puntuales.</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Sin límite temporal.</li>
+                  </ul>
+                </div>
+                <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary w-100 mt-3">
+                  PROBAR GRATIS
+                </a>
+              </div>
             </div>
           </div>
+
+          <!-- PLAN PRO INDIVIDUAL -->
+          <div class="col-10 col-sm-8 col-md-6 col-lg-3 pricing-col">
+            <div class="card-offer d-flex flex-column h-100" style="border: 2px solid var(--academic-navy);">
+              <div class="card-offer-header">
+                <i class="bi bi-tag-fill me-1"></i> PRO INDIVIDUAL
+              </div>
+              <div class="card-offer-body text-center d-flex flex-column justify-content-between">
+                <div>
+                  <div class="coupon-box">
+                    <span class="text-uppercase fw-black text-muted small">Desde</span>
+                    <div class="coupon-price" style="font-size: 2.3rem;">150€<span class="fs-6 fw-bold text-muted"> / año</span></div>
+                    <span class="badge bg-dark text-white fw-black mt-1" style="background-color: var(--academic-navy) !important;">HASTA 60 ALUMNOS • CURSOS ILIMITADOS</span>
+                  </div>
+                  <ul class="list-checks text-start mx-auto" style="max-width: 260px;">
+                    <li><i class="bi bi-check-circle-fill"></i> Ideal para profesores autónomos.</li>
+                    <li><i class="bi bi-check-circle-fill"></i> 150 €/año (lanza.) o 20 €/mes.</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Soporte técnico especializado.</li>
+                  </ul>
+                </div>
+                <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary w-100 mt-3">
+                  ME INTERESA
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLAN ACADEMIA PRO -->
+          <div class="col-10 col-sm-8 col-md-6 col-lg-3 pricing-col">
+            <div class="card-offer d-flex flex-column h-100" style="border: 2px solid var(--academic-navy);">
+              <div class="card-offer-header">
+                <i class="bi bi-award-fill me-1"></i> ACADEMIA PRO
+              </div>
+              <div class="card-offer-body text-center d-flex flex-column justify-content-between">
+                <div>
+                  <div class="coupon-box">
+                    <span class="text-uppercase fw-black text-muted small">Desde</span>
+                    <div class="coupon-price" style="font-size: 2.3rem;">990€<span class="fs-6 fw-bold text-muted"> / año</span></div>
+                    <span class="badge bg-dark text-white fw-black mt-1" style="background-color: var(--academic-navy) !important;">HASTA 3 PROFESORES • 150 ALUMNOS</span>
+                  </div>
+                  <ul class="list-checks text-start mx-auto" style="max-width: 260px;">
+                    <li><i class="bi bi-check-circle-fill"></i> Para academias pequeñas/medianas.</li>
+                    <li><i class="bi bi-check-circle-fill"></i> 990 €/año (82,50 €/mes) o 99 €/mes.</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Cursos ilimitados.</li>
+                  </ul>
+                </div>
+                <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary w-100 mt-3">
+                  ME INTERESA
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- PLAN ACADEMIA ENTERPRISE -->
+          <div class="col-10 col-sm-8 col-md-6 col-lg-3 pricing-col">
+            <div class="card-offer d-flex flex-column h-100" style="border: 2px solid var(--academic-navy);">
+              <div class="card-offer-header">
+                <i class="bi bi-gem me-1"></i> ENTERPRISE
+              </div>
+              <div class="card-offer-body text-center d-flex flex-column justify-content-between">
+                <div>
+                  <div class="coupon-box">
+                    <span class="text-uppercase fw-black text-muted small">Tramos desde</span>
+                    <div class="coupon-price" style="font-size: 2rem;">1.800€<span class="fs-6 fw-bold text-muted"> / año</span></div>
+                    <span class="badge bg-dark text-white fw-black mt-1" style="background-color: var(--academic-navy) !important;">PROFESORES Y ALUMNOS ILIMITADOS</span>
+                  </div>
+                  <ul class="list-checks text-start mx-auto" style="max-width: 260px;">
+                    <li><i class="bi bi-check-circle-fill"></i> Grandes centros u oposiciones.</li>
+                    <li><i class="bi bi-check-circle-fill"></i> Tarifa mensual personalizada.</li>
+                  </ul>
+                </div>
+                <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary w-100 mt-3">
+                  CONTACTAR
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
+      <!-- Pequeño aviso visual para móviles indicando que se puede deslizar -->
+      <div class="text-center text-muted d-lg-none mt-2 small">
+        <i class="bi bi-arrow-left-right me-1"></i> Desliza horizontalmente para ver todos los planes
+      </div>
+
+    </div>
+  </section>
     </div>
   </section>
 
@@ -486,60 +602,6 @@
   </section>
   
   
-  <!-- PREGUNTAS FRECUENTES -->
-  <section class="py-5" style="background-color: var(--academic-gray-bg);">
-    <div class="container" style="max-width: 800px;">
-      <h2 class="section-head">PREGUNTAS FRECUENTES</h2>
-      
-      <div class="accordion" id="faqAccordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-              ¿Puedo importar mis preguntas actuales?
-            </button>
-          </h2>
-          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Sí, disponemos de plantillas simples para importar tus baterías de preguntas masivamente o añadirlas de forma individual.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-  <h2 class="accordion-header">
-    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-      ¿Qué tipo de tarifas existen?
-    </button>
-  </h2>
-  <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-    <div class="accordion-body">
-      <p>Ofrecemos una estructura de planes adaptada a cada necesidad:</p>
-      <ul>
-        <li><strong>Plan Free (0 €):</strong> Pensado para pruebas o docentes puntuales con 1 profesor, 1 curso y hasta 15 alumnos.</li>
-        <li><strong>Plan Pro Individual:</strong> Ideal para profesores autónomos. Incluye cursos ilimitados y hasta 60 alumnos por 150 €/año en precio de lanzamiento (posteriormente 200 €/año) o 20 €/mes.</li>
-        <li><strong>Plan Academia Pro:</strong> Diseñado para academias pequeñas y medianas con hasta 3 profesores, cursos ilimitados y 150 alumnos por 990 €/año (82,50 €/mes) o 99 €/mes.</li>
-        <li><strong>Plan Academia Enterprise:</strong> Orientado a grandes centros o preparación de oposiciones. Incluye profesores y alumnos ilimitados por tramos desde 1.800 €/año, con tarifa mensual personalizada.</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-              ¿Cómo se realiza el cobro a los alumnos?
-            </button>
-          </h2>
-          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Mantienes independencia total. Sigues cobrando a tus alumnos con tu método habitual; nosotros solo te facturamos el uso de la plataforma.
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
 <!-- FORMULARIO SOLICITUD DE INFORMACIÓN / CONTACTO -->
   <section class="py-5" style="background-color: #ffffff;">
     <div class="container" style="max-width: 650px;">
