@@ -22,11 +22,18 @@
       --faq-bg-closed: #EEF2F6;       /* Color de fondo para las FAQs no seleccionadas */
     }
 
+    /* CORRECCIÓN ABSOLUTA DE DESBORDAMIENTO HORIZONTAL EN MÓVIL */
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
     body { 
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
       color: var(--academic-dark); 
       background-color: #ffffff;
-      overflow-x: hidden;
     }
 
     /* NAVBAR */
@@ -267,11 +274,12 @@
     /* CARRUSEL FLUIDO EN MÓVIL Y GRID FIJO EN PC PARA TARIFAS */
     .pricing-track {
       display: flex;
-      gap: 1.25rem;
+      gap: 1rem;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       -webkit-overflow-scrolling: touch;
-      padding: 0.5rem 0.25rem 1.25rem 0.25rem;
+      padding: 0.5rem 1rem 1.25rem 1rem;
+      margin: 0 -1rem;
     }
 
     .pricing-track::-webkit-scrollbar {
@@ -301,6 +309,7 @@
         overflow-x: visible;
         scroll-snap-type: none;
         padding: 0;
+        margin: 0;
         justify-content: center;
       }
       .pricing-col {
@@ -324,7 +333,7 @@
     </a>
     
     <div class="d-flex align-items-center gap-2">
-      <a href="https://app.luapol.com/registro/preparadores" class="btn btn-top-acc">
+      <a href="https://app.luapol.com/register/preparadores" class="btn btn-top-acc">
         <i class="bi bi-person-plus-fill me-1"></i> REGISTRO PREPARADORES
       </a>
       <a href="https://app.luapol.com/login/" class="btn btn-top-acc">
