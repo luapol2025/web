@@ -22,6 +22,13 @@
       --faq-bg-closed: #EEF2F6;       /* Color de fondo para las FAQs no seleccionadas */
     }
 
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
     body { 
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; 
       color: var(--academic-dark); 
@@ -35,19 +42,20 @@
       padding: 0.8rem 0;
     }
     
-.navbar-logo {
-  height: 1.2em; /* Mismo alto que la tipografía */
-  width: auto;   
-  margin-right: 0.35rem; 
-  vertical-align: sub; /* Alineación perfecta con el texto LUAPOL */
-}
+    .navbar-logo {
+      height: 1.8rem;
+      width: auto;   
+      margin-right: 8px;
+      vertical-align: sub;
+    }
 
     .brand-tagline {
-  font-size: 1.5rem; /* Mismo tamaño que LUAPOL */
-  color: #000000 !important;
-  font-weight: 800; /* Grosor destacado pero equilibrado */
-  letter-spacing: -0.02em;
-}
+      font-size: 1.5rem;
+      color: #000000 !important;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
     .btn-top-acc {
       background-color: var(--academic-navy);
       color: #ffffff !important;
@@ -56,6 +64,7 @@
       border-radius: 0.2rem;
       text-transform: uppercase;
       font-size: 0.85rem;
+      white-space: nowrap;
     }
 
     /* HERO LIMPIO SIN RECUADRO CENTRAL */
@@ -103,48 +112,27 @@
       line-height: 1.5;
     }
 
-    /* NUEVO BOTÓN PRINCIPAL UNIFICADO EN AZUL Y DORADO */
+    /* BOTÓN PRINCIPAL */
     .btn-action-primary {
       background-color: var(--academic-navy);
       color: #ffffff !important;
       font-weight: 900;
-      font-size: 1.05rem;
-      padding: 0.9rem 2.2rem;
+      font-size: 0.95rem;
+      padding: 0.8rem 1.2rem;
       border-radius: 0.3rem;
       border: 2px solid var(--academic-gold);
       text-decoration: none;
       display: inline-block;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.4px;
       transition: all 0.2s ease-in-out;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
     }
 
     .btn-action-primary:hover {
       background-color: var(--academic-gold);
       color: var(--academic-navy) !important;
       transform: translateY(-2px);
-    }
-
-    .btn-dark-outline {
-      background-color: rgba(11, 37, 69, 0.7);
-      color: #ffffff !important;
-      font-weight: 800;
-      padding: 0.9rem 1.8rem;
-      border-radius: 0.3rem;
-      border: 2px solid rgba(255, 255, 255, 0.6);
-      text-decoration: none;
-      display: inline-block;
-      text-transform: uppercase;
-      font-size: 0.95rem;
-      transition: all 0.2s ease-in-out;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    .btn-dark-outline:hover {
-      background-color: #ffffff;
-      color: var(--academic-navy) !important;
-      border-color: #ffffff;
     }
 
     /* SECCIONES Y CABECERAS */
@@ -159,66 +147,138 @@
     }
 
     /* TARJETAS TIPO OFERTA */
-.card-offer {
-  background: #ffffff;
-  border: 2px solid var(--academic-navy); 
-  border-radius: 0.4rem;
-  overflow: hidden;
-  height: 100%;
-  box-shadow: 0 4px 12px rgba(11, 37, 69, 0.05);
-}
+    .card-offer {
+      background: #ffffff;
+      border: 2px solid var(--academic-navy); 
+      border-radius: 0.4rem;
+      overflow: hidden;
+      height: 100%;
+      box-shadow: 0 4px 12px rgba(11, 37, 69, 0.05);
+    }
 
     .card-offer-header {
       background-color: var(--academic-navy);
       color: #ffffff;
       font-weight: 900;
-      padding: 0.8rem 1rem;
+      padding: 0.8rem 0.75rem;
       text-align: center;
-      font-size: 1.05rem;
+      font-size: 1rem;
       text-transform: uppercase;
       border-bottom: 2px solid var(--academic-gold);
     }
 
     .card-offer-body {
-      padding: 1.5rem;
+      padding: 1.25rem;
     }
 
     .coupon-box {
       border: 2px dashed var(--academic-navy);
       background-color: var(--academic-gold-light);
       border-radius: 0.3rem;
-      padding: 1rem;
+      padding: 0.85rem 0.6rem;
       text-align: center;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .coupon-price {
-      font-size: 3rem;
+      font-size: 2.2rem;
       font-weight: 900;
       color: var(--academic-navy);
-      line-height: 1;
+      line-height: 1.1;
+    }
+
+    /* TABLA DE CUOTAS CLAVE EN TARJETA DE PRECIO */
+    .plan-limits {
+      background-color: var(--academic-gray-bg);
+      border: 1px solid var(--academic-border);
+      border-radius: 0.3rem;
+      padding: 0.65rem 0.75rem;
+      margin-bottom: 1rem;
+      font-size: 0.83rem;
+    }
+
+    .plan-limits-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.22rem 0;
+      border-bottom: 1px dashed #CBD5E1;
+    }
+
+    .plan-limits-row:last-child {
+      border-bottom: none;
+    }
+
+    .plan-limits-row span:first-child {
+      color: #475569;
+    }
+
+    .plan-limits-row strong {
+      color: var(--academic-navy);
+      font-weight: 800;
     }
 
     .list-checks {
       list-style: none;
       padding: 0;
-      margin: 0 0 1.5rem 0;
+      margin: 0 0 1rem 0;
     }
 
     .list-checks li {
-      margin-bottom: 0.6rem;
-      font-size: 0.92rem;
+      margin-bottom: 0.55rem;
+      font-size: 0.86rem;
       display: flex;
       align-items: flex-start;
-      gap: 8px;
+      gap: 7px;
       color: #334155;
+      line-height: 1.35;
     }
 
     .list-checks li i {
       color: var(--academic-navy);
-      font-size: 1.1rem;
-      line-height: 1;
+      font-size: 1rem;
+      line-height: 1.1;
       font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .btn-details-toggle {
+      background: transparent;
+      border: 1px solid #CBD5E1;
+      color: var(--academic-navy);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 0.4rem 0.6rem;
+      border-radius: 0.25rem;
+      width: 100%;
+      transition: all 0.15s ease;
+    }
+
+    .btn-details-toggle:hover {
+      background-color: var(--faq-bg-closed);
+      border-color: var(--academic-navy);
+    }
+
+    .extra-features-list {
+      border-top: 1px solid var(--academic-border);
+      padding-top: 0.75rem;
+      margin-top: 0.75rem;
+      font-size: 0.8rem;
+    }
+
+    .extra-features-list li {
+      margin-bottom: 0.4rem;
+      font-size: 0.8rem;
+    }
+
+    .extra-features-list li.feature-disabled {
+      color: #94A3B8;
+      text-decoration: line-through;
+    }
+
+    .extra-features-list li.feature-disabled i {
+      color: #CBD5E1;
     }
 
     /* PUNTOS DE DOLOR (ANTES / AHORA) */
@@ -281,352 +341,650 @@
     footer a:hover {
       text-decoration: underline;
     }
+
+    /* CARRUSEL FLUIDO EN MÓVIL Y GRID EN PC (4 COLUMNAS HERRAMIENTAS / 5 COLUMNAS PRECIOS) */
+    .cards-track {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 0.5rem 1rem 1.25rem 1rem;
+      margin: 0 -1rem;
+    }
+
+    .cards-track::-webkit-scrollbar {
+      height: 6px;
+    }
+
+    .cards-track::-webkit-scrollbar-thumb {
+      background-color: rgba(11, 37, 69, 0.35);
+      border-radius: 4px;
+    }
+
+    .cards-col, .pricing-col {
+      flex: 0 0 85%;
+      max-width: 85%;
+      scroll-snap-align: center;
+    }
+
+    @media (min-width: 576px) and (max-width: 991.98px) {
+      .cards-col, .pricing-col {
+        flex: 0 0 65%;
+        max-width: 65%;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .cards-track {
+        overflow-x: visible;
+        scroll-snap-type: none;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+      }
+      /* 4 tarjetas en Herramientas */
+      .cards-col {
+        flex: 0 0 23.5%;
+        max-width: 23.5%;
+        scroll-snap-align: none;
+      }
+      /* 5 tarjetas en Tarifas */
+      .pricing-track {
+        gap: 0.75rem;
+      }
+      .pricing-col {
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 20%;
+        scroll-snap-align: none;
+      }
+    }
   </style>
 </head>
 
 <body>
 
 <nav class="navbar sticky-top">
-  <div class="container d-flex align-items-center justify-content-between">
+  <div class="container d-flex align-items-center justify-content-between flex-wrap gap-2">
     <a class="navbar-brand d-flex align-items-center text-decoration-none m-0" href="https://www.luapol.com/">
-      <img src="img/shield-alt-solid.png" alt="Luapol" class="navbar-logo" style="height: 1.8rem; width: auto; margin-right: 8px;">
-      <span class="text-uppercase" style="color: #000000 !important; font-weight: 800; font-size: 1.4rem; line-height: 1; opacity: 1 !important;">
-        LUAPOL<span class="d-none d-md-inline ms-2" style="color: #000000 !important; font-weight: 800; font-size: 1.4rem; opacity: 1 !important;">– CREA TU PROPIA ACADEMIA</span>
+      <img src="img/shield-alt-solid.png" alt="Luapol" class="navbar-logo">
+      <span class="text-uppercase" style="color: #000000 !important; font-weight: 800; font-size: 1.4rem; line-height: 1;">
+        LUAPOL<span class="d-none d-md-inline ms-2" style="color: #000000 !important; font-weight: 800; font-size: 1.4rem;">– CREA TU PROPIA ACADEMIA</span>
       </span>
     </a>
     
-    <a href="https://app.luapol.com/login/" class="btn btn-top-acc">
-      <i class="bi bi-person-fill me-1"></i> ACCESO PREPARADORES
-    </a>
+    <div class="d-flex align-items-center gap-2">
+      <a href="https://app.luapol.com/register/preparadores" class="btn btn-top-acc">
+        <i class="bi bi-person-plus-fill me-1"></i> REGISTRO PREPARADORES
+      </a>
+      <a href="https://app.luapol.com/login/" class="btn btn-top-acc">
+        <i class="bi bi-person-fill me-1"></i> ACCESO PREPARADORES
+      </a>
+    </div>
   </div>
 </nav>
 
-  <!-- HERO PROMOCIONAL LIMPIO -->
-  <section class="hero text-center">
-    <div class="container">
-      <span class="hero-badge"><i class="bi bi-mortarboard-fill me-1"></i> Plataforma para Preparadores</span>
-      <h1>LANZA Y GESTIONA TU PROPIA ACADEMIA<br>DE OPOSICIONES EN MINUTOS</h1>
-      
-      <p class="hero-text">
-        Ahorra tiempo en la creación de exámenes tipo test, organiza tus materiales de estudio y realiza un seguimiento preciso de tus alumnos en una sola plataforma.
-      </p>
+<!-- HERO -->
+<section class="hero text-center">
+  <div class="container">
+    <span class="hero-badge"><i class="bi bi-mortarboard-fill me-1"></i> Plataforma para Preparadores</span>
+    <h1>LANZA Y GESTIONA TU PROPIA ACADEMIA<br>DE OPOSICIONES EN MINUTOS</h1>
+    
+    <p class="hero-text">
+      Ahorra tiempo en la creación de exámenes tipo test, organiza tus materiales de estudio y realiza un seguimiento preciso de tus alumnos en una sola plataforma.
+    </p>
 
-      <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-        <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary">
-          PROBAR GRATIS 14 DÍAS
-        </a>
-     <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary">
-          VER DEMOSTRACIÓN
-        </a>
-      </div>
+    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+      <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary">
+        PROBAR VERSIÓN GRATUITA (HASTA 15 ALUMNOS SIN LÍMITE TEMPORAL) 
+      </a>
     </div>
-  </section>
-
-  <!-- ANTES VS AHORA -->
-  <section class="py-5" style="background-color: var(--academic-gray-bg);">
-    <div class="container">
-      <h2 class="section-head">OPTIMIZA LA GESTIÓN DE TU ACADEMIA</h2>
-      <div class="row g-4 justify-content-center">
-        
-<div class="col-md-5">
-  <div class="box-before-after box-before">
-    <h4 class="text-danger fw-black mb-3"><i class="bi bi-x-circle-fill me-2"></i>GESTIÓN TRADICIONAL</h4>
-    <ul class="list-checks">
-      <li><i class="bi bi-x-lg text-danger"></i> Corrección manual de exámenes y pérdida de tiempo.</li>
-      <li><i class="bi bi-x-lg text-danger"></i> Materiales dispersos en correos o grupos de mensajería.</li>
-      <li><i class="bi bi-x-lg text-danger"></i> Dificultad para medir el progreso real de los estudiantes.</li>
-      <li><i class="bi bi-x-lg text-danger"></i> Riesgo de filtración y copia sin control de tus test.</li>
-    </ul>
   </div>
-</div>
+</section>
 
-<!-- COLUMNA DESPUÉS: CON LUAPOL -->
-<div class="col-md-5">
-  <div class="box-before-after box-after">
-    <h4 class="text-success fw-black mb-3"><i class="bi bi-check-circle-fill me-2"></i>CON LUAPOL</h4>
-    <ul class="list-checks">
-      <li><i class="bi bi-check-lg text-success"></i> Automatización total de exámenes y corrección inmediata.</li>
-      <li><i class="bi bi-check-lg text-success"></i> Biblioteca centralizada para subir tus materiales de apoyo.</li>
-      <li><i class="bi bi-check-lg text-success"></i> Métricas claras del rendimiento individual y del grupo.</li>
-      <li><i class="bi bi-check-lg text-success"></i> Visualización segura de contenido para proteger tu propiedad intelectual.</li>
-    </ul>
+<!-- ANTES VS AHORA -->
+<section class="py-5" style="background-color: var(--academic-gray-bg);">
+  <div class="container">
+    <h2 class="section-head">OPTIMIZA LA GESTIÓN DE TU ACADEMIA</h2>
+    <div class="row g-4 justify-content-center">
+      
+      <div class="col-md-5">
+        <div class="box-before-after box-before">
+          <h4 class="text-danger fw-black mb-3"><i class="bi bi-x-circle-fill me-2"></i>GESTIÓN TRADICIONAL</h4>
+          <ul class="list-checks">
+            <li><i class="bi bi-x-lg text-danger"></i> Corrección manual de exámenes y pérdida de tiempo.</li>
+            <li><i class="bi bi-x-lg text-danger"></i> Materiales dispersos en correos o grupos de mensajería.</li>
+            <li><i class="bi bi-x-lg text-danger"></i> Dificultad para medir el progreso real de los estudiantes.</li>
+            <li><i class="bi bi-x-lg text-danger"></i> Riesgo de filtración y copia sin control de tus test.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-5">
+        <div class="box-before-after box-after">
+          <h4 class="text-success fw-black mb-3"><i class="bi bi-check-circle-fill me-2"></i>CON LUAPOL</h4>
+          <ul class="list-checks">
+            <li><i class="bi bi-check-lg text-success"></i> Automatización total de exámenes y corrección inmediata.</li>
+            <li><i class="bi bi-check-lg text-success"></i> Biblioteca centralizada para subir tus materiales de apoyo.</li>
+            <li><i class="bi bi-check-lg text-success"></i> Estadísticas claras del rendimiento individual y grupal. </li>
+            <li><i class="bi bi-check-lg text-success"></i> Visualización segura de contenido para proteger tu propiedad intelectual.</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </div>
-</div>
-      </div>
-    </div>
-  </section>
+</section>
 
-  <!-- MÓDULOS / BLOQUES DESTACADOS -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="section-head">HERRAMIENTAS INCLUIDAS</h2>
+<!-- HERRAMIENTAS INCLUIDAS -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="section-head">HERRAMIENTAS INCLUIDAS</h2>
+    
+    <div class="cards-track">
       
-      <div class="row g-4">
-        
-        <div class="col-md-6 col-lg-3">
-          <div class="card-offer">
-            <div class="card-offer-header">
-              <i class="bi bi-file-earmark-check me-1"></i> GESTIÓN DE TEST
-            </div>
-            <div class="card-offer-body">
-              <ul class="list-checks">
-                <li><i class="bi bi-check2"></i> Importa de forma masiva tus preguntas desde plantillas.</li>
-                <li><i class="bi bi-check2"></i> Crea y modifica tus test, planes de estudio y simulacros.</li>
-                <li><i class="bi bi-check2"></i> Modifica y personaliza fácilmente los temas y preguntas.</li>
-              </ul>
-            </div>
+      <!-- HERRAMIENTA 1 -->
+      <div class="cards-col">
+        <div class="card-offer d-flex flex-column h-100">
+          <div class="card-offer-header">
+            <i class="bi bi-file-earmark-check me-1"></i> GESTIÓN DE TEST
+          </div>
+          <div class="card-offer-body">
+            <ul class="list-checks mb-0">
+              <li><i class="bi bi-check2"></i> Importa de forma masiva tus preguntas desde plantillas.</li>
+              <li><i class="bi bi-check2"></i> Crea y modifica tus test, planes de estudio y simulacros.</li>
+              <li><i class="bi bi-check2"></i> Modifica y personaliza fácilmente los temas y preguntas.</li>
+            </ul>
           </div>
         </div>
-
-
-        <div class="col-md-6 col-lg-3">
-          <div class="card-offer">
-            <div class="card-offer-header">
-              <i class="bi bi-calendar-event me-1"></i> PLANES ESTUDIO
-            </div>
-            <div class="card-offer-body">
-              <ul class="list-checks">
-                <li><i class="bi bi-check2"></i> Configura automáticamente planes de estudio por bloques de estudio.</li>
-                <li><i class="bi bi-check2"></i> Programa tus propios simulacros y exámenes de repaso de errores.</li>
-                <li><i class="bi bi-check2"></i> Genera test libremente. </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        
-        <div class="col-md-6 col-lg-3">
-          <div class="card-offer">
-            <div class="card-offer-header">
-              <i class="bi bi-folder-symlink me-1"></i> ALUMNOS
-            </div>
-            <div class="card-offer-body">
-              <ul class="list-checks">
-                <li><i class="bi bi-check2"></i> Gestiona fácilmente las altas y bajas.</li>
-                <li><i class="bi bi-check2"></i> Cobros 100% directos: tú fijas las tarifas y cobras como quieras, sin comisiones.</li>
-                <li><i class="bi bi-check2"></i> Monitorización individualizada de la actividad.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-3">
-          <div class="card-offer">
-            <div class="card-offer-header">
-              <i class="bi bi-bar-chart-line me-1"></i> ESTADÍSTICAS
-            </div>
-            <div class="card-offer-body">
-              <ul class="list-checks">
-                <li><i class="bi bi-check2"></i> Informes detallados por alumno y globales.</li>
-                <li><i class="bi bi-check2"></i> Detección de fallos habituales.</li>
-                <li><i class="bi bi-check2"></i> Mide el progreso de tus alumnos para personalizar su preparación.</li>
-              </ul>
-            
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </section>
 
-  <!-- TARIFA DESTACADA -->
-  <section class="py-5" style="background-color: var(--academic-gray-bg);">
-    <div class="container">
-      <h2 class="section-head">NUESTRAS TARIFAS</h2>
+      <!-- HERRAMIENTA 2 -->
+      <div class="cards-col">
+        <div class="card-offer d-flex flex-column h-100">
+          <div class="card-offer-header">
+            <i class="bi bi-calendar-event me-1"></i> PLANES ESTUDIO
+          </div>
+          <div class="card-offer-body">
+            <ul class="list-checks mb-0">
+              <li><i class="bi bi-check2"></i> Configura automáticamente planes de estudio en bloques.</li>
+              <li><i class="bi bi-check2"></i> Programa tus propios simulacros y exámenes de repaso de errores.</li>
+              <li><i class="bi bi-check2"></i> Genera test libremente.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERRAMIENTA 3 -->
+      <div class="cards-col">
+        <div class="card-offer d-flex flex-column h-100">
+          <div class="card-offer-header">
+            <i class="bi bi-folder-symlink me-1"></i> ALUMNOS
+          </div>
+          <div class="card-offer-body">
+            <ul class="list-checks mb-0">
+              <li><i class="bi bi-check2"></i> Gestiona fácilmente las altas y bajas.</li>
+              <li><i class="bi bi-check2"></i> Cobros 100% directos: tú fijas las tarifas y cobras como quieras, sin comisiones.</li>
+              <li><i class="bi bi-check2"></i> Monitorización individualizada de la actividad.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERRAMIENTA 4 -->
+      <div class="cards-col">
+        <div class="card-offer d-flex flex-column h-100">
+          <div class="card-offer-header">
+            <i class="bi bi-bar-chart-line me-1"></i> ESTADÍSTICAS
+          </div>
+          <div class="card-offer-body">
+            <ul class="list-checks mb-0">
+              <li><i class="bi bi-check2"></i> Informes detallados por alumno y globales.</li>
+              <li><i class="bi bi-check2"></i> Detección de fallos habituales.</li>
+              <li><i class="bi bi-check2"></i> Mide el progreso de tus alumnos para personalizar su preparación.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center text-muted d-lg-none mt-2 small">
+      <i class="bi bi-arrow-left-right me-1"></i> Desliza horizontalmente para ver todas las herramientas
+    </div>
+
+  </div>
+</section>
+
+<!-- NUESTRAS TARIFAS (5 PLANES ADAPTADOS) -->
+<section class="py-5" style="background-color: var(--academic-gray-bg);">
+  <div class="container">
+    <h2 class="section-head">NUESTRAS TARIFAS</h2>
+    <p class="text-center text-muted mb-4 fs-6">Elige el plan que mejor se adapta al tamaño y necesidades de tu preparación:</p>
+    
+    <div class="cards-track pricing-track">
       
-      <div class="row justify-content-center">
-        <div class="col-md-7 col-lg-5">
-          <div class="card-offer" style="border: 2px solid var(--academic-navy);">
-            <div class="card-offer-header">
-              <i class="bi bi-tag-fill me-1"></i> TARIFA PARA PREPARADORES
-            </div>
-            <div class="card-offer-body text-center">
-              
+      <!-- 1. PLAN FREE -->
+      <div class="pricing-col">
+        <div class="card-offer d-flex flex-column h-100">
+          <div class="card-offer-header">
+            <i class="bi bi-tag me-1"></i> FREE
+          </div>
+          <div class="card-offer-body d-flex flex-column justify-content-between h-100">
+            <div>
               <div class="coupon-box">
-                <span class="text-uppercase fw-black text-muted small">Precio Final</span>
-                <div class="coupon-price">49€<span class="fs-6 fw-bold text-muted"> / mes</span></div>
-                <span class="badge bg-dark text-white fw-black mt-1" style="background-color: var(--academic-navy) !important;">HASTA 20 ALUMNOS INCLUIDOS</span>
+                <span class="text-uppercase fw-black text-muted small d-block">Evaluación</span>
+                <div class="coupon-price">0€</div>
+                <span class="badge text-white fw-black mt-1" style="background-color: var(--academic-navy);">GRATIS</span>
               </div>
 
-              <ul class="list-checks text-start mx-auto" style="max-width: 320px;">
-                <li><i class="bi bi-check-circle-fill"></i> <strong>+ 3 € / mes</strong> por alumno adicional.</li>
-                <li><i class="bi bi-check-circle-fill"></i> Sin permanencia ni compromisos.</li>
-                <li><i class="bi bi-check-circle-fill"></i> Soporte técnico especializado.</li>
+              <div class="plan-limits">
+                <div class="plan-limits-row"><span>Cursos activos:</span> <strong>1</strong></div>
+                <div class="plan-limits-row"><span>Licencias alumnos:</span> <strong>15</strong></div>
+                <div class="plan-limits-row"><span>Administradores:</span> <strong>1</strong></div>
+                <div class="plan-limits-row"><span>Subdominio propio:</span> <strong><i class="bi bi-x-lg text-muted"></i></strong></div>
+              </div>
+
+              <ul class="list-checks text-start">
+                <li><i class="bi bi-check-circle-fill"></i> Creación de academia, bloques y temarios.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Importación de tests y corrección automática.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Repaso adaptativo y estadísticas del curso.</li>
               </ul>
 
-              <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary w-100">
-                ME INTERESA
-              </a>
+              <button class="btn-details-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#planFreeDetails" aria-expanded="false">
+                <i class="bi bi-chevron-down me-1"></i> Ver todas las funciones
+              </button>
+
+              <div class="collapse" id="planFreeDetails">
+                <ul class="list-checks extra-features-list text-start mb-0">
+                  <li><i class="bi bi-check2"></i> Gestión de alumnos y control de actividad básica.</li>
+                  <li><i class="bi bi-check2"></i> Material de estudio (documentos, vídeos y enlaces).</li>
+                  <li><i class="bi bi-check2"></i> Detección de dificultades comunes en el curso.</li>
+                  <li class="feature-disabled"><i class="bi bi-x"></i> Modo Reto y simulacros automáticos.</li>
+                  <li class="feature-disabled"><i class="bi bi-x"></i> Seguimiento completo y evolución temporal.</li>
+                  <li class="feature-disabled"><i class="bi bi-x"></i> Puntos débiles individuales y subdominio propio.</li>
+                </ul>
+              </div>
             </div>
+
+            <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary w-100 mt-3 text-center">
+              PROBAR GRATIS
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. PLAN PREPARADOR -->
+      <div class="pricing-col">
+        <div class="card-offer d-flex flex-column h-100">
+          <div class="card-offer-header">
+            <i class="bi bi-person-badge me-1"></i> PREPARADOR
+          </div>
+          <div class="card-offer-body d-flex flex-column justify-content-between h-100">
+            <div>
+              <div class="coupon-box">
+                <span class="text-uppercase fw-black text-muted small d-block">Tarifa</span>
+                <div class="coupon-price">X€<span class="fs-6 fw-bold text-muted"> / mes</span></div>
+                <span class="badge text-white fw-black mt-1" style="background-color: var(--academic-navy);">PRO</span>
+              </div>
+
+              <div class="plan-limits">
+                <div class="plan-limits-row"><span>Cursos activos:</span> <strong>1</strong></div>
+                <div class="plan-limits-row"><span>Licencias alumnos:</span> <strong>30</strong></div>
+                <div class="plan-limits-row"><span>Administradores:</span> <strong>1</strong></div>
+                <div class="plan-limits-row"><span>Subdominio propio:</span> <strong><i class="bi bi-x-lg text-muted"></i></strong></div>
+              </div>
+
+              <ul class="list-checks text-start">
+                <li><i class="bi bi-check-circle-fill"></i> Todo lo incluido en el plan Free.</li>
+                <li><i class="bi bi-check-circle-fill"></i> <strong>Modo Reto</strong> y simulacros automáticos periódicos.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Seguimiento individual, evolución y puntos débiles.</li>
+              </ul>
+
+              <button class="btn-details-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#planPrepDetails" aria-expanded="false">
+                <i class="bi bi-chevron-down me-1"></i> Ver todas las funciones
+              </button>
+
+              <div class="collapse" id="planPrepDetails">
+                <ul class="list-checks extra-features-list text-start mb-0">
+                  <li><i class="bi bi-check2"></i> Generación automática de tests y plan por bloques.</li>
+                  <li><i class="bi bi-check2"></i> Simulacros periódicos automáticos.</li>
+                  <li><i class="bi bi-check2"></i> Seguimiento completo de actividad y rendimiento.</li>
+                  <li><i class="bi bi-check2"></i> Evolución temporal (mejora o estancamiento).</li>
+                  <li><i class="bi bi-check2"></i> Detección automática de puntos débiles individuales.</li>
+                  <li class="feature-disabled"><i class="bi bi-x"></i> Espacio personalizado con subdominio propio.</li>
+                </ul>
+              </div>
+            </div>
+
+            <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary w-100 mt-3 text-center">
+              SELECCIONAR
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. PLAN PREPARADOR PLUS -->
+      <div class="pricing-col">
+        <div class="card-offer d-flex flex-column h-100">
+          <div class="card-offer-header">
+            <i class="bi bi-star-fill me-1"></i> PREPARADOR PLUS
+          </div>
+          <div class="card-offer-body d-flex flex-column justify-content-between h-100">
+            <div>
+              <div class="coupon-box">
+                <span class="text-uppercase fw-black text-muted small d-block">Tarifa</span>
+                <div class="coupon-price">X€<span class="fs-6 fw-bold text-muted"> / mes</span></div>
+                <span class="badge text-white fw-black mt-1" style="background-color: var(--academic-navy);">PRO</span>
+              </div>
+
+              <div class="plan-limits">
+                <div class="plan-limits-row"><span>Cursos activos:</span> <strong>3</strong></div>
+                <div class="plan-limits-row"><span>Licencias alumnos:</span> <strong>100</strong></div>
+                <div class="plan-limits-row"><span>Administradores:</span> <strong>1</strong></div>
+                <div class="plan-limits-row"><span>Subdominio propio:</span> <strong><i class="bi bi-x-lg text-muted"></i></strong></div>
+              </div>
+
+              <ul class="list-checks text-start">
+                <li><i class="bi bi-check-circle-fill"></i> Todo lo incluido en Preparador.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Amplía hasta <strong>3 cursos activos</strong> simultáneos.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Capacidad para <strong>100 alumnos</strong> con análisis avanzado.</li>
+              </ul>
+
+              <button class="btn-details-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#planPrepPlusDetails" aria-expanded="false">
+                <i class="bi bi-chevron-down me-1"></i> Ver todas las funciones
+              </button>
+
+              <div class="collapse" id="planPrepPlusDetails">
+                <ul class="list-checks extra-features-list text-start mb-0">
+                  <li><i class="bi bi-check2"></i> Automatización completa (Modo Reto y simulacros).</li>
+                  <li><i class="bi bi-check2"></i> Análisis detallado por alumno y grupal por curso.</li>
+                  <li><i class="bi bi-check2"></i> Detección de puntos débiles y evolución temporal.</li>
+                  <li><i class="bi bi-check2"></i> Biblioteca multimedia organizada por temas.</li>
+                  <li class="feature-disabled"><i class="bi bi-x"></i> Espacio personalizado con subdominio propio.</li>
+                </ul>
+              </div>
+            </div>
+
+            <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary w-100 mt-3 text-center">
+              SELECCIONAR
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. PLAN ACADEMIA -->
+      <div class="pricing-col">
+        <div class="card-offer d-flex flex-column h-100">
+          <div class="card-offer-header">
+            <i class="bi bi-building me-1"></i> ACADEMIA
+          </div>
+          <div class="card-offer-body d-flex flex-column justify-content-between h-100">
+            <div>
+              <div class="coupon-box">
+                <span class="text-uppercase fw-black text-muted small d-block">Tarifa</span>
+                <div class="coupon-price">X€<span class="fs-6 fw-bold text-muted"> / mes</span></div>
+                <span class="badge text-white fw-black mt-1" style="background-color: var(--academic-navy);">PRO</span>
+              </div>
+
+              <div class="plan-limits">
+                <div class="plan-limits-row"><span>Cursos activos:</span> <strong>Ilimitados</strong></div>
+                <div class="plan-limits-row"><span>Licencias alumnos:</span> <strong>250</strong></div>
+                <div class="plan-limits-row"><span>Administradores:</span> <strong>3</strong></div>
+                <div class="plan-limits-row"><span>Subdominio propio:</span> <strong><i class="bi bi-check-lg text-success"></i></strong></div>
+              </div>
+
+              <ul class="list-checks text-start">
+                <li><i class="bi bi-check-circle-fill"></i> Todo lo incluido en Preparador Plus.</li>
+                <li><i class="bi bi-check-circle-fill"></i> <strong>Subdominio propio</strong> (tuacademia.luapol.com).</li>
+                <li><i class="bi bi-check-circle-fill"></i> Cursos ilimitados y hasta <strong>3 administradores</strong>.</li>
+              </ul>
+
+              <button class="btn-details-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#planAcadDetails" aria-expanded="false">
+                <i class="bi bi-chevron-down me-1"></i> Ver todas las funciones
+              </button>
+
+              <div class="collapse" id="planAcadDetails">
+                <ul class="list-checks extra-features-list text-start mb-0">
+                  <li><i class="bi bi-check2"></i> Espacio personalizado con subdominio propio.</li>
+                  <li><i class="bi bi-check2"></i> Gestión multi-administrador (hasta 3 profesores).</li>
+                  <li><i class="bi bi-check2"></i> Todas las herramientas de automatización y análisis.</li>
+                  <li><i class="bi bi-check2"></i> Modo Reto, simulacros y detección de puntos débiles.</li>
+                </ul>
+              </div>
+            </div>
+
+            <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary w-100 mt-3 text-center">
+              SELECCIONAR
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. PLAN ACADEMIA PLUS -->
+      <div class="pricing-col">
+        <div class="card-offer d-flex flex-column h-100">
+          <div class="card-offer-header">
+            <i class="bi bi-gem me-1"></i> ACADEMIA PLUS
+          </div>
+          <div class="card-offer-body d-flex flex-column justify-content-between h-100">
+            <div>
+              <div class="coupon-box">
+                <span class="text-uppercase fw-black text-muted small d-block">Tarifa</span>
+                <div class="coupon-price">X€<span class="fs-6 fw-bold text-muted"> / mes</span></div>
+                <span class="badge text-white fw-black mt-1" style="background-color: var(--academic-navy);">PRO</span>
+              </div>
+
+              <div class="plan-limits">
+                <div class="plan-limits-row"><span>Cursos activos:</span> <strong>Ilimitados</strong></div>
+                <div class="plan-limits-row"><span>Licencias alumnos:</span> <strong>Ilimitados</strong></div>
+                <div class="plan-limits-row"><span>Administradores:</span> <strong>Ilimitados</strong></div>
+                <div class="plan-limits-row"><span>Subdominio propio:</span> <strong><i class="bi bi-check-lg text-success"></i></strong></div>
+              </div>
+
+              <ul class="list-checks text-start">
+                <li><i class="bi bi-check-circle-fill"></i> Todas las funciones Pro desbloqueadas.</li>
+                <li><i class="bi bi-check-circle-fill"></i> <strong>Alumnos, cursos y administradores ilimitados</strong>.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Espacio personalizado con subdominio propio.</li>
+              </ul>
+
+              <button class="btn-details-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#planAcadPlusDetails" aria-expanded="false">
+                <i class="bi bi-chevron-down me-1"></i> Ver todas las funciones
+              </button>
+
+              <div class="collapse" id="planAcadPlusDetails">
+                <ul class="list-checks extra-features-list text-start mb-0">
+                  <li><i class="bi bi-check2"></i> Escalabilidad total sin límite de licencias ni cursos.</li>
+                  <li><i class="bi bi-check2"></i> Equipo docente y administradores sin límite.</li>
+                  <li><i class="bi bi-check2"></i> Subdominio propio (tuacademia.luapol.com).</li>
+                  <li><i class="bi bi-check2"></i> Automatización y analítica avanzada completa.</li>
+                </ul>
+              </div>
+            </div>
+
+            <a href="https://app.luapol.com/register/preparadores" class="btn-action-primary w-100 mt-3 text-center">
+              SELECCIONAR
+            </a>
           </div>
         </div>
       </div>
 
     </div>
-  </section>
 
-  <!-- DEMO Y CAPTURAS -->
-  <section class="py-5" id="demo">
-    <div class="container text-center">
-      <h2 class="section-head"> DEMOSTRACIÓN </h2>
-      
-      <div class="row justify-content-center mb-5">
-        <div class="col-lg-9">
-          <div class="ratio ratio-16x9 rounded border shadow-sm">
+    <div class="text-center text-muted d-lg-none mt-2 small">
+      <i class="bi bi-arrow-left-right me-1"></i> Desliza horizontalmente para ver todos los planes
+    </div>
+
+  </div>
+</section>
+
+<!-- DEMO Y CAPTURAS -->
+<section class="py-5" id="demo">
+  <div class="container text-center">
+    <h2 class="section-head">DEMOSTRACIÓN</h2>
+    
+    <div class="row justify-content-center mb-5">
+      <div class="col-lg-9">
+        <div class="ratio ratio-16x9 rounded border shadow-sm">
           <iframe src="https://www.youtube.com/embed/ypcjAmbndus" title="Demo Luapol" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+  
+<!-- PREGUNTAS FRECUENTES -->
+<section class="py-5" style="background-color: var(--academic-gray-bg);">
+  <div class="container" style="max-width: 800px;">
+    <h2 class="section-head">PREGUNTAS FRECUENTES</h2>
+    
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+            ¿Puedo importar mis preguntas actuales?
+          </button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Sí, disponemos de plantillas simples para importar tus baterías de preguntas masivamente o añadirlas de forma individual.
           </div>
         </div>
       </div>
 
-    </div>
-  </section>
-  
-  
-  <!-- PREGUNTAS FRECUENTES -->
-  <section class="py-5" style="background-color: var(--academic-gray-bg);">
-    <div class="container" style="max-width: 800px;">
-      <h2 class="section-head">PREGUNTAS FRECUENTES</h2>
-      
-      <div class="accordion" id="faqAccordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-              ¿Puedo importar mis preguntas actuales?
-            </button>
-          </h2>
-          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Sí, disponemos de plantillas simples para importar tus baterías de preguntas masivamente o añadirlas de forma individual.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-              ¿Existe un límite de estudiantes?
-            </button>
-          </h2>
-          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              No hay límite. La tarifa base cubre los primeros 20 alumnos y el sistema calcula automáticamente el ajuste por alumnos adicionales.
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-              ¿Cómo se realiza el cobro a los alumnos?
-            </button>
-          </h2>
-          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              Mantienes independencia total. Sigues cobrando a tus alumnos con tu método habitual; nosotros solo te facturamos el uso de la plataforma.
-            </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+            ¿Qué tipo de tarifas existen?
+          </button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            <p>Ofrecemos una estructura de planes adaptada a cada necesidad:</p>
+            <ul>
+              <li><strong>Plan Free (0 €):</strong> Pensado para evaluar y crear contenido básico con 1 curso activo, hasta 15 alumnos y 1 administrador.</li>
+              <li><strong>Plan Preparador (X €):</strong> Para preparadores individuales. Incluye 1 curso activo, hasta 30 alumnos, 1 administrador y todas las herramientas avanzadas (Modo Reto, simulacros automáticos y seguimiento de puntos débiles).</li>
+              <li><strong>Plan Preparador Plus (X €):</strong> Amplía hasta 3 cursos activos y 100 licencias de alumnos con todas las funciones avanzadas de automatización y análisis.</li>
+              <li><strong>Plan Academia (X €):</strong> Pensado para centros en crecimiento con cursos ilimitados, hasta 250 alumnos, 3 administradores y subdominio propio (<em>tuacademia.luapol.com</em>).</li>
+              <li><strong>Plan Academia Plus (X €):</strong> Sin límites de cursos, alumnos ni administradores, con subdominio propio y todas las funcionalidades Pro.</li>
+            </ul>
           </div>
         </div>
       </div>
 
-    </div>
-  </section>
-<!-- FORMULARIO SOLICITUD DE INFORMACIÓN / CONTACTO -->
-  <section class="py-5" style="background-color: #ffffff;">
-    <div class="container" style="max-width: 650px;">
-      <h2 class="section-head">¿QUIERES MÁS INFORMACIÓN?</h2>
-      <p class="text-center text-muted mb-4 fs-6">
-        Déjanos tu correo electrónico y nos pondremos en contacto contigo para resolver tus dudas.
-      </p>
-
-      <form id="contactForm" action="https://formspree.io/f/xzdvyklr" method="POST" class="card p-4 shadow-sm border" style="border-radius: 0.5rem;">
-        <div class="mb-3">
-          <label for="userEmail" class="form-label fw-bold">Tu Email de contacto <span class="text-danger">*</span></label>
-          <div class="input-group">
-            <span class="input-group-text bg-light"><i class="bi bi-envelope-fill text-muted"></i></span>
-            <input type="email" class="form-control" id="userEmail" name="email" placeholder="ejemplo@correo.com" required>
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+            ¿Cómo se realiza el cobro a los alumnos?
+          </button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Mantienes independencia total. Sigues cobrando a tus alumnos con tu método habitual; nosotros solo te facturamos el uso de la plataforma.
           </div>
         </div>
-
-        <div class="mb-3">
-          <label for="userName" class="form-label fw-bold">Nombre o Academia (Opcional)</label>
-          <input type="text" class="form-control" id="userName" name="nombre" placeholder="Tu nombre o el de tu academia">
-        </div>
-
-        <div class="mb-3">
-          <label for="userMessage" class="form-label fw-bold">¿Tienes alguna duda en particular? (Opcional)</label>
-          <textarea class="form-control" id="userMessage" name="mensaje" rows="3" placeholder="Escribe aquí tu consulta..."></textarea>
-        </div>
-
-        <button type="submit" id="submitBtn" class="btn-action-primary w-100 text-center mt-2 border-0">
-          <i class="bi bi-send-fill me-1"></i> SOLICITAR INFORMACIÓN
-        </button>
-
-        <!-- Mensaje de respuesta -->
-        <div id="formStatus" class="mt-3 text-center fw-bold d-none"></div>
-      </form>
+      </div>
     </div>
-  </section>
 
-  <script>
-    const form = document.getElementById("contactForm");
-    const status = document.getElementById("formStatus");
-    const btn = document.getElementById("submitBtn");
+  </div>
+</section>
 
-    form.addEventListener("submit", async function(event) {
-      event.preventDefault();
-      btn.disabled = true;
-      btn.innerHTML = "Enviando...";
+<!-- FORMULARIO CONTACTO -->
+<section class="py-5" style="background-color: #ffffff;">
+  <div class="container" style="max-width: 650px;">
+    <h2 class="section-head">¿QUIERES MÁS INFORMACIÓN?</h2>
+    <p class="text-center text-muted mb-4 fs-6">
+      Déjanos tu correo electrónico y nos pondremos en contacto contigo para resolver tus dudas.
+    </p>
 
-      try {
-        const data = new FormData(event.target);
-        const response = await fetch(event.target.action, {
-          method: form.method,
-          body: data,
-          headers: { 'Accept': 'application/json' }
-        });
+    <form id="contactForm" action="https://formspree.io/f/xzdvyklr" method="POST" class="card p-4 shadow-sm border" style="border-radius: 0.5rem;">
+      <div class="mb-3">
+        <label for="userEmail" class="form-label fw-bold">Tu Email de contacto <span class="text-danger">*</span></label>
+        <div class="input-group">
+          <span class="input-group-text bg-light"><i class="bi bi-envelope-fill text-muted"></i></span>
+          <input type="email" class="form-control" id="userEmail" name="email" placeholder="ejemplo@correo.com" required>
+        </div>
+      </div>
 
-        if (response.ok) {
-          status.classList.remove("d-none", "text-danger");
-          status.classList.add("text-success");
-          status.innerHTML = "¡Muchas gracias! Hemos recibido tu mensaje correctamente.";
-          form.reset();
-          btn.innerHTML = "<i class='bi bi-check-lg'></i> ¡ENVIADO CON ÉXITO!";
-        } else {
-          throw new Error('Error en el envío');
-        }
-      } catch (error) {
-        status.classList.remove("d-none", "text-success");
-        status.classList.add("text-danger");
-        status.innerHTML = "Hubo un problema al enviar. Por favor, inténtalo de nuevo.";
-        btn.disabled = false;
-        btn.innerHTML = "<i class='bi bi-send-fill me-1'></i> SOLICITAR INFORMACIÓN";
+      <div class="mb-3">
+        <label for="userName" class="form-label fw-bold">Nombre o Academia (Opcional)</label>
+        <input type="text" class="form-control" id="userName" name="nombre" placeholder="Tu nombre o el de tu academia">
+      </div>
+
+      <div class="mb-3">
+        <label for="userMessage" class="form-label fw-bold">¿Tienes alguna duda en particular? (Opcional)</label>
+        <textarea class="form-control" id="userMessage" name="mensaje" rows="3" placeholder="Escribe aquí tu consulta..."></textarea>
+      </div>
+
+      <button type="submit" id="submitBtn" class="btn-action-primary w-100 text-center mt-2 border-0">
+        <i class="bi bi-send-fill me-1"></i> SOLICITAR INFORMACIÓN
+      </button>
+
+      <div id="formStatus" class="mt-3 text-center fw-bold d-none"></div>
+    </form>
+  </div>
+</section>
+
+<!-- SCRIPT FORMULARIO -->
+<script>
+  const form = document.getElementById("contactForm");
+  const status = document.getElementById("formStatus");
+  const btn = document.getElementById("submitBtn");
+
+  form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+    btn.disabled = true;
+    btn.innerHTML = "Enviando...";
+
+    try {
+      const data = new FormData(event.target);
+      const response = await fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (response.ok) {
+        status.classList.remove("d-none", "text-danger");
+        status.classList.add("text-success");
+        status.innerHTML = "¡Muchas gracias! Hemos recibido tu mensaje correctamente.";
+        form.reset();
+        btn.innerHTML = "<i class='bi bi-check-lg'></i> ¡ENVIADO CON ÉXITO!";
+      } else {
+        throw new Error('Error en el envío');
       }
-    });
-  </script>
+    } catch (error) {
+      status.classList.remove("d-none", "text-success");
+      status.classList.add("text-danger");
+      status.innerHTML = "Hubo un problema al enviar. Por favor, inténtalo de nuevo.";
+      btn.disabled = false;
+      btn.innerHTML = "<i class='bi bi-send-fill me-1'></i> SOLICITAR INFORMACIÓN";
     }
   });
 </script>
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-          <a href="terminos.html">Aviso Legal, Privacidad y Cookies</a>
-          <span class="mx-2">|</span>
-          <span>Contacto: info@luapol.com</span>
-        </div>
-        <div class="col-md-6 text-center text-md-end">
-          <a href="https://www.instagram.com/luapol_cnp" target="_blank" class="me-3">
-            <i class="bi bi-instagram me-1"></i> Instagram
-          </a>
-          <span>© 2026 LUAPOL</span>
-        </div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+        <a href="terminos.html">Aviso Legal, Privacidad y Cookies</a>
+        <span class="mx-2">|</span>
+        <span>Contacto: info@luapol.com</span>
+      </div>
+      <div class="col-md-6 text-center text-md-end">
+        <a href="https://www.instagram.com/luapol_cnp" target="_blank" class="me-3">
+          <i class="bi bi-instagram me-1"></i> Instagram
+        </a>
+        <span>© 2026 LUAPOL</span>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
