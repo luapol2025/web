@@ -117,8 +117,8 @@
       background-color: var(--academic-navy);
       color: #ffffff !important;
       font-weight: 900;
-      font-size: 0.95rem;
-      padding: 0.8rem 1.2rem;
+      font-size: 0.92rem;
+      padding: 0.8rem 1rem;
       border-radius: 0.3rem;
       border: 2px solid var(--academic-gold);
       text-decoration: none;
@@ -160,15 +160,15 @@
       background-color: var(--academic-navy);
       color: #ffffff;
       font-weight: 900;
-      padding: 0.8rem 0.75rem;
+      padding: 0.8rem 0.7rem;
       text-align: center;
-      font-size: 1rem;
+      font-size: 0.98rem;
       text-transform: uppercase;
       border-bottom: 2px solid var(--academic-gold);
     }
 
     .card-offer-body {
-      padding: 1.25rem;
+      padding: 1.15rem;
     }
 
     .coupon-box {
@@ -181,7 +181,7 @@
     }
 
     .coupon-price {
-      font-size: 2.2rem;
+      font-size: 2.15rem;
       font-weight: 900;
       color: var(--academic-navy);
       line-height: 1.1;
@@ -192,16 +192,17 @@
       background-color: var(--academic-gray-bg);
       border: 1px solid var(--academic-border);
       border-radius: 0.3rem;
-      padding: 0.65rem 0.75rem;
+      padding: 0.65rem 0.7rem;
       margin-bottom: 1rem;
-      font-size: 0.83rem;
+      font-size: 0.8rem;
     }
 
     .plan-limits-row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.22rem 0;
+      gap: 0.4rem;
+      padding: 0.25rem 0;
       border-bottom: 1px dashed #CBD5E1;
     }
 
@@ -216,6 +217,7 @@
     .plan-limits-row strong {
       color: var(--academic-navy);
       font-weight: 800;
+      text-align: right;
     }
 
     .list-checks {
@@ -226,7 +228,7 @@
 
     .list-checks li {
       margin-bottom: 0.55rem;
-      font-size: 0.86rem;
+      font-size: 0.84rem;
       display: flex;
       align-items: flex-start;
       gap: 7px;
@@ -237,7 +239,7 @@
     .list-checks li i {
       color: var(--academic-navy);
       font-size: 1rem;
-      line-height: 1.1;
+      line-height: 1.2;
       font-weight: bold;
       flex-shrink: 0;
     }
@@ -246,10 +248,10 @@
       background: transparent;
       border: 1px solid #CBD5E1;
       color: var(--academic-navy);
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       font-weight: 800;
       text-transform: uppercase;
-      padding: 0.4rem 0.6rem;
+      padding: 0.4rem 0.55rem;
       border-radius: 0.25rem;
       width: 100%;
       transition: all 0.15s ease;
@@ -264,21 +266,11 @@
       border-top: 1px solid var(--academic-border);
       padding-top: 0.75rem;
       margin-top: 0.75rem;
-      font-size: 0.8rem;
     }
 
     .extra-features-list li {
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.45rem;
       font-size: 0.8rem;
-    }
-
-    .extra-features-list li.feature-disabled {
-      color: #94A3B8;
-      text-decoration: line-through;
-    }
-
-    .extra-features-list li.feature-disabled i {
-      color: #CBD5E1;
     }
 
     /* PUNTOS DE DOLOR (ANTES / AHORA) */
@@ -342,7 +334,7 @@
       text-decoration: underline;
     }
 
-    /* CARRUSEL FLUIDO EN MÓVIL Y GRID EN PC (4 COLUMNAS HERRAMIENTAS / 5 COLUMNAS PRECIOS) */
+    /* CARRUSEL FLUIDO EN MÓVIL Y GRID EN PC */
     .cards-track {
       display: flex;
       gap: 1rem;
@@ -383,15 +375,13 @@
         margin: 0;
         justify-content: center;
       }
-      /* 4 tarjetas en Herramientas */
       .cards-col {
         flex: 0 0 23.5%;
         max-width: 23.5%;
         scroll-snap-align: none;
       }
-      /* 5 tarjetas en Tarifas */
       .pricing-track {
-        gap: 0.75rem;
+        gap: 0.7rem;
       }
       .pricing-col {
         flex: 1 1 0;
@@ -561,7 +551,7 @@
 <section class="py-5" style="background-color: var(--academic-gray-bg);">
   <div class="container">
     <h2 class="section-head">NUESTRAS TARIFAS</h2>
-    <p class="text-center text-muted mb-4 fs-6">Elige el plan que mejor se adapta al tamaño y necesidades de tu preparación:</p>
+    <p class="text-center text-muted mb-4 fs-6">Elige el plan que mejor se adapta al tamaño y necesidades de tu preparación[cite: 3].</p>
     
     <div class="cards-track pricing-track">
       
@@ -587,8 +577,8 @@
               </div>
 
               <ul class="list-checks text-start">
-                <li><i class="bi bi-check-circle-fill"></i> Creación de academia, bloques y temarios.</li>
-                <li><i class="bi bi-check-circle-fill"></i> Importación de tests y corrección automática.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Academia, bloques, temarios y material de estudio.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Creación e importación de tests con corrección automática.</li>
                 <li><i class="bi bi-check-circle-fill"></i> Repaso adaptativo y estadísticas del curso.</li>
               </ul>
 
@@ -598,12 +588,10 @@
 
               <div class="collapse" id="planFreeDetails">
                 <ul class="list-checks extra-features-list text-start mb-0">
-                  <li><i class="bi bi-check2"></i> Gestión de alumnos y control de actividad básica.</li>
-                  <li><i class="bi bi-check2"></i> Material de estudio (documentos, vídeos y enlaces).</li>
-                  <li><i class="bi bi-check2"></i> Detección de dificultades comunes en el curso.</li>
-                  <li class="feature-disabled"><i class="bi bi-x"></i> Modo Reto y simulacros automáticos.</li>
-                  <li class="feature-disabled"><i class="bi bi-x"></i> Seguimiento completo y evolución temporal.</li>
-                  <li class="feature-disabled"><i class="bi bi-x"></i> Puntos débiles individuales y subdominio propio.</li>
+                  <li><i class="bi bi-check2"></i> Gestión de alumnos y actividad básica.</li>
+                  <li><i class="bi bi-check2"></i> Resultados por test (nota, aciertos, fallos e intentos).</li>
+                  <li><i class="bi bi-check2"></i> Documentos, vídeos y enlaces por temas.</li>
+                  <li><i class="bi bi-check2"></i> Análisis global del curso y dificultades comunes.</li>
                 </ul>
               </div>
             </div>
@@ -638,7 +626,7 @@
 
               <ul class="list-checks text-start">
                 <li><i class="bi bi-check-circle-fill"></i> Todo lo incluido en el plan Free.</li>
-                <li><i class="bi bi-check-circle-fill"></i> <strong>Modo Reto</strong> y simulacros automáticos periódicos.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Modo Reto y simulacros automáticos periódicos.</li>
                 <li><i class="bi bi-check-circle-fill"></i> Seguimiento individual, evolución y puntos débiles.</li>
               </ul>
 
@@ -648,12 +636,10 @@
 
               <div class="collapse" id="planPrepDetails">
                 <ul class="list-checks extra-features-list text-start mb-0">
-                  <li><i class="bi bi-check2"></i> Generación automática de tests y plan por bloques.</li>
-                  <li><i class="bi bi-check2"></i> Simulacros periódicos automáticos.</li>
+                  <li><i class="bi bi-check2"></i> Generación automática de tests y estudio por bloques.</li>
+                  <li><i class="bi bi-check2"></i> Simulacros periódicos generados automáticamente.</li>
                   <li><i class="bi bi-check2"></i> Seguimiento completo de actividad y rendimiento.</li>
-                  <li><i class="bi bi-check2"></i> Evolución temporal (mejora o estancamiento).</li>
-                  <li><i class="bi bi-check2"></i> Detección automática de puntos débiles individuales.</li>
-                  <li class="feature-disabled"><i class="bi bi-x"></i> Espacio personalizado con subdominio propio.</li>
+                  <li><i class="bi bi-check2"></i> Evolución temporal y puntos débiles por alumno.</li>
                 </ul>
               </div>
             </div>
@@ -688,8 +674,8 @@
 
               <ul class="list-checks text-start">
                 <li><i class="bi bi-check-circle-fill"></i> Todo lo incluido en Preparador.</li>
-                <li><i class="bi bi-check-circle-fill"></i> Amplía hasta <strong>3 cursos activos</strong> simultáneos.</li>
-                <li><i class="bi bi-check-circle-fill"></i> Capacidad para <strong>100 alumnos</strong> con análisis avanzado.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Hasta 3 cursos activos simultáneos.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Hasta 100 licencias de alumnos con análisis avanzado.</li>
               </ul>
 
               <button class="btn-details-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#planPrepPlusDetails" aria-expanded="false">
@@ -698,11 +684,10 @@
 
               <div class="collapse" id="planPrepPlusDetails">
                 <ul class="list-checks extra-features-list text-start mb-0">
-                  <li><i class="bi bi-check2"></i> Automatización completa (Modo Reto y simulacros).</li>
-                  <li><i class="bi bi-check2"></i> Análisis detallado por alumno y grupal por curso.</li>
-                  <li><i class="bi bi-check2"></i> Detección de puntos débiles y evolución temporal.</li>
-                  <li><i class="bi bi-check2"></i> Biblioteca multimedia organizada por temas.</li>
-                  <li class="feature-disabled"><i class="bi bi-x"></i> Espacio personalizado con subdominio propio.</li>
+                  <li><i class="bi bi-check2"></i> Modo Reto y simulacros automáticos en todos los cursos.</li>
+                  <li><i class="bi bi-check2"></i> Estadísticas por test, por curso y por alumno.</li>
+                  <li><i class="bi bi-check2"></i> Evolución temporal y puntos débiles individuales.</li>
+                  <li><i class="bi bi-check2"></i> Material de estudio organizado por temas.</li>
                 </ul>
               </div>
             </div>
@@ -737,8 +722,8 @@
 
               <ul class="list-checks text-start">
                 <li><i class="bi bi-check-circle-fill"></i> Todo lo incluido en Preparador Plus.</li>
-                <li><i class="bi bi-check-circle-fill"></i> <strong>Subdominio propio</strong> (tuacademia.luapol.com).</li>
-                <li><i class="bi bi-check-circle-fill"></i> Cursos ilimitados y hasta <strong>3 administradores</strong>.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Subdominio propio (tuacademia.luapol.com).</li>
+                <li><i class="bi bi-check-circle-fill"></i> Cursos activos ilimitados y hasta 3 administradores.</li>
               </ul>
 
               <button class="btn-details-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#planAcadDetails" aria-expanded="false">
@@ -748,9 +733,9 @@
               <div class="collapse" id="planAcadDetails">
                 <ul class="list-checks extra-features-list text-start mb-0">
                   <li><i class="bi bi-check2"></i> Espacio personalizado con subdominio propio.</li>
-                  <li><i class="bi bi-check2"></i> Gestión multi-administrador (hasta 3 profesores).</li>
-                  <li><i class="bi bi-check2"></i> Todas las herramientas de automatización y análisis.</li>
-                  <li><i class="bi bi-check2"></i> Modo Reto, simulacros y detección de puntos débiles.</li>
+                  <li><i class="bi bi-check2"></i> Hasta 3 administradores y 250 licencias de alumnos.</li>
+                  <li><i class="bi bi-check2"></i> Cursos activos ilimitados.</li>
+                  <li><i class="bi bi-check2"></i> Automatización y analítica completa.</li>
                 </ul>
               </div>
             </div>
@@ -784,9 +769,9 @@
               </div>
 
               <ul class="list-checks text-start">
-                <li><i class="bi bi-check-circle-fill"></i> Todas las funciones Pro desbloqueadas.</li>
-                <li><i class="bi bi-check-circle-fill"></i> <strong>Alumnos, cursos y administradores ilimitados</strong>.</li>
-                <li><i class="bi bi-check-circle-fill"></i> Espacio personalizado con subdominio propio.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Todas las funciones Pro incluidas.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Cursos activos, licencias y administradores ilimitados.</li>
+                <li><i class="bi bi-check-circle-fill"></i> Subdominio propio (tuacademia.luapol.com).</li>
               </ul>
 
               <button class="btn-details-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#planAcadPlusDetails" aria-expanded="false">
@@ -795,10 +780,10 @@
 
               <div class="collapse" id="planAcadPlusDetails">
                 <ul class="list-checks extra-features-list text-start mb-0">
-                  <li><i class="bi bi-check2"></i> Escalabilidad total sin límite de licencias ni cursos.</li>
-                  <li><i class="bi bi-check2"></i> Equipo docente y administradores sin límite.</li>
-                  <li><i class="bi bi-check2"></i> Subdominio propio (tuacademia.luapol.com).</li>
-                  <li><i class="bi bi-check2"></i> Automatización y analítica avanzada completa.</li>
+                  <li><i class="bi bi-check2"></i> Cursos activos ilimitados.</li>
+                  <li><i class="bi bi-check2"></i> Licencias de alumnos ilimitadas.</li>
+                  <li><i class="bi bi-check2"></i> Administradores ilimitados.</li>
+                  <li><i class="bi bi-check2"></i> Subdominio propio y analítica completa.</li>
                 </ul>
               </div>
             </div>
@@ -864,11 +849,11 @@
           <div class="accordion-body">
             <p>Ofrecemos una estructura de planes adaptada a cada necesidad:</p>
             <ul>
-              <li><strong>Plan Free (0 €):</strong> Pensado para evaluar y crear contenido básico con 1 curso activo, hasta 15 alumnos y 1 administrador.</li>
-              <li><strong>Plan Preparador (X €):</strong> Para preparadores individuales. Incluye 1 curso activo, hasta 30 alumnos, 1 administrador y todas las herramientas avanzadas (Modo Reto, simulacros automáticos y seguimiento de puntos débiles).</li>
-              <li><strong>Plan Preparador Plus (X €):</strong> Amplía hasta 3 cursos activos y 100 licencias de alumnos con todas las funciones avanzadas de automatización y análisis.</li>
-              <li><strong>Plan Academia (X €):</strong> Pensado para centros en crecimiento con cursos ilimitados, hasta 250 alumnos, 3 administradores y subdominio propio (<em>tuacademia.luapol.com</em>).</li>
-              <li><strong>Plan Academia Plus (X €):</strong> Sin límites de cursos, alumnos ni administradores, con subdominio propio y todas las funcionalidades Pro.</li>
+              <li><strong>Plan Free (0 €):</strong> Pensado para evaluar y crear contenido básico con 1 curso activo, hasta 15 licencias de alumnos y 1 administrador.</li>
+              <li><strong>Plan Preparador:</strong> Para preparadores individuales, con 1 curso activo, hasta 30 licencias de alumnos, 1 administrador y funciones avanzadas (Modo Reto, simulacros automáticos, seguimiento individual y detección de puntos débiles).</li>
+              <li><strong>Plan Preparador Plus:</strong> Amplía hasta 3 cursos activos y 100 licencias de alumnos (1 administrador), manteniendo todas las herramientas de automatización y análisis.</li>
+              <li><strong>Plan Academia:</strong> Pensado para centros en crecimiento, con cursos activos ilimitados, hasta 250 licencias de alumnos, hasta 3 administradores y subdominio propio (<em>tuacademia.luapol.com</em>).</li>
+              <li><strong>Plan Academia Plus:</strong> Sin límite de cursos activos, licencias de alumnos ni administradores, con subdominio propio (<em>tuacademia.luapol.com</em>) y todas las funcionalidades Pro incluidas.</li>
             </ul>
           </div>
         </div>
